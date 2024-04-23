@@ -1,0 +1,12 @@
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DTO\bin\Debug\DTO.dll
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DTO\bin\Debug\DTO.pdb
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.dll
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\bin\Debug\DTO.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\bin\Debug\DTO.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.pdb

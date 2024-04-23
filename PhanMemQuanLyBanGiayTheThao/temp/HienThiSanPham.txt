@@ -1,0 +1,110 @@
+﻿--- Hiển thị sản phẩm ---
+
+public void HienThiMaSanPham()
+        {
+            string scon;
+            //chuoi ket noi CSDL
+            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+            //Doi tuong ket noi CSDL
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql;
+            sSql = "SELECT MaSP, TenSP, GiaBan FROM SANPHAM";
+            try
+            {
+                myConnection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
+                //DataSet: du lieu tren bo nho RAM
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                myConnection.Close();
+
+                //cbo_MaSP
+                cbo_MaSP.DataSource = ds.Tables[0];
+                cbo_MaSP.DisplayMember = "MaSP";
+                cbo_MaSP.ValueMember = "TenSP";
+
+                //cbo_TenSP
+                cbo_TenSP.DataSource = ds.Tables[0];
+                cbo_TenSP.DisplayMember = "TenSP";
+                cbo_TenSP.ValueMember = "MaSP";
+
+                //cbo_DonGia
+                cbo_DonGia.DataSource = ds.Tables[0];
+                cbo_DonGia.DisplayMember = "GiaBan";
+                cbo_DonGia.ValueMember = "MaSP";
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+            }
+        }
+
+
+
+--- Hiển thị nhân viên ---
+
+public void HienThiMaNhanVien()
+        {
+            string scon;
+            //chuoi ket noi CSDL
+            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+            //Doi tuong ket noi CSDL
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql;
+            sSql = "SELECT MaNV, TenNV FROM NHANVIEN";
+            try
+            {
+                myConnection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
+                //DataSet: du lieu tren bo nho RAM
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                myConnection.Close();
+                cbo_MaNV.DataSource = ds.Tables[0];
+                cbo_MaNV.DisplayMember = "MaNV";
+                cbo_MaNV.ValueMember = "TenNV";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+            }
+        }
+
+
+
+--- Hiển thị mã khách hàng ---
+
+public void HienThiMaKhachHang()
+        {
+            string scon;
+            //chuoi ket noi CSDL
+            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+            //Doi tuong ket noi CSDL
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql;
+            sSql = "SELECT MaKH, TenKH FROM KHACHHANG";
+            try
+            {
+                myConnection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
+                //DataSet: du lieu tren bo nho RAM
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                myConnection.Close();
+                cbo_MaKH.DataSource = ds.Tables[0];
+                cbo_MaKH.DisplayMember = "MaKH";
+                cbo_MaKH.ValueMember = "TenKH";
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+            }
+        }
+
+
+
+---  ---

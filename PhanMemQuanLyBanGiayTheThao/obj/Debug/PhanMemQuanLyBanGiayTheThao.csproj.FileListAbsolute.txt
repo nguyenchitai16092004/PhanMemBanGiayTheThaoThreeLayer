@@ -1,0 +1,43 @@
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_ChiTietHoaDon.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_DangNhap.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_HoaDonBanHang.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_KhachHang.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_Menu.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_NhaCungCap.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_NhanVien.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.Properties.Resources.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_SanPham.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_TaiKhoan.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_ThongKeDoanhThu.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_ThongKeSanPham.resources
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.csproj.GenerateResource.cache
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.csproj.CoreCompileInputs.cache
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.csproj.AssemblyReference.cache
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_ChiTietHoaDon.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_DangNhap.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_HoaDonBanHang.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_KhachHang.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_Menu.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_NhaCungCap.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_NhanVien.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.Properties.Resources.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_SanPham.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_TaiKhoan.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_ThongKeDoanhThu.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.frm_ThongKeSanPham.resources
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.csproj.GenerateResource.cache
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.csproj.CoreCompileInputs.cache
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\PhanMemQuanLyBanGiayTheThao.exe.config
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\PhanMemQuanLyBanGiayTheThao.exe
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\PhanMemQuanLyBanGiayTheThao.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\BLL.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\DTO.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\FontAwesome.Sharp.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\DAL.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\BLL.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\DTO.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\bin\Debug\DAL.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.csproj.CopyComplete
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.exe
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\PhanMemQuanLyBanGiayTheThao\obj\Debug\PhanMemQuanLyBanGiayTheThao.pdb

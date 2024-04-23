@@ -1,0 +1,15 @@
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DAL\bin\Debug\DAL.dll
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DAL\bin\Debug\DAL.pdb
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.dll
+C:\Users\ADMIN\Source\Repos\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\bin\Debug\DAL.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\bin\Debug\DAL.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\bin\Debug\DTO.dll
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\bin\Debug\DTO.pdb
+D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DAL\obj\Debug\DAL.csproj.CopyComplete

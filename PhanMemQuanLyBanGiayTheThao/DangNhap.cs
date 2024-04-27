@@ -30,7 +30,8 @@ namespace PhanMemQuanLyBanGiayTheThao
 
             if (isAuthenticated)
             {
-                MessageBox.Show("Đăng nhập thành công!");               
+                MessageBox.Show("Đăng nhập thành công!");
+                MessageBox.Show("Xin chào " + username);
                 DangNhapBLL PhanQuyenBLL = new DangNhapBLL();
                 int MaTK = PhanQuyenBLL.PhanQuyen(username, password);
                 frm_Menu home = new frm_Menu();
@@ -40,7 +41,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!");
+                MessageBox.Show("Đăng Nhập không thành công !");
             }
         }
 
@@ -61,6 +62,11 @@ namespace PhanMemQuanLyBanGiayTheThao
                     btn_eyeopen.Visible = false;
                 }
                 count += 1;
+        }
+
+        private void frm_DangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -197,6 +197,7 @@
             this.Controls.Add(this.grb_Body);
             this.Name = "frm_DoiMatKhau";
             this.Text = "DoiMatKhau";
+            this.Load += new System.EventHandler(this.frm_DoiMatKhau_Load);
             this.grb_Body.ResumeLayout(false);
             this.grb_Body.PerformLayout();
             this.grb_Header.ResumeLayout(false);

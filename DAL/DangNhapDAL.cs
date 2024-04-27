@@ -15,7 +15,7 @@ namespace DAL
 
         public bool KiemTraDangNhap(string tenDangNhap, string matKhau)
         {
-            string query = "SELECT * FROM TAIKHOAN WHERE TenDangNhap = @username AND MatKhau = @password";
+            string query = "SELECT * FROM TAIKHOAN WHERE TenDangNhap = @username AND MatKhau = @password AND ThuocLoai != 'Khách hàng'";
             using (SqlConnection connection = db.GetConnection()) // Sử dụng kết nối từ dbConnect
             {
                 connection.Open();
@@ -48,7 +48,6 @@ namespace DAL
                     }
                 }
             }
-
             return MaTK; // Trả về mã tài khoản, hoặc 0 nếu không có bản ghi phù hợp
         }
 

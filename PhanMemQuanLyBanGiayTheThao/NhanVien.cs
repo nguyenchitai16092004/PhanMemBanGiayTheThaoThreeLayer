@@ -13,6 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_NhanVien : Form
     {
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_NhanVien()
         {
             InitializeComponent();
@@ -22,8 +23,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XemDanhSachNhanVien()
         {
             //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "SELECT* FROM NHANVIEN;";
             try
@@ -68,13 +67,9 @@ namespace PhanMemQuanLyBanGiayTheThao
                 cbo_GioiTinh.Text = "Nữ";
                
             }
-
-
         }
         public void ThemNhanVien()
         {
-            //khai báo chuoi ket noi CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "INSERT INTO NHANVIEN (TenNV, DiaChi, GioiTinh, SDT, Luong) VALUES (@TenNV, @DiaChi, @GioiTinh, @SDT, @Luong)";
             try
             {
@@ -117,9 +112,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void SuaNhanVien()
         {
             string MaNV = txt_MaNhanVienNhanVien.Text;
-            // Khai báo chuỗi kết nối CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -176,10 +168,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaNhanVien()
         {
             string MaNhanVien = txt_MaNhanVienNhanVien.Text;
-
-            // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -220,6 +208,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemDanhSachNhanVien();
             HienThiMaTaiKhoan();
+            cbo_Search.Text = "Tìm kiếm theo :";
+
         }
 
         private void btn_TimKiemThongTinNhanVien_Click(object sender, EventArgs e)
@@ -242,7 +232,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             TimKiemThongKe = txt_TimKiem.Text;
             try
             {
-                string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     string sSQL = "SELECT * FROM NHANVIEN WHERE " + TimKiemTheo + " = @TimKiemThongKe";
@@ -267,12 +256,12 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
             XemDanhSachNhanVien();
+            txt_TimKiem.Clear();
+            cbo_Search.Text = "Tìm kiếm theo :";
+
         }
         public void HienThiMaTaiKhoan()
         {
-            string scon;
-            //chuoi ket noi CSDL
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             //Doi tuong ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
             string sSql;
@@ -293,6 +282,11 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 MessageBox.Show("LOI. Chi tiet: " + ex.Message);
             }
+        }
+
+        private void btn_DoiMatKhauNhanVien_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 

@@ -13,6 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_NhaCungCap : Form
     {
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_NhaCungCap()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
             XemDanhSachNhaCungCap();
+            txt_TimKiem.Clear();
+            cbo_Search.Text = "Tìm kiếm theo :";
         }
 
         private void ddv_NhaCungCap_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,9 +33,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         public void XemDanhSachNhaCungCap()
         {
-            //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "SELECT * FROM NHACUNGCAP;";
             try
@@ -77,8 +77,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         public void ThemNhaCungCap()
         {
-            //khai báo chuoi ket noi CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "INSERT INTO NHACUNGCAP (TenNCC, DiaChi, SDT, TrangThai) VALUES (@TenNCC, @DiaChi, @SDT, @TrangThai)";
             try
             {
@@ -110,9 +108,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void SuaNhaCungCap()
         {
             string MaNhaCungCap = txt_MaNhaCungCap.Text;
-            // Khai báo chuỗi kết nối CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -159,10 +154,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaNhaCungCap()
         {
             string MaNhaCungCap = txt_MaNhaCungCap.Text;
-
-            // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -206,7 +197,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             TimKiemThongKe = txt_TimKiem.Text;
             try
             {
-                string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     string sSQL = "SELECT * FROM NHACUNGCAP WHERE " + TimKiemTheo + " = @TimKiemThongKe";
@@ -239,6 +229,14 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 TimKiem();
             }
+
+        }
+
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            XemDanhSachNhaCungCap();
+            txt_TimKiem.Clear();
+            cbo_Search.Text = "Tìm kiếm theo :";
 
         }
     }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ChiTietHoaDon));
             this.grb_HoaDonBanHang = new System.Windows.Forms.GroupBox();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
+            this.pic_ImageSP = new System.Windows.Forms.PictureBox();
             this.txt_TienGuiKhach = new System.Windows.Forms.TextBox();
             this.txt_TienKhachDua = new System.Windows.Forms.TextBox();
             this.lb_TienGuiKhach = new System.Windows.Forms.Label();
@@ -44,8 +45,6 @@
             this.lb_TenSP = new System.Windows.Forms.Label();
             this.txt_TenSP = new System.Windows.Forms.TextBox();
             this.cbo_MaSP = new System.Windows.Forms.ComboBox();
-            this.lb_HinhAnhHoaDonBanHang = new System.Windows.Forms.Label();
-            this.pic_ImageSanPhamHoaDonBanHang = new System.Windows.Forms.PictureBox();
             this.btn_ThemTaoChiTietHoaDon = new System.Windows.Forms.Button();
             this.dgv_HoaDonBanHang = new System.Windows.Forms.DataGridView();
             this.btn_LamMoi = new System.Windows.Forms.Button();
@@ -58,17 +57,17 @@
             this.btn_XoaHoaDonBanHang = new System.Windows.Forms.Button();
             this.btn_HoanTat = new System.Windows.Forms.Button();
             this.grb_Header = new System.Windows.Forms.GroupBox();
-            this.lb_TenUserHoaDonBanHang = new System.Windows.Forms.Label();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiBanHang = new System.Windows.Forms.Button();
             this.lb_DangXuatHoaDonBanHang = new System.Windows.Forms.Label();
             this.btn_DangXuatHoaDonBanHang = new System.Windows.Forms.Button();
-            this.btn_ImageUserHoaDonBanHang = new System.Windows.Forms.Button();
             this.grb_HoaDonBanHang.SuspendLayout();
             this.grb_SanPham.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageSanPhamHoaDonBanHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDonBanHang)).BeginInit();
             this.grb_Header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // grb_HoaDonBanHang
@@ -86,6 +85,7 @@
             // 
             // grb_SanPham
             // 
+            this.grb_SanPham.Controls.Add(this.pic_ImageSP);
             this.grb_SanPham.Controls.Add(this.txt_TienGuiKhach);
             this.grb_SanPham.Controls.Add(this.txt_TienKhachDua);
             this.grb_SanPham.Controls.Add(this.lb_TienGuiKhach);
@@ -99,8 +99,6 @@
             this.grb_SanPham.Controls.Add(this.lb_TenSP);
             this.grb_SanPham.Controls.Add(this.txt_TenSP);
             this.grb_SanPham.Controls.Add(this.cbo_MaSP);
-            this.grb_SanPham.Controls.Add(this.lb_HinhAnhHoaDonBanHang);
-            this.grb_SanPham.Controls.Add(this.pic_ImageSanPhamHoaDonBanHang);
             this.grb_SanPham.Controls.Add(this.btn_ThemTaoChiTietHoaDon);
             this.grb_SanPham.Controls.Add(this.dgv_HoaDonBanHang);
             this.grb_SanPham.Controls.Add(this.btn_LamMoi);
@@ -119,10 +117,22 @@
             this.grb_SanPham.Size = new System.Drawing.Size(1270, 623);
             this.grb_SanPham.TabIndex = 16;
             this.grb_SanPham.TabStop = false;
-            this.grb_SanPham.Text = "Sản phẩm";
+            this.grb_SanPham.Text = "Chi tiêt hóa đơn";
+            // 
+            // pic_ImageSP
+            // 
+            this.pic_ImageSP.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pic_ImageSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pic_ImageSP.Location = new System.Drawing.Point(163, 26);
+            this.pic_ImageSP.Name = "pic_ImageSP";
+            this.pic_ImageSP.Size = new System.Drawing.Size(190, 180);
+            this.pic_ImageSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_ImageSP.TabIndex = 57;
+            this.pic_ImageSP.TabStop = false;
             // 
             // txt_TienGuiKhach
             // 
+            this.txt_TienGuiKhach.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txt_TienGuiKhach.Location = new System.Drawing.Point(907, 521);
             this.txt_TienGuiKhach.Name = "txt_TienGuiKhach";
             this.txt_TienGuiKhach.ReadOnly = true;
@@ -166,6 +176,7 @@
             // 
             // txt_TongTien
             // 
+            this.txt_TongTien.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txt_TongTien.Location = new System.Drawing.Point(1069, 521);
             this.txt_TongTien.Name = "txt_TongTien";
             this.txt_TongTien.ReadOnly = true;
@@ -190,10 +201,11 @@
             // 
             // txt_ThanhTien
             // 
-            this.txt_ThanhTien.Location = new System.Drawing.Point(4, 462);
+            this.txt_ThanhTien.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txt_ThanhTien.Location = new System.Drawing.Point(9, 462);
             this.txt_ThanhTien.Name = "txt_ThanhTien";
             this.txt_ThanhTien.ReadOnly = true;
-            this.txt_ThanhTien.Size = new System.Drawing.Size(337, 27);
+            this.txt_ThanhTien.Size = new System.Drawing.Size(332, 27);
             this.txt_ThanhTien.TabIndex = 48;
             // 
             // nud_SoLuong
@@ -215,6 +227,7 @@
             // 
             // txt_TenSP
             // 
+            this.txt_TenSP.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txt_TenSP.Location = new System.Drawing.Point(9, 277);
             this.txt_TenSP.Name = "txt_TenSP";
             this.txt_TenSP.ReadOnly = true;
@@ -229,27 +242,6 @@
             this.cbo_MaSP.Size = new System.Drawing.Size(143, 28);
             this.cbo_MaSP.TabIndex = 43;
             this.cbo_MaSP.SelectedIndexChanged += new System.EventHandler(this.cbo_MaSP_SelectedIndexChanged);
-            // 
-            // lb_HinhAnhHoaDonBanHang
-            // 
-            this.lb_HinhAnhHoaDonBanHang.AutoSize = true;
-            this.lb_HinhAnhHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_HinhAnhHoaDonBanHang.Location = new System.Drawing.Point(145, 149);
-            this.lb_HinhAnhHoaDonBanHang.Name = "lb_HinhAnhHoaDonBanHang";
-            this.lb_HinhAnhHoaDonBanHang.Size = new System.Drawing.Size(65, 20);
-            this.lb_HinhAnhHoaDonBanHang.TabIndex = 0;
-            this.lb_HinhAnhHoaDonBanHang.Text = "Ảnh SP";
-            // 
-            // pic_ImageSanPhamHoaDonBanHang
-            // 
-            this.pic_ImageSanPhamHoaDonBanHang.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pic_ImageSanPhamHoaDonBanHang.Image = ((System.Drawing.Image)(resources.GetObject("pic_ImageSanPhamHoaDonBanHang.Image")));
-            this.pic_ImageSanPhamHoaDonBanHang.Location = new System.Drawing.Point(87, 35);
-            this.pic_ImageSanPhamHoaDonBanHang.Name = "pic_ImageSanPhamHoaDonBanHang";
-            this.pic_ImageSanPhamHoaDonBanHang.Size = new System.Drawing.Size(180, 111);
-            this.pic_ImageSanPhamHoaDonBanHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_ImageSanPhamHoaDonBanHang.TabIndex = 13;
-            this.pic_ImageSanPhamHoaDonBanHang.TabStop = false;
             // 
             // btn_ThemTaoChiTietHoaDon
             // 
@@ -281,6 +273,7 @@
             this.dgv_HoaDonBanHang.Size = new System.Drawing.Size(867, 390);
             this.dgv_HoaDonBanHang.TabIndex = 39;
             this.dgv_HoaDonBanHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HoaDonBanHang_CellClick);
+            this.dgv_HoaDonBanHang.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgv_HoaDonBanHang_RowPrePaint);
             // 
             // btn_LamMoi
             // 
@@ -323,11 +316,13 @@
             // 
             // txt_KhuyenMai
             // 
+            this.txt_KhuyenMai.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txt_KhuyenMai.Location = new System.Drawing.Point(9, 398);
             this.txt_KhuyenMai.Name = "txt_KhuyenMai";
             this.txt_KhuyenMai.ReadOnly = true;
             this.txt_KhuyenMai.Size = new System.Drawing.Size(332, 27);
             this.txt_KhuyenMai.TabIndex = 24;
+            this.txt_KhuyenMai.TextChanged += new System.EventHandler(this.txt_KhuyenMai_TextChanged);
             // 
             // lb_KhuyenMai
             // 
@@ -391,11 +386,10 @@
             // grb_Header
             // 
             this.grb_Header.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grb_Header.Controls.Add(this.lb_TenUserHoaDonBanHang);
+            this.grb_Header.Controls.Add(this.pic_Logo);
             this.grb_Header.Controls.Add(this.btn_QuayLaiBanHang);
             this.grb_Header.Controls.Add(this.lb_DangXuatHoaDonBanHang);
             this.grb_Header.Controls.Add(this.btn_DangXuatHoaDonBanHang);
-            this.grb_Header.Controls.Add(this.btn_ImageUserHoaDonBanHang);
             this.grb_Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.grb_Header.Location = new System.Drawing.Point(3, 24);
             this.grb_Header.Name = "grb_Header";
@@ -403,28 +397,30 @@
             this.grb_Header.TabIndex = 15;
             this.grb_Header.TabStop = false;
             // 
-            // lb_TenUserHoaDonBanHang
+            // pic_Logo
             // 
-            this.lb_TenUserHoaDonBanHang.AutoSize = true;
-            this.lb_TenUserHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TenUserHoaDonBanHang.Location = new System.Drawing.Point(123, 113);
-            this.lb_TenUserHoaDonBanHang.Name = "lb_TenUserHoaDonBanHang";
-            this.lb_TenUserHoaDonBanHang.Size = new System.Drawing.Size(205, 20);
-            this.lb_TenUserHoaDonBanHang.TabIndex = 5;
-            this.lb_TenUserHoaDonBanHang.Text = "Tên người đang đăng nhập";
+            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
+            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
+            this.pic_Logo.Location = new System.Drawing.Point(6, 9);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(130, 120);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 5;
+            this.pic_Logo.TabStop = false;
             // 
             // btn_QuayLaiBanHang
             // 
             this.btn_QuayLaiBanHang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_QuayLaiBanHang.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiBanHang.Image")));
             this.btn_QuayLaiBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QuayLaiBanHang.Location = new System.Drawing.Point(0, 12);
+            this.btn_QuayLaiBanHang.Location = new System.Drawing.Point(191, 18);
             this.btn_QuayLaiBanHang.Name = "btn_QuayLaiBanHang";
-            this.btn_QuayLaiBanHang.Size = new System.Drawing.Size(124, 37);
+            this.btn_QuayLaiBanHang.Size = new System.Drawing.Size(150, 47);
             this.btn_QuayLaiBanHang.TabIndex = 4;
             this.btn_QuayLaiBanHang.Text = "Quay lại";
             this.btn_QuayLaiBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_QuayLaiBanHang.UseVisualStyleBackColor = false;
+            this.btn_QuayLaiBanHang.Click += new System.EventHandler(this.btn_QuayLaiBanHang_Click);
             // 
             // lb_DangXuatHoaDonBanHang
             // 
@@ -448,18 +444,6 @@
             this.btn_DangXuatHoaDonBanHang.TabIndex = 2;
             this.btn_DangXuatHoaDonBanHang.UseVisualStyleBackColor = false;
             // 
-            // btn_ImageUserHoaDonBanHang
-            // 
-            this.btn_ImageUserHoaDonBanHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ImageUserHoaDonBanHang.BackgroundImage")));
-            this.btn_ImageUserHoaDonBanHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ImageUserHoaDonBanHang.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_ImageUserHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ImageUserHoaDonBanHang.Location = new System.Drawing.Point(200, 32);
-            this.btn_ImageUserHoaDonBanHang.Name = "btn_ImageUserHoaDonBanHang";
-            this.btn_ImageUserHoaDonBanHang.Size = new System.Drawing.Size(67, 72);
-            this.btn_ImageUserHoaDonBanHang.TabIndex = 2;
-            this.btn_ImageUserHoaDonBanHang.UseVisualStyleBackColor = true;
-            // 
             // frm_ChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -473,11 +457,12 @@
             this.grb_HoaDonBanHang.ResumeLayout(false);
             this.grb_SanPham.ResumeLayout(false);
             this.grb_SanPham.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageSanPhamHoaDonBanHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDonBanHang)).EndInit();
             this.grb_Header.ResumeLayout(false);
             this.grb_Header.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,8 +472,6 @@
         private System.Windows.Forms.GroupBox grb_HoaDonBanHang;
         private System.Windows.Forms.GroupBox grb_SanPham;
         private System.Windows.Forms.ComboBox cbo_MaSP;
-        private System.Windows.Forms.Label lb_HinhAnhHoaDonBanHang;
-        private System.Windows.Forms.PictureBox pic_ImageSanPhamHoaDonBanHang;
         private System.Windows.Forms.Button btn_ThemTaoChiTietHoaDon;
         private System.Windows.Forms.DataGridView dgv_HoaDonBanHang;
         private System.Windows.Forms.Button btn_LamMoi;
@@ -498,11 +481,9 @@
         private System.Windows.Forms.Label lb_TienKhachDuaHoaDonBanHang;
         private System.Windows.Forms.Button btn_XoaHoaDonBanHang;
         private System.Windows.Forms.GroupBox grb_Header;
-        private System.Windows.Forms.Label lb_TenUserHoaDonBanHang;
         private System.Windows.Forms.Button btn_QuayLaiBanHang;
         private System.Windows.Forms.Label lb_DangXuatHoaDonBanHang;
         private System.Windows.Forms.Button btn_DangXuatHoaDonBanHang;
-        private System.Windows.Forms.Button btn_ImageUserHoaDonBanHang;
         private System.Windows.Forms.Label lb_TenSP;
         private System.Windows.Forms.TextBox txt_TenSP;
         private System.Windows.Forms.NumericUpDown nud_SoLuong;
@@ -518,5 +499,7 @@
         private System.Windows.Forms.TextBox txt_TienKhachDua;
         private System.Windows.Forms.Label lb_TienGuiKhach;
         private System.Windows.Forms.Label lb_TienKhachDua;
+        private System.Windows.Forms.PictureBox pic_ImageSP;
+        private System.Windows.Forms.PictureBox pic_Logo;
     }
 }

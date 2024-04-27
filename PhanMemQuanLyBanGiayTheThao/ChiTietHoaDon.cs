@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,12 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ChiTietHoaDon : Form
     {
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+
         public void XemChiTietHoaDon(int MaHD)
         {
             // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-            string sSQL = "SELECT CHITIETHOADON.MaHD, SANPHAM.MaSP, SANPHAM.TenSP, SANPHAM.GiaBan, SANPHAM.KhuyenMai, CHITIETHOADON.SoLuong, CHITIETHOADON.ThanhTien FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE CHITIETHOADON.MaHD = @MaHD";
+            string sSQL = "SELECT CHITIETHOADON.MaHD, SANPHAM.MaSP, SANPHAM.TenSP, SANPHAM.GiaBan, SANPHAM.KhuyenMai, CHITIETHOADON.SoLuong, CHITIETHOADON.ThanhTien, SANPHAM.Anh FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE CHITIETHOADON.MaHD = @MaHD";
             try
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
@@ -45,9 +47,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         public void HienThiMaSanPham()
         {
-            string scon;
-            //chuoi ket noi CSDL
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+
             //Doi tuong ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
             string sSql;
@@ -77,8 +77,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XuatThongTinSP()
         {
             String MaSP = cbo_MaSP.Text;
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "SELECT TenSP, GiaBan, KhuyenMai " +
                           "FROM SANPHAM " +
                           "WHERE MaSP = @MaSP";
@@ -104,7 +102,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                //
             }
         }
 
@@ -113,7 +111,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void TongHD()
         {
             string MaSP = cbo_MaSP.Text;
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "SELECT SUM(ThanhTien) as 'Tổng tiền' " +
                           "FROM CHITIETHOADON INNER JOIN HOADON on CHITIETHOADON.MaHD = HOADON.MaHD " +
                           "WHERE HOADON.MaHD = @MaHD " +
@@ -150,7 +147,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             int DonGia = int.Parse(txt_DonGia.Text);
             int ThanhTien = SoLuong * DonGia;
             txt_ThanhTien.Text = ThanhTien.ToString();
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "INSERT INTO CHITIETHOADON (MaHD,MaSP,SoLuong,ThanhTien) VALUES (@MaHD,@MaSP,@SoLuong,@ThanhTien)";
             try
             {
@@ -178,8 +174,6 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         public void XoaSP(int MaHD)
         {
-            string scon = "Data Source= LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-
             // Mở kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -212,7 +206,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void SuaSP(int MaHD)
         {
             // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "UPDATE CHITIETHOADON SET SoLuong = @SoLuong WHERE MaHD = @MaHD AND MaSP = @MaSP";
             try
             {
@@ -239,7 +232,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void HoanThienHoaDon(int MaHD)
         {
             // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "UPDATE HOADON SET TienKhachDua = @TienKhachDua , TienGuiLai = @TienGuiLai , TongHD = @TongHD WHERE MaHD = @MaHD";
             try
             {
@@ -277,6 +269,10 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemChiTietHoaDon(MaHD);
             HienThiMaSanPham();
             TongHD();
+            DataGridViewImageColumn avatar_column = (DataGridViewImageColumn)dgv_HoaDonBanHang.Columns[7];
+            avatar_column.Width = 60;
+            avatar_column.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
         }
 
         private void cbo_MaSP_SelectedIndexChanged(object sender, EventArgs e)
@@ -325,19 +321,64 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void dgv_HoaDonBanHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i = dgv_HoaDonBanHang.CurrentRow.Index;
-            cbo_MaSP.Text = dgv_HoaDonBanHang.Rows[i].Cells[1].Value.ToString();
-            txt_TenSP.Text = dgv_HoaDonBanHang.Rows[i].Cells[2].Value.ToString();
-            txt_DonGia.Text = dgv_HoaDonBanHang.Rows[i].Cells[3].Value.ToString();
-            txt_KhuyenMai.Text = dgv_HoaDonBanHang.Rows[i].Cells[4].Value.ToString();
-            nud_SoLuong.Value = Convert.ToInt32(dgv_HoaDonBanHang.Rows[i].Cells[5].Value);
-            txt_ThanhTien.Text = dgv_HoaDonBanHang.Rows[i].Cells[6].Value.ToString();
+            int rowIndex = e.RowIndex;
+            DataGridViewRow selectedRow = dgv_HoaDonBanHang.Rows[rowIndex];
+            if (selectedRow != null)
+            {
+                int i = dgv_HoaDonBanHang.CurrentRow.Index;
+                cbo_MaSP.Text = dgv_HoaDonBanHang.Rows[i].Cells[1].Value.ToString();
+                txt_TenSP.Text = dgv_HoaDonBanHang.Rows[i].Cells[2].Value.ToString();
+                txt_DonGia.Text = dgv_HoaDonBanHang.Rows[i].Cells[3].Value.ToString();
+                txt_KhuyenMai.Text = dgv_HoaDonBanHang.Rows[i].Cells[4].Value.ToString();
+                nud_SoLuong.Value = Convert.ToInt32(dgv_HoaDonBanHang.Rows[i].Cells[5].Value);
+                txt_ThanhTien.Text = dgv_HoaDonBanHang.Rows[i].Cells[6].Value.ToString();
+                // Kiểm tra nếu cột "Anh" có dữ liệu
+                if (selectedRow.Cells[7].Value != DBNull.Value)
+                {
+                    // Lấy dữ liệu dạng byte[] từ cột "Anh"
+                    byte[] imageData = (byte[])selectedRow.Cells[7].Value;
+                    // Chuyển đổi dữ liệu byte[] thành hình ảnh
+                    if (imageData != null && imageData.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            pic_ImageSP.Image = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        // Nếu không có hình ảnh, đặt hình ảnh mặc định hoặc xóa hình cũ
+                        pic_ImageSP.Image = null;
+                    }
+                }
+            }
         }
 
-        private void btn_XoaHoaDonBanHang_Click(object sender, EventArgs e)
+
+            private void btn_XoaHoaDonBanHang_Click(object sender, EventArgs e)
         {
             XoaSP(MaHD);
             XemChiTietHoaDon(MaHD);
         }
+
+        private void dgv_HoaDonBanHang_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            dgv_HoaDonBanHang.Rows[e.RowIndex].Height = 80;
+
+        }
+
+        private void btn_QuayLaiBanHang_Click(object sender, EventArgs e)
+        {
+            frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
+            ql.MaTK = MaTK;
+            ql.Show();
+            this.Hide();
+        }
+
+        private void txt_KhuyenMai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

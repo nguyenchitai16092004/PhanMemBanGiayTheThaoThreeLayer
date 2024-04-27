@@ -13,6 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ThongKeSanPham : Form
     {
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_ThongKeSanPham()
         {
             InitializeComponent();
@@ -20,9 +21,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public int MaTK;
         public void XemThongKe()
         {
-            //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "SELECT  CHITIETHOADON.MaSP , SANPHAM.TenSP , COUNT(CHITIETHOADON.SoLuong) as 'Số Lượng sản phẩm bán được' ,SANPHAM.SoLuong as 'Số lượng còn lại' FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP GROUP BY CHITIETHOADON.MaSP,SANPHAM.TenSP,CHITIETHOADON.TenSP,SANPHAM.SoLuong";
             try
@@ -48,7 +46,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                     TimKiemThongKe = txt_TimKiemThongKe.Text;
             try
             {
-                string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     string sSQL;

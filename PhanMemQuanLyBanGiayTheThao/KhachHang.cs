@@ -13,6 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_KhachHang : Form
     {
+       public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_KhachHang()
         {
             InitializeComponent();
@@ -21,8 +22,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XemDanhSachKhachHang()
         {
             //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+            
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "SELECT * FROM KHACHHANG;";
             try
@@ -44,6 +44,9 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void KhachHang_Load(object sender, EventArgs e)
         {
             XemDanhSachKhachHang();
+            txt_TimKiemKhachHang.Clear();
+            cbo_Search.Text = "Tìm kiếm theo :";
+
         }
         private void btn_QuayLaiKhachHang_Click(object sender, EventArgs e)
         {
@@ -75,7 +78,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void ThemKhachHang()
         {
             //khai báo chuoi ket noi CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "INSERT INTO KHACHHANG (TenKH, Email, DiaChi, GioiTinh, SDT,QuyenHang) VALUES (@TenKH, @Email, @DiaChi, @GioiTinh,@SDT, @QuyenHang)";
             try
             {
@@ -122,9 +124,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void SuaKhachHang()
         {
             string MaKhachHang = txt_MaKhachHangKhachHang.Text;
-            // Khai báo chuỗi kết nối CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -184,9 +183,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             string MaKhachHang = txt_MaKhachHangKhachHang.Text;
 
-            // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -230,7 +226,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             TimKiemThongKe = txt_TimKiemKhachHang.Text;
             try
             {
-                string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     string sSQL = "SELECT * FROM KHACHHANG WHERE " + TimKiemTheo + " = @TimKiemThongKe";
@@ -264,6 +259,13 @@ namespace PhanMemQuanLyBanGiayTheThao
                 TimKiem();
             }
 
+        }
+
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            XemDanhSachKhachHang();
+            txt_TimKiemKhachHang.Clear();
+            cbo_Search.Text = "Tìm kiếm theo :";
         }
     }
 }

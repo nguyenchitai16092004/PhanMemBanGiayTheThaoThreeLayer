@@ -67,6 +67,12 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoaDonBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,7 @@
       <DependentUpon>ThongKeSanPham.cs</DependentUpon>
     </Compile>
     <Content Include="img\background.jpeg" />
+    <Content Include="img\background.jpg" />
     <Content Include="img\bill.jpg" />
     <Content Include="img\cart.jpg" />
     <Content Include="img\Change.png" />
@@ -131,6 +138,7 @@
     <Content Include="img\chitiethoadon.jpg" />
     <Content Include="img\DangNhap.png" />
     <Content Include="img\dangxuat.png" />
+    <Content Include="img\giay-sneaker-la-gi-2.jpg" />
     <Content Include="img\hinhnen.jpg" />
     <Content Include="img\hinhnen1.jpeg" />
     <Content Include="img\Hinhnen2.jpg" />
@@ -141,6 +149,7 @@
     <Content Include="img\lammoi.jpg" />
     <Content Include="img\logo.jpg" />
     <Content Include="img\logo.png" />
+    <Content Include="img\logo1.png" />
     <Content Include="img\menu-01_generated.jpg" />
     <Content Include="img\menu.png" />
     <Content Include="img\nhacungcap.png" />
@@ -156,6 +165,7 @@
     <Content Include="img\thongke.jpg" />
     <Content Include="img\thongkee.png" />
     <Content Include="img\tinhtien.png" />
+    <Content Include="img\tong-hop-hinh-nen-background-vector-designer-dep-do-phan-giai-fhd-2k-4k-moi-nhat-2-1024x683.jpg" />
     <Content Include="img\user.png" />
     <Content Include="img\xoa.png" />
     <Content Include="img\xuat.png" />
@@ -164,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonBanHang.resx">
       <DependentUpon>HoaDonBanHang.cs</DependentUpon>
@@ -216,9 +229,7 @@
   <ItemGroup>
     <None Include="Resources\logo.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="img\products\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{92847706-6a2a-4389-ad67-e869fd8e78b8}</Project>

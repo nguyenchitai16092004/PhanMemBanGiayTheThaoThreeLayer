@@ -14,13 +14,16 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_HoaDonBanHang : Form
     {
-        //
-
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        int TienKhachDua;
+        public int MaTK;
+        public frm_HoaDonBanHang()
+        {
+            InitializeComponent();
+        }
         public void XemHoaDon()
         {
             //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "SELECT * FROM HOADON";
             try
@@ -45,7 +48,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void ThemHoaDon()
         {
             // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "INSERT INTO HOADON (MaNV, MaKH, NgayLap, TienKhachDua, TienGuiLai, TongHD) VALUES (@MaNV, @MaKH, @NgayLap, @TienKhachDua, @TienGuiLai, @TongHD)";
             try
             {
@@ -75,9 +77,6 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         public void SuaHoaDon()
         {
-
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -101,6 +100,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                             this.Hide();
                             chiTietHoaDon.MaHD = int.Parse(txt_MaHoaDon.Text);
                             chiTietHoaDon.TienKhachDua = TienKhachDua;
+                            chiTietHoaDon.MaTK = MaTK;
                             chiTietHoaDon.Show();
                         }
                         else
@@ -111,7 +111,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                    MessageBox.Show("Bạn chưa chọn hóa đơn ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
         }
@@ -121,8 +121,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaHoaDon()
         {
             string maHoaDon = txt_MaHoaDon.Text;
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-
             // Mở kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -137,7 +135,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     string sSQLChiTietHoaDon = "DELETE FROM CHITIETHOADON WHERE MaHD = @MaHD";
                     SqlCommand cmdChiTietHoaDon = new SqlCommand(sSQLChiTietHoaDon, myConnection, transaction);
                     cmdChiTietHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
-                    cmdChiTietHoaDon.ExecuteNonQuery();
+                    cmdChiTietHoaDon.ExecuteNonQuery();         
 
                     // Xóa hóa đơn trong bảng HOADON
                     string sSQLHoaDon = "DELETE FROM HOADON WHERE MaHD = @MaHD";
@@ -145,21 +143,12 @@ namespace PhanMemQuanLyBanGiayTheThao
                     cmdHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
                     cmdHoaDon.ExecuteNonQuery();
 
-                    // Hoàn thành giao dịch
-                    transaction.Commit();
 
                     MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo");
                 }
                 catch (Exception ex)
                 {
-                    // Nếu có lỗi, hủy bỏ giao dịch
-                    transaction.Rollback();
                     MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
-                }
-                finally
-                {
-                    // Đóng kết nối
-                    myConnection.Close();
                 }
             }
         }
@@ -168,9 +157,6 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         public void HienThiMaNhanVien()
         {
-            string scon;
-            //chuoi ket noi CSDL
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             //Doi tuong ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
             string sSql;
@@ -198,7 +184,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public int LayMaHDLonNhat()
         {
             int maxMaHD = 0; // Khởi tạo giá trị mặc định cho trường hợp không có dữ liệu
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "SELECT MAX(MaHD) AS MaxMaHD FROM HOADON";
 
             try
@@ -226,7 +211,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public int LayMaHD()
         {
             int MaHD = 0;
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "SELECT MAX(MaHD) AS MaxMaHD FROM HOADON";
 
             try
@@ -250,12 +234,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
 
         //-------------------------------------------------------------------------------------------------------------------
-        public frm_HoaDonBanHang()
-        {
-            InitializeComponent();
-        }
-        int TienKhachDua;
-        public int MaTK;
         private void btn_KHHoaDonBanHang_Click(object sender, EventArgs e)
         {
             frm_KhachHang kh = new frm_KhachHang();
@@ -291,8 +269,17 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_XoaHoaDonBanHang_Click(object sender, EventArgs e)
         {
-            XoaHoaDon();
-            XemHoaDon();
+            if (txt_MaHoaDon.Text != "")
+            {
+                XoaHoaDon();
+                XemHoaDon();
+                txt_MaHoaDon.Clear();
+                txt_MaKH.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn sản phẩm nào !!!");
+            }
         }
 
         private void btn_SuaHoaDonBanHang_Click(object sender, EventArgs e)
@@ -382,7 +369,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
             try
             {
-                string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     string sSQL = "SELECT * FROM HOADON WHERE " + TimKiemTheo + " = @TimKiemThongKe";
@@ -437,6 +423,14 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 dtp_Ngay.Visible = false;
             }
+        }
+
+        private void btn_DoiMatKhauNhanVien_Click(object sender, EventArgs e)
+        {
+            frm_DoiMatKhau dmk = new frm_DoiMatKhau();
+            dmk.Show();
+            dmk.MaTK = MaTK;
+            this.Hide();
         }
     }
 }

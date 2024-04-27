@@ -14,6 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_SanPham : Form
     {
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_SanPham()
         {
             InitializeComponent();
@@ -21,9 +22,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public int MaTK;
         public void XemDanhSachSanPham()
         {
-            //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "SELECT * FROM SANPHAM; ";
             try
@@ -46,9 +44,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaSanPham()
         {
             string MaSP = txt_MaSanPhamSanPham.Text;
-            //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "DELETE FROM SANPHAM WHERE MaSP like '" + MaSP.ToString() + "'";
             try
@@ -83,9 +78,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 TrangThai = 1;
             }
-            // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-            // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
                 // Chuỗi truy vấn cập nhật
@@ -139,8 +131,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 MessageBox.Show("Bạn hãy thêm ảnh của sản phẩm trước khi thêm sản phẩm.", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
-            //khai báo chuoi ket noi CSDL
-            string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "INSERT INTO SANPHAM (TenSP, GiaBan, MaNCC, SoLuong, TrangThai, KhuyenMai, GiaNhap, Anh) VALUES (@TenSP, @GiaBan, @MaNCC, @SoLuong, @TrangThai, @KhuyenMai, @GiaNhap, @Anh)";
             try
             {
@@ -276,6 +266,9 @@ namespace PhanMemQuanLyBanGiayTheThao
             DataGridViewImageColumn avatar_column = (DataGridViewImageColumn)dgv_SanPham.Columns[8];
             avatar_column.Width = 60;
             avatar_column.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            txt_TimKiemSanPham.Clear();
+            cbo_Search.Text = "Tìm kiếm theo :";
+
 
         }
         public void TimKiem()
@@ -286,7 +279,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             TimKiemThongKe = txt_TimKiemSanPham.Text;
             try
             {
-                string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     string sSQL = "SELECT * FROM SANPHAM WHERE " + TimKiemTheo + " = @TimKiemThongKe";
@@ -322,6 +314,13 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void dgv_SanPham_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             dgv_SanPham.Rows[e.RowIndex].Height = 80;
+        }
+
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            XemDanhSachSanPham();
+            txt_TimKiemSanPham.Clear();
+            cbo_Search.Text = "Tìm kiếm theo :";
         }
     }
 }

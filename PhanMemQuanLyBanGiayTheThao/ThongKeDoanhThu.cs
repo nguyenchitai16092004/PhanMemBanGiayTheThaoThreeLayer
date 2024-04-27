@@ -14,6 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ThongKeDoanhThu : Form
     {
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_ThongKeDoanhThu()
         {
             InitializeComponent();
@@ -28,9 +29,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         public void XemThongKe()
         {
-            //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "SELECT * FROM HOADON";
             try
@@ -65,7 +63,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
             try
             {
-                string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     string sSQL = "SELECT * FROM HOADON WHERE " + TimKiemTheo + " = @TimKiemThongKe";

@@ -30,13 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ThongKeSanPham));
             this.grb_HeaderThongKe = new System.Windows.Forms.GroupBox();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.lb_HoaDon = new System.Windows.Forms.Label();
             this.btn_HoaDon = new System.Windows.Forms.Button();
             this.lb_SanPham = new System.Windows.Forms.Label();
             this.btn_SanPham = new System.Windows.Forms.Button();
-            this.lb_TenUserThongKe = new System.Windows.Forms.Label();
             this.btn_QuayLaiThongKe = new System.Windows.Forms.Button();
-            this.btn_ImageUserThongKe = new System.Windows.Forms.Button();
             this.grb_ThongKeSanPham = new System.Windows.Forms.GroupBox();
             this.dgv_ThongKeSanPhamBanRa = new System.Windows.Forms.DataGridView();
             this.lb_TimKiem = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.btn_XuatThongTinThongKe = new System.Windows.Forms.Button();
             this.grb_HeaderThongKe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.grb_ThongKeSanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ThongKeSanPhamBanRa)).BeginInit();
             this.SuspendLayout();
@@ -55,18 +55,28 @@
             this.grb_HeaderThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grb_HeaderThongKe.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grb_HeaderThongKe.Controls.Add(this.pic_Logo);
             this.grb_HeaderThongKe.Controls.Add(this.lb_HoaDon);
             this.grb_HeaderThongKe.Controls.Add(this.btn_HoaDon);
             this.grb_HeaderThongKe.Controls.Add(this.lb_SanPham);
             this.grb_HeaderThongKe.Controls.Add(this.btn_SanPham);
-            this.grb_HeaderThongKe.Controls.Add(this.lb_TenUserThongKe);
             this.grb_HeaderThongKe.Controls.Add(this.btn_QuayLaiThongKe);
-            this.grb_HeaderThongKe.Controls.Add(this.btn_ImageUserThongKe);
             this.grb_HeaderThongKe.Location = new System.Drawing.Point(1, 1);
             this.grb_HeaderThongKe.Name = "grb_HeaderThongKe";
             this.grb_HeaderThongKe.Size = new System.Drawing.Size(1326, 150);
             this.grb_HeaderThongKe.TabIndex = 56;
             this.grb_HeaderThongKe.TabStop = false;
+            // 
+            // pic_Logo
+            // 
+            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
+            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
+            this.pic_Logo.Location = new System.Drawing.Point(11, 11);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 65;
+            this.pic_Logo.TabStop = false;
             // 
             // lb_HoaDon
             // 
@@ -113,37 +123,19 @@
             this.btn_SanPham.TabIndex = 36;
             this.btn_SanPham.UseVisualStyleBackColor = true;
             // 
-            // lb_TenUserThongKe
-            // 
-            this.lb_TenUserThongKe.AutoSize = true;
-            this.lb_TenUserThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TenUserThongKe.Location = new System.Drawing.Point(282, 114);
-            this.lb_TenUserThongKe.Name = "lb_TenUserThongKe";
-            this.lb_TenUserThongKe.Size = new System.Drawing.Size(205, 20);
-            this.lb_TenUserThongKe.TabIndex = 35;
-            this.lb_TenUserThongKe.Text = "Tên người đang đăng nhập";
-            // 
             // btn_QuayLaiThongKe
             // 
-            this.btn_QuayLaiThongKe.Location = new System.Drawing.Point(11, 21);
+            this.btn_QuayLaiThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btn_QuayLaiThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiThongKe.Image")));
+            this.btn_QuayLaiThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QuayLaiThongKe.Location = new System.Drawing.Point(160, 21);
             this.btn_QuayLaiThongKe.Name = "btn_QuayLaiThongKe";
-            this.btn_QuayLaiThongKe.Size = new System.Drawing.Size(96, 32);
+            this.btn_QuayLaiThongKe.Size = new System.Drawing.Size(117, 39);
             this.btn_QuayLaiThongKe.TabIndex = 34;
             this.btn_QuayLaiThongKe.Text = "Quay lại";
-            this.btn_QuayLaiThongKe.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_QuayLaiThongKe.UseVisualStyleBackColor = false;
             this.btn_QuayLaiThongKe.Click += new System.EventHandler(this.btn_QuayLaiThongKe_Click);
-            // 
-            // btn_ImageUserThongKe
-            // 
-            this.btn_ImageUserThongKe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ImageUserThongKe.BackgroundImage")));
-            this.btn_ImageUserThongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ImageUserThongKe.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_ImageUserThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ImageUserThongKe.Location = new System.Drawing.Point(327, 11);
-            this.btn_ImageUserThongKe.Name = "btn_ImageUserThongKe";
-            this.btn_ImageUserThongKe.Size = new System.Drawing.Size(100, 100);
-            this.btn_ImageUserThongKe.TabIndex = 33;
-            this.btn_ImageUserThongKe.UseVisualStyleBackColor = true;
             // 
             // grb_ThongKeSanPham
             // 
@@ -157,6 +149,7 @@
             this.grb_ThongKeSanPham.Controls.Add(this.txt_TimKiemThongKe);
             this.grb_ThongKeSanPham.Controls.Add(this.btn_LamMoi);
             this.grb_ThongKeSanPham.Controls.Add(this.btn_XuatThongTinThongKe);
+            this.grb_ThongKeSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_ThongKeSanPham.Location = new System.Drawing.Point(0, 148);
             this.grb_ThongKeSanPham.Name = "grb_ThongKeSanPham";
             this.grb_ThongKeSanPham.Size = new System.Drawing.Size(1330, 492);
@@ -178,9 +171,9 @@
             // lb_TimKiem
             // 
             this.lb_TimKiem.AutoSize = true;
-            this.lb_TimKiem.Location = new System.Drawing.Point(35, 68);
+            this.lb_TimKiem.Location = new System.Drawing.Point(12, 57);
             this.lb_TimKiem.Name = "lb_TimKiem";
-            this.lb_TimKiem.Size = new System.Drawing.Size(62, 16);
+            this.lb_TimKiem.Size = new System.Drawing.Size(77, 20);
             this.lb_TimKiem.TabIndex = 66;
             this.lb_TimKiem.Text = "Tìm kiếm";
             // 
@@ -190,27 +183,32 @@
             this.Cbb_TimKiem_Theo.Items.AddRange(new object[] {
             "MaSP",
             "Tên sản phẩm "});
-            this.Cbb_TimKiem_Theo.Location = new System.Drawing.Point(49, 35);
+            this.Cbb_TimKiem_Theo.Location = new System.Drawing.Point(432, 63);
             this.Cbb_TimKiem_Theo.Name = "Cbb_TimKiem_Theo";
-            this.Cbb_TimKiem_Theo.Size = new System.Drawing.Size(239, 24);
+            this.Cbb_TimKiem_Theo.Size = new System.Drawing.Size(239, 28);
             this.Cbb_TimKiem_Theo.TabIndex = 64;
             // 
             // btn_SearchThongKe
             // 
-            this.btn_SearchThongKe.Location = new System.Drawing.Point(416, 60);
+            this.btn_SearchThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btn_SearchThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_SearchThongKe.Image")));
+            this.btn_SearchThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_SearchThongKe.Location = new System.Drawing.Point(686, 54);
             this.btn_SearchThongKe.Name = "btn_SearchThongKe";
-            this.btn_SearchThongKe.Size = new System.Drawing.Size(82, 33);
+            this.btn_SearchThongKe.Size = new System.Drawing.Size(102, 48);
             this.btn_SearchThongKe.TabIndex = 63;
             this.btn_SearchThongKe.Text = "Search";
-            this.btn_SearchThongKe.UseVisualStyleBackColor = true;
+            this.btn_SearchThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_SearchThongKe.UseVisualStyleBackColor = false;
             this.btn_SearchThongKe.Click += new System.EventHandler(this.btn_SearchThongKe_Click);
             // 
             // txt_TimKiemThongKe
             // 
             this.txt_TimKiemThongKe.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_TimKiemThongKe.Location = new System.Drawing.Point(101, 65);
+            this.txt_TimKiemThongKe.Location = new System.Drawing.Point(103, 54);
+            this.txt_TimKiemThongKe.Multiline = true;
             this.txt_TimKiemThongKe.Name = "txt_TimKiemThongKe";
-            this.txt_TimKiemThongKe.Size = new System.Drawing.Size(309, 22);
+            this.txt_TimKiemThongKe.Size = new System.Drawing.Size(309, 33);
             this.txt_TimKiemThongKe.TabIndex = 62;
             // 
             // btn_LamMoi
@@ -252,6 +250,7 @@
             this.Load += new System.EventHandler(this.ThongKeSanPham_Load);
             this.grb_HeaderThongKe.ResumeLayout(false);
             this.grb_HeaderThongKe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.grb_ThongKeSanPham.ResumeLayout(false);
             this.grb_ThongKeSanPham.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ThongKeSanPhamBanRa)).EndInit();
@@ -262,9 +261,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grb_HeaderThongKe;
-        private System.Windows.Forms.Label lb_TenUserThongKe;
         private System.Windows.Forms.Button btn_QuayLaiThongKe;
-        private System.Windows.Forms.Button btn_ImageUserThongKe;
         private System.Windows.Forms.Label lb_SanPham;
         private System.Windows.Forms.Button btn_SanPham;
         private System.Windows.Forms.Label lb_HoaDon;
@@ -277,5 +274,6 @@
         private System.Windows.Forms.Button btn_SearchThongKe;
         private System.Windows.Forms.TextBox txt_TimKiemThongKe;
         private System.Windows.Forms.DataGridView dgv_ThongKeSanPhamBanRa;
+        private System.Windows.Forms.PictureBox pic_Logo;
     }
 }

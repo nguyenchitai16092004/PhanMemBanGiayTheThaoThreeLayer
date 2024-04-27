@@ -13,12 +13,12 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_Menu : Form
     {
+        public string connectionString = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         string Quyen;
         int MaTaiKhoan ;
         public string QuyenHang(int MaTK)
         {
             string quyen = null;
-            string connectionString = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string query = "SELECT ThuocLoai FROM TAIKHOAN WHERE MaTK = @MaTK";
 
             try
@@ -155,7 +155,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void Menu_Load(object sender, EventArgs e)
         {
             MaTaiKhoan = MaTK;
-            MessageBox.Show(MaTaiKhoan.ToString());
+            //MessageBox.Show(MaTaiKhoan.ToString());
             Quyen = QuyenHang(MaTaiKhoan);
             
         }

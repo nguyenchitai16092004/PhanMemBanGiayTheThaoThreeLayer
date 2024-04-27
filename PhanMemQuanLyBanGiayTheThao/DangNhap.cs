@@ -62,11 +62,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 }
                 count += 1;
         }
-
-        private void frm_DangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

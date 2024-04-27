@@ -10,3 +10,9 @@ D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.csproj.AssemblyR
 D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.dll
 D:\Học Tập\c#\PhanMemQuanLyBanGiayTheThao\DTO\obj\Debug\DTO.pdb
+C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\bin\Debug\DTO.dll
+C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\bin\Debug\DTO.pdb
+C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.dll
+C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.pdb

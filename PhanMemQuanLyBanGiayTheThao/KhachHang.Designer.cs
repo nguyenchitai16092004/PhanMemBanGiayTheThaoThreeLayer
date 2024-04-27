@@ -45,8 +45,6 @@
             this.cbo_GioiTinh = new System.Windows.Forms.ComboBox();
             this.txt_EmailKhachHang = new System.Windows.Forms.TextBox();
             this.lb_Email = new System.Windows.Forms.Label();
-            this.lb_UserKhachHang = new System.Windows.Forms.Label();
-            this.pic_ImageKH = new System.Windows.Forms.PictureBox();
             this.txt_MaTaiKhoanKhachHang = new System.Windows.Forms.TextBox();
             this.lb_MaTaiKhoanKhachHang = new System.Windows.Forms.Label();
             this.txt_DiaChiKhachHang = new System.Windows.Forms.TextBox();
@@ -62,16 +60,13 @@
             this.lb_DangXuatKhachHang = new System.Windows.Forms.Label();
             this.btn_DangXuatKhachHang = new System.Windows.Forms.Button();
             this.grb_HeaderKhachHang = new System.Windows.Forms.GroupBox();
-            this.lb_TenUserKhachHang = new System.Windows.Forms.Label();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiKhachHang = new System.Windows.Forms.Button();
-            this.btn_ImageUserKhachHang = new System.Windows.Forms.Button();
-            this.lb_DoiMatKhauKhachHang = new System.Windows.Forms.Label();
-            this.btn_DoiMatKhauKhachHang = new System.Windows.Forms.Button();
             this.grb_ThongTinKhachhangKhachHang.SuspendLayout();
             this.grb_HienThiThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageKH)).BeginInit();
             this.grb_HeaderKhachHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // grb_ThongTinKhachhangKhachHang
@@ -85,8 +80,6 @@
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.cbo_GioiTinh);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.txt_EmailKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_Email);
-            this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_UserKhachHang);
-            this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.pic_ImageKH);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.txt_MaTaiKhoanKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_MaTaiKhoanKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.txt_DiaChiKhachHang);
@@ -99,7 +92,7 @@
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_MaKhachHangKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_SDTKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_HoTenKhachHangKhachHang);
-            this.grb_ThongTinKhachhangKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_ThongTinKhachhangKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_ThongTinKhachhangKhachHang.Location = new System.Drawing.Point(0, 153);
             this.grb_ThongTinKhachhangKhachHang.Name = "grb_ThongTinKhachhangKhachHang";
             this.grb_ThongTinKhachhangKhachHang.Size = new System.Drawing.Size(1409, 552);
@@ -114,9 +107,9 @@
             "Bạc",
             "Vàng",
             "Kim Cương"});
-            this.cbo_QuyenHang.Location = new System.Drawing.Point(23, 424);
+            this.cbo_QuyenHang.Location = new System.Drawing.Point(30, 400);
             this.cbo_QuyenHang.Name = "cbo_QuyenHang";
-            this.cbo_QuyenHang.Size = new System.Drawing.Size(153, 30);
+            this.cbo_QuyenHang.Size = new System.Drawing.Size(153, 28);
             this.cbo_QuyenHang.TabIndex = 37;
             // 
             // grb_HienThiThongTin
@@ -148,7 +141,7 @@
             "SDT"});
             this.cbo_Search.Location = new System.Drawing.Point(427, 21);
             this.cbo_Search.Name = "cbo_Search";
-            this.cbo_Search.Size = new System.Drawing.Size(121, 30);
+            this.cbo_Search.Size = new System.Drawing.Size(121, 28);
             this.cbo_Search.TabIndex = 85;
             // 
             // btn_LamMoi
@@ -164,6 +157,7 @@
             this.btn_LamMoi.Text = "Làm mới";
             this.btn_LamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LamMoi.UseVisualStyleBackColor = false;
+            this.btn_LamMoi.Click += new System.EventHandler(this.btn_LamMoi_Click);
             // 
             // dgv_KhachHang
             // 
@@ -258,7 +252,7 @@
             this.lb_TimKiemKhachHang.AutoSize = true;
             this.lb_TimKiemKhachHang.Location = new System.Drawing.Point(29, 26);
             this.lb_TimKiemKhachHang.Name = "lb_TimKiemKhachHang";
-            this.lb_TimKiemKhachHang.Size = new System.Drawing.Size(82, 22);
+            this.lb_TimKiemKhachHang.Size = new System.Drawing.Size(77, 20);
             this.lb_TimKiemKhachHang.TabIndex = 36;
             this.lb_TimKiemKhachHang.Text = "Tìm kiếm";
             // 
@@ -267,7 +261,7 @@
             this.txt_TimKiemKhachHang.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_TimKiemKhachHang.Location = new System.Drawing.Point(127, 21);
             this.txt_TimKiemKhachHang.Name = "txt_TimKiemKhachHang";
-            this.txt_TimKiemKhachHang.Size = new System.Drawing.Size(277, 28);
+            this.txt_TimKiemKhachHang.Size = new System.Drawing.Size(277, 27);
             this.txt_TimKiemKhachHang.TabIndex = 35;
             // 
             // cbo_GioiTinh
@@ -276,60 +270,43 @@
             this.cbo_GioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbo_GioiTinh.Location = new System.Drawing.Point(26, 355);
+            this.cbo_GioiTinh.Location = new System.Drawing.Point(33, 331);
             this.cbo_GioiTinh.Name = "cbo_GioiTinh";
-            this.cbo_GioiTinh.Size = new System.Drawing.Size(150, 30);
+            this.cbo_GioiTinh.Size = new System.Drawing.Size(150, 28);
             this.cbo_GioiTinh.TabIndex = 35;
             // 
             // txt_EmailKhachHang
             // 
             this.txt_EmailKhachHang.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_EmailKhachHang.Location = new System.Drawing.Point(215, 220);
+            this.txt_EmailKhachHang.Location = new System.Drawing.Point(222, 196);
             this.txt_EmailKhachHang.Name = "txt_EmailKhachHang";
-            this.txt_EmailKhachHang.Size = new System.Drawing.Size(199, 28);
+            this.txt_EmailKhachHang.Size = new System.Drawing.Size(199, 27);
             this.txt_EmailKhachHang.TabIndex = 30;
             // 
             // lb_Email
             // 
             this.lb_Email.AutoSize = true;
             this.lb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Email.Location = new System.Drawing.Point(211, 193);
+            this.lb_Email.Location = new System.Drawing.Point(218, 169);
             this.lb_Email.Name = "lb_Email";
             this.lb_Email.Size = new System.Drawing.Size(51, 20);
             this.lb_Email.TabIndex = 29;
             this.lb_Email.Text = "Email";
             // 
-            // lb_UserKhachHang
-            // 
-            this.lb_UserKhachHang.AutoSize = true;
-            this.lb_UserKhachHang.Location = new System.Drawing.Point(128, 103);
-            this.lb_UserKhachHang.Name = "lb_UserKhachHang";
-            this.lb_UserKhachHang.Size = new System.Drawing.Size(48, 22);
-            this.lb_UserKhachHang.TabIndex = 25;
-            this.lb_UserKhachHang.Text = "User";
-            // 
-            // pic_ImageKH
-            // 
-            this.pic_ImageKH.Location = new System.Drawing.Point(26, 32);
-            this.pic_ImageKH.Name = "pic_ImageKH";
-            this.pic_ImageKH.Size = new System.Drawing.Size(96, 90);
-            this.pic_ImageKH.TabIndex = 24;
-            this.pic_ImageKH.TabStop = false;
-            // 
             // txt_MaTaiKhoanKhachHang
             // 
-            this.txt_MaTaiKhoanKhachHang.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txt_MaTaiKhoanKhachHang.Location = new System.Drawing.Point(215, 158);
+            this.txt_MaTaiKhoanKhachHang.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txt_MaTaiKhoanKhachHang.Location = new System.Drawing.Point(222, 134);
             this.txt_MaTaiKhoanKhachHang.Name = "txt_MaTaiKhoanKhachHang";
             this.txt_MaTaiKhoanKhachHang.ReadOnly = true;
-            this.txt_MaTaiKhoanKhachHang.Size = new System.Drawing.Size(199, 28);
+            this.txt_MaTaiKhoanKhachHang.Size = new System.Drawing.Size(199, 27);
             this.txt_MaTaiKhoanKhachHang.TabIndex = 15;
             // 
             // lb_MaTaiKhoanKhachHang
             // 
             this.lb_MaTaiKhoanKhachHang.AutoSize = true;
             this.lb_MaTaiKhoanKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MaTaiKhoanKhachHang.Location = new System.Drawing.Point(215, 131);
+            this.lb_MaTaiKhoanKhachHang.Location = new System.Drawing.Point(222, 107);
             this.lb_MaTaiKhoanKhachHang.Name = "lb_MaTaiKhoanKhachHang";
             this.lb_MaTaiKhoanKhachHang.Size = new System.Drawing.Size(104, 20);
             this.lb_MaTaiKhoanKhachHang.TabIndex = 14;
@@ -338,16 +315,16 @@
             // txt_DiaChiKhachHang
             // 
             this.txt_DiaChiKhachHang.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_DiaChiKhachHang.Location = new System.Drawing.Point(26, 291);
+            this.txt_DiaChiKhachHang.Location = new System.Drawing.Point(33, 267);
             this.txt_DiaChiKhachHang.Name = "txt_DiaChiKhachHang";
-            this.txt_DiaChiKhachHang.Size = new System.Drawing.Size(388, 28);
+            this.txt_DiaChiKhachHang.Size = new System.Drawing.Size(388, 27);
             this.txt_DiaChiKhachHang.TabIndex = 15;
             // 
             // lb_GioiTinhKhachHang
             // 
             this.lb_GioiTinhKhachHang.AutoSize = true;
             this.lb_GioiTinhKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_GioiTinhKhachHang.Location = new System.Drawing.Point(27, 332);
+            this.lb_GioiTinhKhachHang.Location = new System.Drawing.Point(34, 308);
             this.lb_GioiTinhKhachHang.Name = "lb_GioiTinhKhachHang";
             this.lb_GioiTinhKhachHang.Size = new System.Drawing.Size(71, 20);
             this.lb_GioiTinhKhachHang.TabIndex = 14;
@@ -357,7 +334,7 @@
             // 
             this.lb_DiaChiKhachHang.AutoSize = true;
             this.lb_DiaChiKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DiaChiKhachHang.Location = new System.Drawing.Point(27, 268);
+            this.lb_DiaChiKhachHang.Location = new System.Drawing.Point(34, 244);
             this.lb_DiaChiKhachHang.Name = "lb_DiaChiKhachHang";
             this.lb_DiaChiKhachHang.Size = new System.Drawing.Size(61, 20);
             this.lb_DiaChiKhachHang.TabIndex = 14;
@@ -366,33 +343,33 @@
             // txt_SDTKhachHang
             // 
             this.txt_SDTKhachHang.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_SDTKhachHang.Location = new System.Drawing.Point(215, 355);
+            this.txt_SDTKhachHang.Location = new System.Drawing.Point(222, 331);
             this.txt_SDTKhachHang.Name = "txt_SDTKhachHang";
-            this.txt_SDTKhachHang.Size = new System.Drawing.Size(199, 28);
+            this.txt_SDTKhachHang.Size = new System.Drawing.Size(199, 27);
             this.txt_SDTKhachHang.TabIndex = 11;
             // 
             // txt_MaKhachHangKhachHang
             // 
-            this.txt_MaKhachHangKhachHang.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txt_MaKhachHangKhachHang.Location = new System.Drawing.Point(22, 158);
+            this.txt_MaKhachHangKhachHang.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txt_MaKhachHangKhachHang.Location = new System.Drawing.Point(29, 134);
             this.txt_MaKhachHangKhachHang.Name = "txt_MaKhachHangKhachHang";
             this.txt_MaKhachHangKhachHang.ReadOnly = true;
-            this.txt_MaKhachHangKhachHang.Size = new System.Drawing.Size(154, 28);
+            this.txt_MaKhachHangKhachHang.Size = new System.Drawing.Size(154, 27);
             this.txt_MaKhachHangKhachHang.TabIndex = 12;
             // 
             // txt_TenKhachHang
             // 
             this.txt_TenKhachHang.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_TenKhachHang.Location = new System.Drawing.Point(22, 220);
+            this.txt_TenKhachHang.Location = new System.Drawing.Point(29, 196);
             this.txt_TenKhachHang.Name = "txt_TenKhachHang";
-            this.txt_TenKhachHang.Size = new System.Drawing.Size(154, 28);
+            this.txt_TenKhachHang.Size = new System.Drawing.Size(154, 27);
             this.txt_TenKhachHang.TabIndex = 12;
             // 
             // lb_QuyenHang
             // 
             this.lb_QuyenHang.AutoSize = true;
             this.lb_QuyenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_QuyenHang.Location = new System.Drawing.Point(26, 401);
+            this.lb_QuyenHang.Location = new System.Drawing.Point(33, 377);
             this.lb_QuyenHang.Name = "lb_QuyenHang";
             this.lb_QuyenHang.Size = new System.Drawing.Size(98, 20);
             this.lb_QuyenHang.TabIndex = 10;
@@ -402,7 +379,7 @@
             // 
             this.lb_MaKhachHangKhachHang.AutoSize = true;
             this.lb_MaKhachHangKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MaKhachHangKhachHang.Location = new System.Drawing.Point(22, 131);
+            this.lb_MaKhachHangKhachHang.Location = new System.Drawing.Point(29, 107);
             this.lb_MaKhachHangKhachHang.Name = "lb_MaKhachHangKhachHang";
             this.lb_MaKhachHangKhachHang.Size = new System.Drawing.Size(122, 20);
             this.lb_MaKhachHangKhachHang.TabIndex = 9;
@@ -412,7 +389,7 @@
             // 
             this.lb_SDTKhachHang.AutoSize = true;
             this.lb_SDTKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_SDTKhachHang.Location = new System.Drawing.Point(215, 330);
+            this.lb_SDTKhachHang.Location = new System.Drawing.Point(222, 306);
             this.lb_SDTKhachHang.Name = "lb_SDTKhachHang";
             this.lb_SDTKhachHang.Size = new System.Drawing.Size(42, 20);
             this.lb_SDTKhachHang.TabIndex = 10;
@@ -422,7 +399,7 @@
             // 
             this.lb_HoTenKhachHangKhachHang.AutoSize = true;
             this.lb_HoTenKhachHangKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_HoTenKhachHangKhachHang.Location = new System.Drawing.Point(22, 193);
+            this.lb_HoTenKhachHangKhachHang.Location = new System.Drawing.Point(29, 169);
             this.lb_HoTenKhachHangKhachHang.Name = "lb_HoTenKhachHangKhachHang";
             this.lb_HoTenKhachHangKhachHang.Size = new System.Drawing.Size(66, 20);
             this.lb_HoTenKhachHangKhachHang.TabIndex = 9;
@@ -454,11 +431,8 @@
             // grb_HeaderKhachHang
             // 
             this.grb_HeaderKhachHang.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grb_HeaderKhachHang.Controls.Add(this.lb_TenUserKhachHang);
+            this.grb_HeaderKhachHang.Controls.Add(this.pic_Logo);
             this.grb_HeaderKhachHang.Controls.Add(this.btn_QuayLaiKhachHang);
-            this.grb_HeaderKhachHang.Controls.Add(this.btn_ImageUserKhachHang);
-            this.grb_HeaderKhachHang.Controls.Add(this.lb_DoiMatKhauKhachHang);
-            this.grb_HeaderKhachHang.Controls.Add(this.btn_DoiMatKhauKhachHang);
             this.grb_HeaderKhachHang.Controls.Add(this.lb_DangXuatKhachHang);
             this.grb_HeaderKhachHang.Controls.Add(this.btn_DangXuatKhachHang);
             this.grb_HeaderKhachHang.Dock = System.Windows.Forms.DockStyle.Left;
@@ -468,64 +442,30 @@
             this.grb_HeaderKhachHang.TabIndex = 15;
             this.grb_HeaderKhachHang.TabStop = false;
             // 
-            // lb_TenUserKhachHang
+            // pic_Logo
             // 
-            this.lb_TenUserKhachHang.AutoSize = true;
-            this.lb_TenUserKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TenUserKhachHang.Location = new System.Drawing.Point(231, 28);
-            this.lb_TenUserKhachHang.Name = "lb_TenUserKhachHang";
-            this.lb_TenUserKhachHang.Size = new System.Drawing.Size(205, 20);
-            this.lb_TenUserKhachHang.TabIndex = 14;
-            this.lb_TenUserKhachHang.Text = "Tên người đang đăng nhập";
+            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
+            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
+            this.pic_Logo.Location = new System.Drawing.Point(12, 12);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(143, 130);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 65;
+            this.pic_Logo.TabStop = false;
             // 
             // btn_QuayLaiKhachHang
             // 
             this.btn_QuayLaiKhachHang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_QuayLaiKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiKhachHang.Image")));
             this.btn_QuayLaiKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QuayLaiKhachHang.Location = new System.Drawing.Point(12, 21);
+            this.btn_QuayLaiKhachHang.Location = new System.Drawing.Point(161, 21);
             this.btn_QuayLaiKhachHang.Name = "btn_QuayLaiKhachHang";
-            this.btn_QuayLaiKhachHang.Size = new System.Drawing.Size(96, 42);
+            this.btn_QuayLaiKhachHang.Size = new System.Drawing.Size(119, 42);
             this.btn_QuayLaiKhachHang.TabIndex = 13;
             this.btn_QuayLaiKhachHang.Text = "Quay lại";
             this.btn_QuayLaiKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_QuayLaiKhachHang.UseVisualStyleBackColor = false;
             this.btn_QuayLaiKhachHang.Click += new System.EventHandler(this.btn_QuayLaiKhachHang_Click);
-            // 
-            // btn_ImageUserKhachHang
-            // 
-            this.btn_ImageUserKhachHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ImageUserKhachHang.BackgroundImage")));
-            this.btn_ImageUserKhachHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ImageUserKhachHang.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_ImageUserKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ImageUserKhachHang.Location = new System.Drawing.Point(146, 21);
-            this.btn_ImageUserKhachHang.Name = "btn_ImageUserKhachHang";
-            this.btn_ImageUserKhachHang.Size = new System.Drawing.Size(67, 72);
-            this.btn_ImageUserKhachHang.TabIndex = 12;
-            this.btn_ImageUserKhachHang.UseVisualStyleBackColor = true;
-            // 
-            // lb_DoiMatKhauKhachHang
-            // 
-            this.lb_DoiMatKhauKhachHang.AutoSize = true;
-            this.lb_DoiMatKhauKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DoiMatKhauKhachHang.Location = new System.Drawing.Point(1178, 97);
-            this.lb_DoiMatKhauKhachHang.Name = "lb_DoiMatKhauKhachHang";
-            this.lb_DoiMatKhauKhachHang.Size = new System.Drawing.Size(107, 20);
-            this.lb_DoiMatKhauKhachHang.TabIndex = 11;
-            this.lb_DoiMatKhauKhachHang.Text = "Đổi mật khẩu";
-            // 
-            // btn_DoiMatKhauKhachHang
-            // 
-            this.btn_DoiMatKhauKhachHang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_DoiMatKhauKhachHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_DoiMatKhauKhachHang.BackgroundImage")));
-            this.btn_DoiMatKhauKhachHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_DoiMatKhauKhachHang.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_DoiMatKhauKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DoiMatKhauKhachHang.Location = new System.Drawing.Point(1206, 21);
-            this.btn_DoiMatKhauKhachHang.Name = "btn_DoiMatKhauKhachHang";
-            this.btn_DoiMatKhauKhachHang.Size = new System.Drawing.Size(50, 61);
-            this.btn_DoiMatKhauKhachHang.TabIndex = 10;
-            this.btn_DoiMatKhauKhachHang.UseVisualStyleBackColor = false;
             // 
             // frm_KhachHang
             // 
@@ -542,17 +482,15 @@
             this.grb_HienThiThongTin.ResumeLayout(false);
             this.grb_HienThiThongTin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageKH)).EndInit();
             this.grb_HeaderKhachHang.ResumeLayout(false);
             this.grb_HeaderKhachHang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox grb_ThongTinKhachhangKhachHang;
-        private System.Windows.Forms.Label lb_UserKhachHang;
-        private System.Windows.Forms.PictureBox pic_ImageKH;
         private System.Windows.Forms.TextBox txt_MaTaiKhoanKhachHang;
         private System.Windows.Forms.Label lb_MaTaiKhoanKhachHang;
         private System.Windows.Forms.TextBox txt_DiaChiKhachHang;
@@ -569,11 +507,7 @@
         private System.Windows.Forms.TextBox txt_EmailKhachHang;
         private System.Windows.Forms.Label lb_Email;
         private System.Windows.Forms.Label lb_GioiTinhKhachHang;
-        private System.Windows.Forms.Label lb_DoiMatKhauKhachHang;
-        private System.Windows.Forms.Button btn_DoiMatKhauKhachHang;
-        private System.Windows.Forms.Label lb_TenUserKhachHang;
         private System.Windows.Forms.Button btn_QuayLaiKhachHang;
-        private System.Windows.Forms.Button btn_ImageUserKhachHang;
         private System.Windows.Forms.ComboBox cbo_GioiTinh;
         private System.Windows.Forms.Label lb_QuyenHang;
         private System.Windows.Forms.GroupBox grb_HienThiThongTin;
@@ -588,5 +522,6 @@
         private System.Windows.Forms.TextBox txt_TimKiemKhachHang;
         private System.Windows.Forms.ComboBox cbo_QuyenHang;
         private System.Windows.Forms.ComboBox cbo_Search;
+        private System.Windows.Forms.PictureBox pic_Logo;
     }
 }

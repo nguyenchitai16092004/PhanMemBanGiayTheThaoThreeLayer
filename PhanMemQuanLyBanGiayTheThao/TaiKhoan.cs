@@ -13,6 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_TaiKhoan : Form
     {
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_TaiKhoan()
         {
             InitializeComponent();
@@ -20,9 +21,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public int MaTK;
         public void XemDanhSachTaiKhoan()
         {
-            //khai báo chuoi ket noi CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "SELECT* FROM TAIKHOAN;";
             try
@@ -52,13 +50,14 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void TaiKhoan_Load(object sender, EventArgs e)
         {
             XemDanhSachTaiKhoan();
+            txt_TimKiem.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
+
 
         }
         public void ThemTK()
         {
             //khai báo chuoi ket noi CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             string sSQL = "INSERT INTO TAIKHOAN (TenDangNhap, MatKhau, TrangThai, ThuocLoai) VALUES (@TenDangNhap, @MatKhau, @TrangThai, @ThuocLoai)";
             try
             {
@@ -94,9 +93,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 TrangThai = 1;
             }
-            // Khai báo chuỗi kết nối CSDL
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -140,10 +136,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaTK()
         {
             string MaTaiKhoan = txt_MataiKhoanTaiKhoan.Text;
-
-            // Khai báo chuỗi kết nối CSDL
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-
             // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
@@ -224,7 +216,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 TimKiemThongKe = txt_TimKiem.Text;
             try
             {
-                string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     string sSQL = "SELECT * FROM TAIKHOAN WHERE " + TimKiemTheo + " = @TimKiemThongKe";

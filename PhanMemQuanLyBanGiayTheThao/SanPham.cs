@@ -65,11 +65,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             int TrangThai;
             string MaSP = txt_MaSanPhamSanPham.Text;
-            if (pic_ImageSP.Image == null)
-            {
-                MessageBox.Show("Bạn hãy thêm ảnh của sản phẩm trước khi sửa sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+
             if (chk_TrangThai.Checked == false)
             {
                 TrangThai = 0;
@@ -78,39 +74,53 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 TrangThai = 1;
             }
+
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
-                // Chuỗi truy vấn cập nhật
-                string sSQL = "UPDATE SANPHAM SET TenSP = @TenSP, GiaBan = @Gia, MaNCC = @MaNCC, SoLuong = @SoLuong, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai, Anh = @Anh, GiaNhap = @GiaNhap WHERE MaSP = @MaSP";
+                // Truy vấn cơ bản không cập nhật ảnh
+                string sSQL = "UPDATE SANPHAM SET TenSP = @TenSP, GiaBan = @Gia, MaNCC = @MaNCC, SoLuong = @SoLuong, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai, GiaNhap = @GiaNhap WHERE MaSP = @MaSP";
 
                 try
                 {
                     myConnection.Open();
-                    // Khởi tạo đối tượng SqlCommand
+
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
-                        // Thêm các tham số vào truy vấn
                         cmd.Parameters.AddWithValue("@TenSP", txt_TenSanPhamSanPham.Text);
                         cmd.Parameters.AddWithValue("@Gia", nud_DonGiaSanPham.Text);
                         cmd.Parameters.AddWithValue("@MaNCC", txt_MaNhaCungCapSanPham.Text);
                         cmd.Parameters.AddWithValue("@SoLuong", nud_SoLuongSanPham.Text);
                         cmd.Parameters.AddWithValue("@TrangThai", TrangThai);
                         cmd.Parameters.AddWithValue("@KhuyenMai", txt_KhuyenMai.Text);
-
-                        // Chuyển ảnh sang dạng byte array và thêm vào parameter
-                        MemoryStream ms = new MemoryStream();
-                        pic_ImageSP.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        byte[] imgByte = ms.GetBuffer();
-                        cmd.Parameters.AddWithValue("@Anh", imgByte);
-
                         cmd.Parameters.AddWithValue("@GiaNhap", nud_GiaNhap.Value);
                         cmd.Parameters.AddWithValue("@MaSP", MaSP);
 
-                        // Thực thi truy vấn cập nhật
-                        int rowsAffected = cmd.ExecuteNonQuery();
+                        // Chỉ cập nhật ảnh nếu có ảnh mới
+                        if (pic_ImageSP.Image != null)
+                        {
+                            MemoryStream ms = new MemoryStream();
+                            try
+                            {
+                                pic_ImageSP.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            }
+                            catch (Exception imgEx)
+                            {
+                                // Lỗi khi lưu ảnh
+                                MessageBox.Show("Vui lòng cập nhật lại ảnh của sản phẩm trước khi xác nhận Sửa. Chi tiết lỗi: " + imgEx.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+
+                            byte[] imgByte = ms.ToArray(); // Chuyển đổi sang byte array
+                            cmd.Parameters.AddWithValue("@Anh", imgByte);
+
+                            // Thay đổi chuỗi truy vấn để bao gồm trường ảnh
+                            cmd.CommandText = "UPDATE SANPHAM SET TenSP = @TenSP, GiaBan = @Gia, MaNCC = @MaNCC, SoLuong = @SoLuong, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai, Anh = @Anh, GiaNhap = @GiaNhap WHERE MaSP = @MaSP";
+                        }
+
+                        int rowsAffected = cmd.ExecuteNonQuery(); // Thực thi truy vấn
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là : " + MaSP, "Thông báo");
+                            MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là: " + MaSP, "Thông báo");
                         }
                         else
                         {
@@ -120,7 +130,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
                 }
             }
         }
@@ -128,7 +137,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             if (pic_ImageSP.Image == null)
             {
-                MessageBox.Show("Bạn hãy thêm ảnh của sản phẩm trước khi thêm sản phẩm.", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn hãy thêm ảnh của sản phẩm trước khi thêm sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string sSQL = "INSERT INTO SANPHAM (TenSP, GiaBan, MaNCC, SoLuong, TrangThai, KhuyenMai, GiaNhap, Anh) VALUES (@TenSP, @GiaBan, @MaNCC, @SoLuong, @TrangThai, @KhuyenMai, @GiaNhap, @Anh)";
@@ -166,13 +175,13 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_XoaSanPham_Click(object sender, EventArgs e)
         {
-           DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa sản phẩm này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa sản phẩm này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
                 XoaSanPham();
                 XemDanhSachSanPham();
             }
-            
+
         }
 
         private void dgv_SanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -305,7 +314,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             OpenFileDialog open_image = new OpenFileDialog();
             open_image.Filter = "Image|*.jpg; *.jpeg; *.png";
-            if(open_image.ShowDialog() == DialogResult.OK)
+            if (open_image.ShowDialog() == DialogResult.OK)
             {
                 pic_ImageSP.Image = Image.FromFile(open_image.FileName);
             }
@@ -321,6 +330,17 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemDanhSachSanPham();
             txt_TimKiemSanPham.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
+        }
+
+        private void frm_SanPham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

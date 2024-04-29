@@ -111,7 +111,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Bạn chưa chọn hóa đơn ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa chọn hóa đơn ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -121,39 +121,49 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaHoaDon()
         {
             string maHoaDon = txt_MaHoaDon.Text;
-            // Mở kết nối
-            using (SqlConnection myConnection = new SqlConnection(scon))
+            bool success = true;
+
+            try
             {
-                myConnection.Open();
-
-                // Bắt đầu một giao dịch để đảm bảo tính nhất quán giữa các thao tác
-                SqlTransaction transaction = myConnection.BeginTransaction();
-
-                try
+                using (SqlConnection myConnection = new SqlConnection(scon))
                 {
-                    // Xóa chi tiết hóa đơn trong bảng CHITIETHOADON
+                    myConnection.Open();
+
+                    // Xóa chi tiết hóa đơn
                     string sSQLChiTietHoaDon = "DELETE FROM CHITIETHOADON WHERE MaHD = @MaHD";
-                    SqlCommand cmdChiTietHoaDon = new SqlCommand(sSQLChiTietHoaDon, myConnection, transaction);
-                    cmdChiTietHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
-                    cmdChiTietHoaDon.ExecuteNonQuery();         
+                    using (SqlCommand cmdChiTietHoaDon = new SqlCommand(sSQLChiTietHoaDon, myConnection))
+                    {
+                        cmdChiTietHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
+                        int rowsAffected = cmdChiTietHoaDon.ExecuteNonQuery();
 
-                    // Xóa hóa đơn trong bảng HOADON
-                    string sSQLHoaDon = "DELETE FROM HOADON WHERE MaHD = @MaHD";
-                    SqlCommand cmdHoaDon = new SqlCommand(sSQLHoaDon, myConnection, transaction);
-                    cmdHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
-                    cmdHoaDon.ExecuteNonQuery();
+                        // Kiểm tra nếu không có hàng nào bị xóa
+                        if (rowsAffected == 0)
+                        {
+                            success = false;
+                            MessageBox.Show("Không tìm thấy hóa đơn để xóa.", "Thông báo");
+                        }
+                    }
 
+                    if (success)
+                    {
+                        // Xóa hóa đơn
+                        string sSQLHoaDon = "DELETE FROM HOADON WHERE MaHD = @MaHD";
+                        using (SqlCommand cmdHoaDon = new SqlCommand(sSQLHoaDon, myConnection))
+                        {
+                            cmdHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
+                            cmdHoaDon.ExecuteNonQuery();
 
-                    MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                            MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo");
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                success = false;
+                MessageBox.Show("Lỗi khi xóa hóa đơn. Chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        //
 
         public void HienThiMaNhanVien()
         {
@@ -264,7 +274,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_MaNV.Text = dgv_HoaDonBanHang.Rows[i].Cells[1].Value.ToString();
             txt_MaKH.Text = dgv_HoaDonBanHang.Rows[i].Cells[2].Value.ToString();
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Parse(dgv_HoaDonBanHang.Rows[i].Cells[3].Value.ToString());
-            TienKhachDua = int.Parse(dgv_HoaDonBanHang.Rows[i].Cells[4].Value.ToString());
+            //TienKhachDua = int.Parse(dgv_HoaDonBanHang.Rows[i].Cells[4].Value.ToString());
         }
 
         private void btn_XoaHoaDonBanHang_Click(object sender, EventArgs e)
@@ -286,7 +296,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             SuaHoaDon();
         }
-        
+
         private void btn_TinhTienHoaDonBanHang_Click(object sender, EventArgs e)
         {
             //int soluong = int.Parse(txt_SoLuong.Text);
@@ -344,7 +354,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             ThemHoaDon();
             this.Hide();
             chiTietHoaDon.Show();
-            chiTietHoaDon.MaHD = LayMaHD();            
+            chiTietHoaDon.MaHD = LayMaHD();
         }
         private void btn_XemDanhSachHoaDon_Click(object sender, EventArgs e)
         {
@@ -431,6 +441,17 @@ namespace PhanMemQuanLyBanGiayTheThao
             dmk.Show();
             dmk.MaTK = MaTK;
             this.Hide();
+        }
+
+        private void frm_HoaDonBanHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

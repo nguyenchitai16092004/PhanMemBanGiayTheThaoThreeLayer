@@ -185,8 +185,10 @@
             // 
             // txt_DonGia
             // 
+            this.txt_DonGia.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txt_DonGia.Location = new System.Drawing.Point(9, 333);
             this.txt_DonGia.Name = "txt_DonGia";
+            this.txt_DonGia.ReadOnly = true;
             this.txt_DonGia.Size = new System.Drawing.Size(165, 27);
             this.txt_DonGia.TabIndex = 50;
             // 
@@ -322,7 +324,6 @@
             this.txt_KhuyenMai.ReadOnly = true;
             this.txt_KhuyenMai.Size = new System.Drawing.Size(332, 27);
             this.txt_KhuyenMai.TabIndex = 24;
-            this.txt_KhuyenMai.TextChanged += new System.EventHandler(this.txt_KhuyenMai_TextChanged);
             // 
             // lb_KhuyenMai
             // 

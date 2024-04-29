@@ -77,9 +77,10 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XuatThongTinSP()
         {
             String MaSP = cbo_MaSP.Text;
-            string sSQL = "SELECT TenSP, GiaBan, KhuyenMai " +
+            string sSQL = "SELECT TenSP, GiaBan, KhuyenMai, Anh " +
                           "FROM SANPHAM " +
                           "WHERE MaSP = @MaSP";
+
             try
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
@@ -88,13 +89,35 @@ namespace PhanMemQuanLyBanGiayTheThao
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
                         cmd.Parameters.AddWithValue("@MaSP", MaSP);
+
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
+                                // Set other text fields
                                 txt_TenSP.Text = reader["TenSP"].ToString();
                                 txt_DonGia.Text = reader["GiaBan"].ToString();
                                 txt_KhuyenMai.Text = reader["KhuyenMai"].ToString();
+                                if (reader["Anh"] != DBNull.Value)
+                                {
+                                    byte[] imageData = (byte[])reader["Anh"];
+
+                                    if (imageData.Length > 0)
+                                    {
+                                        using (MemoryStream ms = new MemoryStream(imageData))
+                                        {
+                                            pic_ImageSP.Image = Image.FromStream(ms);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        pic_ImageSP.Image = null;
+                                    }
+                                }
+                                else
+                                {
+                                    pic_ImageSP.Image = null;
+                                }
                             }
                         }
                     }
@@ -145,7 +168,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             int SoLuong = int.Parse(nud_SoLuong.Value.ToString());
             int DonGia = int.Parse(txt_DonGia.Text);
-            int ThanhTien = SoLuong * DonGia;
+            int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
+            double ThanhTien = (SoLuong * DonGia) * ((100.0 - KhuyenMai) / 100.0);
             txt_ThanhTien.Text = ThanhTien.ToString();
             string sSQL = "INSERT INTO CHITIETHOADON (MaHD,MaSP,SoLuong,ThanhTien) VALUES (@MaHD,@MaSP,@SoLuong,@ThanhTien)";
             try
@@ -230,6 +254,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         //
         public void HoanThienHoaDon(int MaHD)
         {
+
             // Khai báo chuỗi kết nối CSDL
             string sSQL = "UPDATE HOADON SET TienKhachDua = @TienKhachDua , TienGuiLai = @TienGuiLai , TongHD = @TongHD WHERE MaHD = @MaHD";
             try
@@ -282,34 +307,69 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void nud_SoLuong_ValueChanged(object sender, EventArgs e)
         {
+            int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
             int Gia = int.Parse(txt_DonGia.Text);
             int Soluong = (int)nud_SoLuong.Value;
-            int ThanhTien = Soluong * Gia;
+            double ThanhTien = (Soluong * Gia) * ((100.0 - KhuyenMai) / 100);
             txt_ThanhTien.Text = ThanhTien.ToString();
+
             TongHD();
         }
 
         private void btn_ThemKhachHang_Click(object sender, EventArgs e)
         {
 
-
-            ThemChiTietHoaDon(MaHD);
-            XemChiTietHoaDon(MaHD);
-            TongHD();
         }
 
         private void btn_HoanTat_Click(object sender, EventArgs e)
         {
-            double tienKhachDua = double.Parse(txt_TienKhachDua.Text);
-            double TongTien = Double.Parse(txt_TongTien.Text);
+            // Kiểm tra xem giá trị nhập vào có rỗng hoặc trống không
+            string tienKhachDuaText = txt_TienKhachDua.Text.Trim();
+            if (string.IsNullOrEmpty(tienKhachDuaText))
+            {
+                MessageBox.Show("Hãy nhập số tiền mà khách đã đưa cho bạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            double tienKhachDua;
+            try
+            {
+                // Chuyển đổi giá trị sang kiểu số
+                tienKhachDua = double.Parse(tienKhachDuaText);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Giá trị nhập vào không hợp lệ. Hãy nhập số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (tienKhachDua <= 0)
+            {
+                MessageBox.Show("Số tiền của khách đưa không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            double TongTien;
+            try
+            {
+                TongTien = double.Parse(txt_TongTien.Text); // Giả sử giá trị này luôn hợp lệ
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Tổng tiền không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             double tienGuiKhach = tienKhachDua - TongTien;
 
             txt_TienGuiKhach.Text = tienGuiKhach.ToString();
 
             HoanThienHoaDon(MaHD);
             frm_HoaDonBanHang hoaDonBanHang = new frm_HoaDonBanHang();
-            hoaDonBanHang.ShowDialog();
-            this.Close();
+            hoaDonBanHang.Show();
+            hoaDonBanHang.MaTK = MaTK;
+
+            this.Hide();
         }
 
         private void btn_SuaHoaDonBanHang_Click(object sender, EventArgs e)
@@ -354,7 +414,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
 
 
-            private void btn_XoaHoaDonBanHang_Click(object sender, EventArgs e)
+        private void btn_XoaHoaDonBanHang_Click(object sender, EventArgs e)
         {
             XoaSP(MaHD);
             XemChiTietHoaDon(MaHD);
@@ -374,10 +434,37 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.Hide();
         }
 
-        private void txt_KhuyenMai_TextChanged(object sender, EventArgs e)
+        private void frm_ChiTietHoaDon_FormClosing(object sender, FormClosingEventArgs e)
         {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (dlg == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
+        private void btn_ThemTaoChiTietHoaDon_Click(object sender, EventArgs e)
+        {
+            int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
+            int SoLuong = int.Parse(nud_SoLuong.Value.ToString());
+            if (SoLuong == 0)
+            {
+                MessageBox.Show("Hãy chọn số lượng sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+
+                if (KhuyenMai > 0)
+                {
+                    MessageBox.Show("Sản phẩm hiện đang được khuyên mãi: " + KhuyenMai + "%", "Bạn có biết?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                ThemChiTietHoaDon(MaHD);
+                XemChiTietHoaDon(MaHD);
+                TongHD();
+            }
+
+        }
     }
 }

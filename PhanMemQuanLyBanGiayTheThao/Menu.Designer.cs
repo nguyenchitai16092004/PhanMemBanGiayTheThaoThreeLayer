@@ -258,6 +258,7 @@
             this.Controls.Add(this.lb_ThongKe);
             this.Controls.Add(this.lb_KhachHang);
             this.Controls.Add(this.lb_BanHangHoaDon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);

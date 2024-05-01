@@ -69,7 +69,7 @@
             // 
             // pic_Logo
             // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
+            this.pic_Logo.BackColor = System.Drawing.Color.White;
             this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
             this.pic_Logo.Location = new System.Drawing.Point(11, 11);
             this.pic_Logo.Name = "pic_Logo";
@@ -195,7 +195,7 @@
             this.btn_SearchThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_SearchThongKe.Location = new System.Drawing.Point(686, 54);
             this.btn_SearchThongKe.Name = "btn_SearchThongKe";
-            this.btn_SearchThongKe.Size = new System.Drawing.Size(102, 48);
+            this.btn_SearchThongKe.Size = new System.Drawing.Size(152, 48);
             this.btn_SearchThongKe.TabIndex = 63;
             this.btn_SearchThongKe.Text = "Search";
             this.btn_SearchThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -245,6 +245,7 @@
             this.ClientSize = new System.Drawing.Size(1327, 703);
             this.Controls.Add(this.grb_ThongKeSanPham);
             this.Controls.Add(this.grb_HeaderThongKe);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_ThongKeSanPham";
             this.Text = "Thống kê sản phẩm";
             this.Load += new System.EventHandler(this.ThongKeSanPham_Load);

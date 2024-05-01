@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhanVien));
             this.grb_HeaderNhanVien = new System.Windows.Forms.GroupBox();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiNhanVien = new System.Windows.Forms.Button();
             this.lb_DangXuatNhanVien = new System.Windows.Forms.Label();
             this.btn_DangXuatNhanVien = new System.Windows.Forms.Button();
@@ -58,11 +59,10 @@
             this.lb_TimKiemThongTinNhanVien = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
-            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.grb_HeaderNhanVien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.grb_NhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // grb_HeaderNhanVien
@@ -78,6 +78,17 @@
             this.grb_HeaderNhanVien.Size = new System.Drawing.Size(1382, 163);
             this.grb_HeaderNhanVien.TabIndex = 2;
             this.grb_HeaderNhanVien.TabStop = false;
+            // 
+            // pic_Logo
+            // 
+            this.pic_Logo.BackColor = System.Drawing.Color.White;
+            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
+            this.pic_Logo.Location = new System.Drawing.Point(12, 12);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 65;
+            this.pic_Logo.TabStop = false;
             // 
             // btn_QuayLaiNhanVien
             // 
@@ -372,7 +383,7 @@
             this.btn_TimKiemThongTinNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_TimKiemThongTinNhanVien.Location = new System.Drawing.Point(999, 9);
             this.btn_TimKiemThongTinNhanVien.Name = "btn_TimKiemThongTinNhanVien";
-            this.btn_TimKiemThongTinNhanVien.Size = new System.Drawing.Size(106, 40);
+            this.btn_TimKiemThongTinNhanVien.Size = new System.Drawing.Size(146, 40);
             this.btn_TimKiemThongTinNhanVien.TabIndex = 56;
             this.btn_TimKiemThongTinNhanVien.Text = "Search";
             this.btn_TimKiemThongTinNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -415,17 +426,6 @@
             this.dgv_NhanVien.TabIndex = 53;
             this.dgv_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellClick);
             // 
-            // pic_Logo
-            // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
-            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
-            this.pic_Logo.Location = new System.Drawing.Point(12, 12);
-            this.pic_Logo.Name = "pic_Logo";
-            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
-            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_Logo.TabIndex = 65;
-            this.pic_Logo.TabStop = false;
-            // 
             // frm_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -434,15 +434,16 @@
             this.ClientSize = new System.Drawing.Size(1382, 699);
             this.Controls.Add(this.grb_NhanVien);
             this.Controls.Add(this.grb_HeaderNhanVien);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_NhanVien";
             this.Text = "NhanVien";
             this.Load += new System.EventHandler(this.NhanVien_Load);
             this.grb_HeaderNhanVien.ResumeLayout(false);
             this.grb_HeaderNhanVien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.grb_NhanVien.ResumeLayout(false);
             this.grb_NhanVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_SanPham : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_SanPham()
         {
             InitializeComponent();
@@ -341,6 +341,11 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 e.Cancel = true;
             }
+        }
+
+        private void grb_SanPhamSanPham_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

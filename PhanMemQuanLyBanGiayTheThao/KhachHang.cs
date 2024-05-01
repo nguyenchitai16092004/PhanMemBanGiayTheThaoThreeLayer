@@ -13,7 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_KhachHang : Form
     {
-       public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+       public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_KhachHang()
         {
             InitializeComponent();
@@ -266,6 +266,14 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemDanhSachKhachHang();
             txt_TimKiemKhachHang.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
+            txt_DiaChiKhachHang.Clear();
+            txt_MaKhachHangKhachHang.Clear();
+            txt_MaTaiKhoanKhachHang.Clear();
+            txt_TenKhachHang.Clear();
+            txt_EmailKhachHang.Clear();
+            txt_SDTKhachHang.Clear();
+            cbo_GioiTinh.SelectedIndex = -1;
+            cbo_QuyenHang.SelectedIndex = -1;
         }
     }
 }

@@ -444,7 +444,7 @@
             // 
             // pic_Logo
             // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
+            this.pic_Logo.BackColor = System.Drawing.Color.White;
             this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
             this.pic_Logo.Location = new System.Drawing.Point(12, 12);
             this.pic_Logo.Name = "pic_Logo";
@@ -474,6 +474,7 @@
             this.ClientSize = new System.Drawing.Size(1405, 695);
             this.Controls.Add(this.grb_ThongTinKhachhangKhachHang);
             this.Controls.Add(this.grb_HeaderKhachHang);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_KhachHang";
             this.Text = "KhachHang";
             this.Load += new System.EventHandler(this.KhachHang_Load);

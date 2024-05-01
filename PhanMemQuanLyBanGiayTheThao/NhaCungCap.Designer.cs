@@ -45,6 +45,7 @@
             this.lb_TimKiem = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.grb_Header = new System.Windows.Forms.GroupBox();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiNhaCungCap = new System.Windows.Forms.Button();
             this.lb_DangXuatNhaCungCap = new System.Windows.Forms.Label();
             this.btn_DangXuatNhaCungCap = new System.Windows.Forms.Button();
@@ -54,11 +55,10 @@
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.btn_XuatThong = new System.Windows.Forms.Button();
             this.cbo_Search = new System.Windows.Forms.ComboBox();
-            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.grb_NhaCungCap.SuspendLayout();
             this.grb_Header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).BeginInit();
             this.SuspendLayout();
             // 
             // grb_NhaCungCap
@@ -194,7 +194,7 @@
             this.btn_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Search.Location = new System.Drawing.Point(976, 191);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(83, 41);
+            this.btn_Search.Size = new System.Drawing.Size(132, 41);
             this.btn_Search.TabIndex = 35;
             this.btn_Search.Text = "Search";
             this.btn_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -231,6 +231,17 @@
             this.grb_Header.Size = new System.Drawing.Size(1349, 150);
             this.grb_Header.TabIndex = 43;
             this.grb_Header.TabStop = false;
+            // 
+            // pic_Logo
+            // 
+            this.pic_Logo.BackColor = System.Drawing.Color.White;
+            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
+            this.pic_Logo.Location = new System.Drawing.Point(6, 7);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 65;
+            this.pic_Logo.TabStop = false;
             // 
             // btn_QuayLaiNhaCungCap
             // 
@@ -360,17 +371,6 @@
             this.cbo_Search.Size = new System.Drawing.Size(141, 24);
             this.cbo_Search.TabIndex = 85;
             // 
-            // pic_Logo
-            // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
-            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
-            this.pic_Logo.Location = new System.Drawing.Point(6, 7);
-            this.pic_Logo.Name = "pic_Logo";
-            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
-            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_Logo.TabIndex = 65;
-            this.pic_Logo.TabStop = false;
-            // 
             // frm_NhaCungCap
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -388,6 +388,7 @@
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.lb_TimKiem);
             this.Controls.Add(this.txt_TimKiem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_NhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhaCungCap";
@@ -396,8 +397,8 @@
             this.grb_NhaCungCap.PerformLayout();
             this.grb_Header.ResumeLayout(false);
             this.grb_Header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

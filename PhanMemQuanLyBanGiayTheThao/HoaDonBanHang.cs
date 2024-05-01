@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_HoaDonBanHang : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         int TienKhachDua;
         public int MaTK;
         public frm_HoaDonBanHang()
@@ -343,7 +343,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemHoaDon();
             HienThiMaNhanVien();
-            cbb_TimKiem_Theo.Text = "Tìm kiếm theo :";
+            cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
 
         }
@@ -367,14 +367,14 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void TimKiem()
         {
             string TimKiemTheo = "", TimKiemThongKe = "";
-            if (cbb_TimKiem_Theo.Text == "Ngày")
+            if (cbo_TimKiem_Theo.Text == "Ngày")
             {
                 TimKiemTheo = "NgayLap";
                 TimKiemThongKe = dtp_Ngay.Value.ToString("yyyy/MM/dd");
             }
             else
             {
-                TimKiemTheo = cbb_TimKiem_Theo.Text;
+                TimKiemTheo = cbo_TimKiem_Theo.Text;
                 TimKiemThongKe = txt_TimKiemHoaDonBanHang.Text;
             }
             try
@@ -406,14 +406,14 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemHoaDon();
             HienThiMaNhanVien();
             txt_TimKiemHoaDonBanHang.Clear();
-            cbb_TimKiem_Theo.Text = "Tìm kiếm theo :";
+            cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
 
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            if (cbb_TimKiem_Theo.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemHoaDonBanHang.Text))
+            if (cbo_TimKiem_Theo.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemHoaDonBanHang.Text))
             {
                 MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
@@ -425,7 +425,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         private void Cbb_TimKiem_Theo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cbb_TimKiem_Theo.Text == "Ngày")
+            if (cbo_TimKiem_Theo.Text == "Ngày")
             {
                 dtp_Ngay.Visible = true;
             }

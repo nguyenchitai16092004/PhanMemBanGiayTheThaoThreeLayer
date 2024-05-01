@@ -162,7 +162,7 @@
             // 
             // pic_Logo
             // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
+            this.pic_Logo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
             this.pic_Logo.Location = new System.Drawing.Point(8, 8);
             this.pic_Logo.Name = "pic_Logo";
@@ -195,9 +195,9 @@
             this.Controls.Add(this.grb_Header);
             this.Controls.Add(this.btn_DoiMatKhau);
             this.Controls.Add(this.grb_Body);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_DoiMatKhau";
             this.Text = "DoiMatKhau";
-            this.Load += new System.EventHandler(this.frm_DoiMatKhau_Load);
             this.grb_Body.ResumeLayout(false);
             this.grb_Body.PerformLayout();
             this.grb_Header.ResumeLayout(false);

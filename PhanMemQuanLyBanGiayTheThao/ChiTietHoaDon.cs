@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ChiTietHoaDon : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
 
         public void XemChiTietHoaDon(int MaHD)
         {
@@ -316,11 +316,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             TongHD();
         }
 
-        private void btn_ThemKhachHang_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_HoanTat_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem giá trị nhập vào có rỗng hoặc trống không
@@ -434,7 +429,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.Hide();
         }
 
-        private void frm_ChiTietHoaDon_FormClosing(object sender, FormClosingEventArgs e)
+        private void frm_ChiTietHoaDon_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             DialogResult dlg = new DialogResult();
             dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -445,7 +440,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        private void btn_ThemTaoChiTietHoaDon_Click(object sender, EventArgs e)
+        private void btn_ThemTaoChiTietHoaDon_Click_1(object sender, EventArgs e)
         {
             int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
             int SoLuong = int.Parse(nud_SoLuong.Value.ToString());
@@ -464,7 +459,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 XemChiTietHoaDon(MaHD);
                 TongHD();
             }
-
         }
     }
 }

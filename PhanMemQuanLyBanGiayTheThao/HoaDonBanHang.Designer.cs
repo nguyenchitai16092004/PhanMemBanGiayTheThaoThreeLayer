@@ -40,7 +40,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_DangXuatHoaDonBanHang = new System.Windows.Forms.Button();
             this.btn_KHHoaDonBanHang = new System.Windows.Forms.Button();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
-            this.cbb_TimKiem_Theo = new System.Windows.Forms.ComboBox();
+            this.cbo_TimKiem_Theo = new System.Windows.Forms.ComboBox();
             this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
             this.txt_MaKH = new System.Windows.Forms.TextBox();
             this.btn_TaoHoaDon = new System.Windows.Forms.Button();
@@ -86,7 +86,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // pic_Logo
             // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
+            this.pic_Logo.BackColor = System.Drawing.Color.White;
             this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
             this.pic_Logo.Location = new System.Drawing.Point(6, 10);
             this.pic_Logo.Name = "pic_Logo";
@@ -174,7 +174,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // grb_SanPham
             // 
-            this.grb_SanPham.Controls.Add(this.cbb_TimKiem_Theo);
+            this.grb_SanPham.Controls.Add(this.cbo_TimKiem_Theo);
             this.grb_SanPham.Controls.Add(this.dtp_Ngay);
             this.grb_SanPham.Controls.Add(this.txt_MaKH);
             this.grb_SanPham.Controls.Add(this.btn_TaoHoaDon);
@@ -204,19 +204,19 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_SanPham.TabStop = false;
             this.grb_SanPham.Text = "Sản phẩm";
             // 
-            // cbb_TimKiem_Theo
+            // cbo_TimKiem_Theo
             // 
-            this.cbb_TimKiem_Theo.FormattingEnabled = true;
-            this.cbb_TimKiem_Theo.Items.AddRange(new object[] {
+            this.cbo_TimKiem_Theo.FormattingEnabled = true;
+            this.cbo_TimKiem_Theo.Items.AddRange(new object[] {
             "MaHD",
             "MaNV",
             "MaKH",
             "Ngày"});
-            this.cbb_TimKiem_Theo.Location = new System.Drawing.Point(721, 30);
-            this.cbb_TimKiem_Theo.Name = "cbb_TimKiem_Theo";
-            this.cbb_TimKiem_Theo.Size = new System.Drawing.Size(144, 28);
-            this.cbb_TimKiem_Theo.TabIndex = 61;
-            this.cbb_TimKiem_Theo.SelectedIndexChanged += new System.EventHandler(this.Cbb_TimKiem_Theo_SelectedIndexChanged_1);
+            this.cbo_TimKiem_Theo.Location = new System.Drawing.Point(721, 30);
+            this.cbo_TimKiem_Theo.Name = "cbo_TimKiem_Theo";
+            this.cbo_TimKiem_Theo.Size = new System.Drawing.Size(144, 28);
+            this.cbo_TimKiem_Theo.TabIndex = 61;
+            this.cbo_TimKiem_Theo.SelectedIndexChanged += new System.EventHandler(this.Cbb_TimKiem_Theo_SelectedIndexChanged_1);
             // 
             // dtp_Ngay
             // 
@@ -300,7 +300,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(923, 499);
+            this.btn_LamMoi.Location = new System.Drawing.Point(871, 500);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 50);
             this.btn_LamMoi.TabIndex = 22;
@@ -405,7 +405,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XemDanhSachHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_XemDanhSachHoaDon.Location = new System.Drawing.Point(17, 421);
             this.btn_XemDanhSachHoaDon.Name = "btn_XemDanhSachHoaDon";
-            this.btn_XemDanhSachHoaDon.Size = new System.Drawing.Size(154, 59);
+            this.btn_XemDanhSachHoaDon.Size = new System.Drawing.Size(175, 59);
             this.btn_XemDanhSachHoaDon.TabIndex = 18;
             this.btn_XemDanhSachHoaDon.Text = "Xem chi tiết HD";
             this.btn_XemDanhSachHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -418,9 +418,9 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XuatThongTinHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XuatThongTinHoaDonBanHang.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinHoaDonBanHang.Image")));
             this.btn_XuatThongTinHoaDonBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThongTinHoaDonBanHang.Location = new System.Drawing.Point(1102, 499);
+            this.btn_XuatThongTinHoaDonBanHang.Location = new System.Drawing.Point(1083, 499);
             this.btn_XuatThongTinHoaDonBanHang.Name = "btn_XuatThongTinHoaDonBanHang";
-            this.btn_XuatThongTinHoaDonBanHang.Size = new System.Drawing.Size(141, 51);
+            this.btn_XuatThongTinHoaDonBanHang.Size = new System.Drawing.Size(160, 51);
             this.btn_XuatThongTinHoaDonBanHang.TabIndex = 18;
             this.btn_XuatThongTinHoaDonBanHang.Text = "Xuất thông tin";
             this.btn_XuatThongTinHoaDonBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -455,6 +455,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 746);
             this.Controls.Add(this.grb_HoaDonBanHang);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_HoaDonBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoaDonBanHang";
@@ -500,7 +501,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         private System.Windows.Forms.Button btn_TaoHoaDon;
         private System.Windows.Forms.TextBox txt_MaKH;
         private System.Windows.Forms.DateTimePicker dtp_Ngay;
-        private System.Windows.Forms.ComboBox cbb_TimKiem_Theo;
+        private System.Windows.Forms.ComboBox cbo_TimKiem_Theo;
         private System.Windows.Forms.Label lb_DoiMatKhauNhanVien;
         private System.Windows.Forms.Button btn_DoiMatKhauNhanVien;
         private System.Windows.Forms.PictureBox pic_Logo;

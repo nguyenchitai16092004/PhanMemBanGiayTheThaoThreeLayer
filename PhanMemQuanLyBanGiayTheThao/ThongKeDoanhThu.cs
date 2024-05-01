@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ThongKeDoanhThu : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_ThongKeDoanhThu()
         {
             InitializeComponent();
@@ -104,8 +104,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 sSQL = "SELECT SUM(TongHD) AS TongHoaDon, COUNT(*) AS SoLuongHoaDon FROM HOADON WHERE YEAR(NgayLap) = @Nam;";
             }
 
-            string scon;
-            scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(scon);
             try
             {

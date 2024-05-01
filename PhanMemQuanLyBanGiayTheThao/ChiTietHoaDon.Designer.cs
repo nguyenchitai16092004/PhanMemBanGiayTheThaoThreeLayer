@@ -252,12 +252,12 @@
             this.btn_ThemTaoChiTietHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ThemTaoChiTietHoaDon.Location = new System.Drawing.Point(13, 502);
             this.btn_ThemTaoChiTietHoaDon.Name = "btn_ThemTaoChiTietHoaDon";
-            this.btn_ThemTaoChiTietHoaDon.Size = new System.Drawing.Size(168, 47);
+            this.btn_ThemTaoChiTietHoaDon.Size = new System.Drawing.Size(190, 47);
             this.btn_ThemTaoChiTietHoaDon.TabIndex = 41;
             this.btn_ThemTaoChiTietHoaDon.Text = "Thêm hóa đơn";
             this.btn_ThemTaoChiTietHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_ThemTaoChiTietHoaDon.UseVisualStyleBackColor = false;
-            this.btn_ThemTaoChiTietHoaDon.Click += new System.EventHandler(this.btn_ThemKhachHang_Click);
+            this.btn_ThemTaoChiTietHoaDon.Click += new System.EventHandler(this.btn_ThemTaoChiTietHoaDon_Click_1);
             // 
             // dgv_HoaDonBanHang
             // 
@@ -283,7 +283,7 @@
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(485, 502);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1109, 46);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 47);
             this.btn_LamMoi.TabIndex = 22;
@@ -307,7 +307,7 @@
             this.btn_SuaHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SuaHoaDonBanHang.Image = ((System.Drawing.Image)(resources.GetObject("btn_SuaHoaDonBanHang.Image")));
             this.btn_SuaHoaDonBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SuaHoaDonBanHang.Location = new System.Drawing.Point(191, 501);
+            this.btn_SuaHoaDonBanHang.Location = new System.Drawing.Point(393, 497);
             this.btn_SuaHoaDonBanHang.Name = "btn_SuaHoaDonBanHang";
             this.btn_SuaHoaDonBanHang.Size = new System.Drawing.Size(105, 47);
             this.btn_SuaHoaDonBanHang.TabIndex = 25;
@@ -360,7 +360,7 @@
             this.btn_XoaHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XoaHoaDonBanHang.Image = ((System.Drawing.Image)(resources.GetObject("btn_XoaHoaDonBanHang.Image")));
             this.btn_XoaHoaDonBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XoaHoaDonBanHang.Location = new System.Drawing.Point(325, 502);
+            this.btn_XoaHoaDonBanHang.Location = new System.Drawing.Point(527, 498);
             this.btn_XoaHoaDonBanHang.Name = "btn_XoaHoaDonBanHang";
             this.btn_XoaHoaDonBanHang.Size = new System.Drawing.Size(107, 47);
             this.btn_XoaHoaDonBanHang.TabIndex = 17;
@@ -451,9 +451,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 803);
             this.Controls.Add(this.grb_HoaDonBanHang);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_ChiTietHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChiTietHoaDon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_ChiTietHoaDon_FormClosing_1);
             this.Load += new System.EventHandler(this.ChiTietHoaDon_Load);
             this.grb_HoaDonBanHang.ResumeLayout(false);
             this.grb_SanPham.ResumeLayout(false);

@@ -48,17 +48,17 @@
             this.btn_ThemTaiKhoan = new System.Windows.Forms.Button();
             this.btn_XoaTaiKhoan = new System.Windows.Forms.Button();
             this.grb_HeaderTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiTaiKhoan = new System.Windows.Forms.Button();
             this.lb_DangXuatTaiKhoan = new System.Windows.Forms.Label();
             this.btn_DangXuatTaiKhoan = new System.Windows.Forms.Button();
             this.dgv_TaiKhoan = new System.Windows.Forms.DataGridView();
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.cbo_Search = new System.Windows.Forms.ComboBox();
-            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.grb_QLTaiKhoanTaiKhoan.SuspendLayout();
             this.grb_HeaderTaiKhoan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_XuatThongTinTaiKhoan
@@ -282,6 +282,17 @@
             this.grb_HeaderTaiKhoan.TabIndex = 52;
             this.grb_HeaderTaiKhoan.TabStop = false;
             // 
+            // pic_Logo
+            // 
+            this.pic_Logo.BackColor = System.Drawing.Color.White;
+            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
+            this.pic_Logo.Location = new System.Drawing.Point(6, 9);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 65;
+            this.pic_Logo.TabStop = false;
+            // 
             // btn_QuayLaiTaiKhoan
             // 
             this.btn_QuayLaiTaiKhoan.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -357,17 +368,6 @@
             this.cbo_Search.Size = new System.Drawing.Size(121, 24);
             this.cbo_Search.TabIndex = 55;
             // 
-            // pic_Logo
-            // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
-            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
-            this.pic_Logo.Location = new System.Drawing.Point(6, 9);
-            this.pic_Logo.Name = "pic_Logo";
-            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
-            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_Logo.TabIndex = 65;
-            this.pic_Logo.TabStop = false;
-            // 
             // frm_TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -386,6 +386,7 @@
             this.Controls.Add(this.btn_SuaTaiKhoan);
             this.Controls.Add(this.grb_QLTaiKhoanTaiKhoan);
             this.Controls.Add(this.btn_XoaTaiKhoan);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_TaiKhoan";
             this.Text = "TaiKhoan";
             this.Load += new System.EventHandler(this.TaiKhoan_Load);
@@ -393,8 +394,8 @@
             this.grb_QLTaiKhoanTaiKhoan.PerformLayout();
             this.grb_HeaderTaiKhoan.ResumeLayout(false);
             this.grb_HeaderTaiKhoan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

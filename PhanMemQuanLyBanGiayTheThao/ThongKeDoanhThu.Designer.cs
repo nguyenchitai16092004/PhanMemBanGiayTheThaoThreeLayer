@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ThongKeDoanhThu));
             this.grb_HeaderThongKe = new System.Windows.Forms.GroupBox();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.lb_HoaDon = new System.Windows.Forms.Label();
             this.btn_HoaDon = new System.Windows.Forms.Button();
             this.lb_SanPham = new System.Windows.Forms.Label();
@@ -49,12 +50,11 @@
             this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
             this.lb_TimKiem = new System.Windows.Forms.Label();
             this.grb_BoLoc = new System.Windows.Forms.GroupBox();
-            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.grb_HeaderThongKe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.grb_ThongKeThongKe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ThongKeHoaDon)).BeginInit();
             this.grb_BoLoc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // grb_HeaderThongKe
@@ -72,6 +72,17 @@
             this.grb_HeaderThongKe.Size = new System.Drawing.Size(1263, 142);
             this.grb_HeaderThongKe.TabIndex = 55;
             this.grb_HeaderThongKe.TabStop = false;
+            // 
+            // pic_Logo
+            // 
+            this.pic_Logo.BackColor = System.Drawing.Color.White;
+            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
+            this.pic_Logo.Location = new System.Drawing.Point(1, 5);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 65;
+            this.pic_Logo.TabStop = false;
             // 
             // lb_HoaDon
             // 
@@ -239,9 +250,9 @@
             this.btn_SearchThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_SearchThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_SearchThongKe.Image")));
             this.btn_SearchThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SearchThongKe.Location = new System.Drawing.Point(295, 70);
+            this.btn_SearchThongKe.Location = new System.Drawing.Point(271, 69);
             this.btn_SearchThongKe.Name = "btn_SearchThongKe";
-            this.btn_SearchThongKe.Size = new System.Drawing.Size(111, 39);
+            this.btn_SearchThongKe.Size = new System.Drawing.Size(135, 39);
             this.btn_SearchThongKe.TabIndex = 52;
             this.btn_SearchThongKe.Text = "Search";
             this.btn_SearchThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -295,17 +306,6 @@
             this.grb_BoLoc.TabStop = false;
             this.grb_BoLoc.Text = "Thống kê hóa đơn";
             // 
-            // pic_Logo
-            // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
-            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
-            this.pic_Logo.Location = new System.Drawing.Point(1, 5);
-            this.pic_Logo.Name = "pic_Logo";
-            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
-            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_Logo.TabIndex = 65;
-            this.pic_Logo.TabStop = false;
-            // 
             // frm_ThongKeDoanhThu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -315,6 +315,7 @@
             this.Controls.Add(this.dgv_ThongKeHoaDon);
             this.Controls.Add(this.grb_HeaderThongKe);
             this.Controls.Add(this.grb_ThongKeThongKe);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_ThongKeDoanhThu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -322,12 +323,12 @@
             this.Load += new System.EventHandler(this.ThongKe_Load);
             this.grb_HeaderThongKe.ResumeLayout(false);
             this.grb_HeaderThongKe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.grb_ThongKeThongKe.ResumeLayout(false);
             this.grb_ThongKeThongKe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ThongKeHoaDon)).EndInit();
             this.grb_BoLoc.ResumeLayout(false);
             this.grb_BoLoc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }

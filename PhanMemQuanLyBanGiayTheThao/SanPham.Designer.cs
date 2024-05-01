@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_SanPham));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
             this.grb_SanPhamSanPham = new System.Windows.Forms.GroupBox();
             this.lb_Note = new System.Windows.Forms.Label();
@@ -60,10 +60,10 @@
             this.lb_TenSanPhamSanPham = new System.Windows.Forms.Label();
             this.lb_MaSanPhamSanPham = new System.Windows.Forms.Label();
             this.grb_HeaderSanPham = new System.Windows.Forms.GroupBox();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiSanPham = new System.Windows.Forms.Button();
             this.lb_DangXuatSanPham = new System.Windows.Forms.Label();
             this.btn_DangXuatSanPham = new System.Windows.Forms.Button();
-            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.grb_SanPham.SuspendLayout();
             this.grb_SanPhamSanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SanPham)).BeginInit();
@@ -125,6 +125,7 @@
             this.grb_SanPhamSanPham.TabIndex = 16;
             this.grb_SanPhamSanPham.TabStop = false;
             this.grb_SanPhamSanPham.Text = "Sản phẩm";
+            this.grb_SanPhamSanPham.Enter += new System.EventHandler(this.grb_SanPhamSanPham_Enter);
             // 
             // lb_Note
             // 
@@ -176,8 +177,8 @@
             this.dgv_SanPham.Name = "dgv_SanPham";
             this.dgv_SanPham.ReadOnly = true;
             this.dgv_SanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_SanPham.RowTemplate.Height = 24;
             this.dgv_SanPham.Size = new System.Drawing.Size(852, 400);
             this.dgv_SanPham.TabIndex = 51;
@@ -192,7 +193,7 @@
             this.btn_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Search.Location = new System.Drawing.Point(877, 62);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(99, 42);
+            this.btn_Search.Size = new System.Drawing.Size(142, 42);
             this.btn_Search.TabIndex = 50;
             this.btn_Search.Text = "Search";
             this.btn_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -455,6 +456,17 @@
             this.grb_HeaderSanPham.TabIndex = 15;
             this.grb_HeaderSanPham.TabStop = false;
             // 
+            // pic_Logo
+            // 
+            this.pic_Logo.BackColor = System.Drawing.Color.White;
+            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
+            this.pic_Logo.Location = new System.Drawing.Point(6, 4);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 65;
+            this.pic_Logo.TabStop = false;
+            // 
             // btn_QuayLaiSanPham
             // 
             this.btn_QuayLaiSanPham.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -492,17 +504,6 @@
             this.btn_DangXuatSanPham.TabIndex = 22;
             this.btn_DangXuatSanPham.UseVisualStyleBackColor = false;
             // 
-            // pic_Logo
-            // 
-            this.pic_Logo.BackColor = System.Drawing.Color.DimGray;
-            this.pic_Logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_Logo.Image")));
-            this.pic_Logo.Location = new System.Drawing.Point(6, 4);
-            this.pic_Logo.Name = "pic_Logo";
-            this.pic_Logo.Size = new System.Drawing.Size(143, 137);
-            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_Logo.TabIndex = 65;
-            this.pic_Logo.TabStop = false;
-            // 
             // frm_SanPham
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -511,6 +512,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1275, 754);
             this.Controls.Add(this.grb_SanPham);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_SanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SanPham";

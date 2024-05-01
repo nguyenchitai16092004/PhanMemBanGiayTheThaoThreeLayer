@@ -258,6 +258,13 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemDanhSachNhanVien();
             txt_TimKiem.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
+            cbo_MaTK.SelectedIndex = -1;
+            txt_MaNhanVienNhanVien.Clear();
+            txt_HoTenNhanVienNhanVien.Clear();
+            txt_SDT.Clear();
+            cbo_GioiTinh.SelectedIndex = -1;
+            txt_DiaChiNhanVien.Clear();
+            txt_Luong.Clear();
 
         }
         public void HienThiMaTaiKhoan()
@@ -284,9 +291,44 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        private void btn_DoiMatKhauNhanVien_Click(object sender, EventArgs e)
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Ngăn ký tự không hợp lệ
+                e.Handled = true;
+
+                // Hiển thị thông báo
+                MessageBox.Show("Chỉ được nhập số.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txt_Luong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Ngăn ký tự không hợp lệ
+                e.Handled = true;
+
+                // Hiển thị thông báo
+                MessageBox.Show("Chỉ được nhập số.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txt_Luong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_NhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 

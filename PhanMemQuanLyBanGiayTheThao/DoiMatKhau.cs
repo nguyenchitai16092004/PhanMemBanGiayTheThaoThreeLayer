@@ -104,5 +104,16 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             DoiMatKhau();
         }
+
+        private void frm_DoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

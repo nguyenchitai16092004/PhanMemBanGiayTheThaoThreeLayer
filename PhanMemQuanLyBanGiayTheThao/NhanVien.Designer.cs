@@ -209,6 +209,8 @@
             this.txt_Luong.Name = "txt_Luong";
             this.txt_Luong.Size = new System.Drawing.Size(317, 27);
             this.txt_Luong.TabIndex = 73;
+            this.txt_Luong.TextChanged += new System.EventHandler(this.txt_Luong_TextChanged);
+            this.txt_Luong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Luong_KeyPress);
             // 
             // txt_DiaChiNhanVien
             // 
@@ -245,6 +247,7 @@
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(321, 27);
             this.txt_SDT.TabIndex = 65;
+            this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // txt_MaNhanVienNhanVien
             // 
@@ -437,6 +440,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_NhanVien";
             this.Text = "NhanVien";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_NhanVien_FormClosing);
             this.Load += new System.EventHandler(this.NhanVien_Load);
             this.grb_HeaderNhanVien.ResumeLayout(false);
             this.grb_HeaderNhanVien.PerformLayout();

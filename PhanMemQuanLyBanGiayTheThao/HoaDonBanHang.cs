@@ -442,9 +442,9 @@ namespace PhanMemQuanLyBanGiayTheThao
             dmk.MaTK = MaTK;
             this.Hide();
         }
-
-        private void frm_HoaDonBanHang_FormClosing(object sender, FormClosingEventArgs e)
+        private void frm_HoaDonBanHang_FormClosing_1(object sender, FormClosingEventArgs e)
         {
+
             DialogResult dlg = new DialogResult();
             dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 

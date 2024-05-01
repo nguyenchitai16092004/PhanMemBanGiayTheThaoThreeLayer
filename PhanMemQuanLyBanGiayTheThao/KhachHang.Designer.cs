@@ -347,6 +347,7 @@
             this.txt_SDTKhachHang.Name = "txt_SDTKhachHang";
             this.txt_SDTKhachHang.Size = new System.Drawing.Size(199, 27);
             this.txt_SDTKhachHang.TabIndex = 11;
+            this.txt_SDTKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDTKhachHang_KeyPress);
             // 
             // txt_MaKhachHangKhachHang
             // 
@@ -477,6 +478,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_KhachHang";
             this.Text = "KhachHang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_KhachHang_FormClosing);
             this.Load += new System.EventHandler(this.KhachHang_Load);
             this.grb_ThongTinKhachhangKhachHang.ResumeLayout(false);
             this.grb_ThongTinKhachhangKhachHang.PerformLayout();

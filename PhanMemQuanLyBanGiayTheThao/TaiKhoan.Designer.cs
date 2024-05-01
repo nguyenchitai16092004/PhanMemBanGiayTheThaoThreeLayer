@@ -248,7 +248,7 @@
             this.btn_ThemTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ThemTaiKhoan.Location = new System.Drawing.Point(12, 545);
             this.btn_ThemTaiKhoan.Name = "btn_ThemTaiKhoan";
-            this.btn_ThemTaiKhoan.Size = new System.Drawing.Size(102, 43);
+            this.btn_ThemTaiKhoan.Size = new System.Drawing.Size(102, 51);
             this.btn_ThemTaiKhoan.TabIndex = 40;
             this.btn_ThemTaiKhoan.Text = "Thêm";
             this.btn_ThemTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -389,6 +389,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_TaiKhoan";
             this.Text = "TaiKhoan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_TaiKhoan_FormClosing);
             this.Load += new System.EventHandler(this.TaiKhoan_Load);
             this.grb_QLTaiKhoanTaiKhoan.ResumeLayout(false);
             this.grb_QLTaiKhoanTaiKhoan.PerformLayout();

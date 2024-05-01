@@ -275,5 +275,28 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_GioiTinh.SelectedIndex = -1;
             cbo_QuyenHang.SelectedIndex = -1;
         }
+
+        private void txt_SDTKhachHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Ngăn ký tự không hợp lệ
+                e.Handled = true;
+
+                // Hiển thị thông báo
+                MessageBox.Show("Chỉ được nhập số.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void frm_KhachHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

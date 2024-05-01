@@ -88,7 +88,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     {
                         cmd.Parameters.AddWithValue("@TenSP", txt_TenSanPhamSanPham.Text);
                         cmd.Parameters.AddWithValue("@Gia", nud_DonGiaSanPham.Text);
-                        cmd.Parameters.AddWithValue("@MaNCC", txt_MaNhaCungCapSanPham.Text);
+                        cmd.Parameters.AddWithValue("@MaNCC", cbo_MaNCC.Text);
                         cmd.Parameters.AddWithValue("@SoLuong", nud_SoLuongSanPham.Text);
                         cmd.Parameters.AddWithValue("@TrangThai", TrangThai);
                         cmd.Parameters.AddWithValue("@KhuyenMai", txt_KhuyenMai.Text);
@@ -150,7 +150,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     {
                         cmd.Parameters.AddWithValue("@TenSP", txt_TenSanPhamSanPham.Text);
                         cmd.Parameters.AddWithValue("@GiaBan", nud_DonGiaSanPham.Text);
-                        cmd.Parameters.AddWithValue("@MaNCC", txt_MaNhaCungCapSanPham.Text);
+                        cmd.Parameters.AddWithValue("@MaNCC", cbo_MaNCC.Text);
                         cmd.Parameters.AddWithValue("@SoLuong", nud_SoLuongSanPham.Text);
                         cmd.Parameters.AddWithValue("@TrangThai", 1);
                         cmd.Parameters.AddWithValue("@KhuyenMai", txt_KhuyenMai.Text);
@@ -195,7 +195,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     txt_MaSanPhamSanPham.Text = selectedRow.Cells[0].Value.ToString();
                     txt_TenSanPhamSanPham.Text = selectedRow.Cells[1].Value.ToString();
                     nud_DonGiaSanPham.Value = Convert.ToDecimal(selectedRow.Cells[2].Value);
-                    txt_MaNhaCungCapSanPham.Text = selectedRow.Cells[3].Value.ToString();
+                    cbo_MaNCC.Text = selectedRow.Cells[3].Value.ToString();
                     nud_SoLuongSanPham.Value = Convert.ToDecimal(selectedRow.Cells[4].Value);
                     txt_KhuyenMai.Text = selectedRow.Cells[6].Value.ToString();
                     nud_GiaNhap.Value = Convert.ToDecimal(selectedRow.Cells[7].Value);
@@ -277,6 +277,8 @@ namespace PhanMemQuanLyBanGiayTheThao
             avatar_column.ImageLayout = DataGridViewImageCellLayout.Zoom;
             txt_TimKiemSanPham.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
+            cbo_MaNCC.SelectedIndex = -1;
+            HienThiMaNhaCungCap();
 
 
         }
@@ -330,6 +332,20 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemDanhSachSanPham();
             txt_TimKiemSanPham.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
+            chk_TrangThai.Checked = false;
+            cbo_MaNCC.SelectedIndex = -1;
+            txt_MaSanPhamSanPham.Clear();
+            txt_TenSanPhamSanPham.Clear();
+            txt_KhuyenMai.Clear();
+            nud_DonGiaSanPham.Value = 0;
+            nud_GiaNhap.Value = 0;
+            nud_SoLuongSanPham.Value = 0;
+
+            if (pic_ImageSP.Image != null)
+            {
+                pic_ImageSP.Image.Dispose(); // Giải phóng tài nguyên hình ảnh
+            }
+            pic_ImageSP.Image = null;
         }
 
         private void frm_SanPham_FormClosing(object sender, FormClosingEventArgs e)
@@ -342,8 +358,31 @@ namespace PhanMemQuanLyBanGiayTheThao
                 e.Cancel = true;
             }
         }
+        public void HienThiMaNhaCungCap()
+        {
+            //Doi tuong ket noi CSDL
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql;
+            sSql = "SELECT MaNCC, TenNCC FROM NHACUNGCAP";
+            try
+            {
+                myConnection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
+                //DataSet: du lieu tren bo nho RAM
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                myConnection.Close();
+                cbo_MaNCC.DataSource = ds.Tables[0];
+                cbo_MaNCC.DisplayMember = "MaNCC";
+                cbo_MaNCC.ValueMember = "TenNCC";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+            }
+        }
 
-        private void grb_SanPhamSanPham_Enter(object sender, EventArgs e)
+        private void btn_XuatThongTinSanPham_Click(object sender, EventArgs e)
         {
 
         }

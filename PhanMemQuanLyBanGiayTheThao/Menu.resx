@@ -121,7 +121,7 @@
   <data name="btn_HoaDonBanHangMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr0AAA69AUf7kK0AAAAHdElNRQfoBA4QMyIesWUYAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAHdElNRQfoBA4QMyIesWUYAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAM4FJREFUeF7tnQd8jdcbx2XvSAQhYo8s
         JBEiQe29iRFqxAwxSo0qau9Vq1apVkurVbNatEr3MKvU3jWqpePfifr9n9+5uTPvTW5IJPSez+f7SXLz
         vuc97zm/e85znrPy2INZcBBKC2OEb4S/BORC7gk3ha1CguAr2EMuDhTVAuG68K+gVai5BYrrH+Gg0F3w
@@ -780,7 +780,7 @@
   <data name="btn_NhaCungCapMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr0AAA69AUf7kK0AAAAHdElNRQfoBA4QNB8JmL/OAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAHdElNRQfoBA4QNB8JmL/OAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAQYxJREFUeF7tnQd8FNX2x5+k994T0ntC
         EtIbpEACKRAghN47oSggIkWqYkMQQaVIlSaIIL0jYhdpIvYGooLt+d7/Fdv5n9/dzO7MZpJs2lJe5vP5
         fgK7U+7M/e2555577p2/tWwtW8vW+M2M8WE8GBN80LK1bI3Z7mLcmB7MWuYppjPjzLRsLVu9NwjKjsli
@@ -1067,7 +1067,7 @@
   <data name="btn_TaiKhoanMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr0AAA69AUf7kK0AAAAHdElNRQfoBA4QNTXLOEdZAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAHdElNRQfoBA4QNTXLOEdZAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAMGVJREFUeF7tnQV4FMcbxpGEeEhISAgu
         wYITHIoUdytSvECLe3ErlEJxLS0e3L04tEhxd4e2tGhboPwpmrz/753LXvYuGwESIOHmeX5PLpfdb2Z2
         3nzjswlswRZswRZswRZswRZswRZswRZs4d2ExIKrkEzwEBwFW7CF1w4UVAahnvCNMF2YLHQTigtJBVuw
@@ -1281,7 +1281,7 @@
   <data name="btn_DangXuatMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr0AAA69AUf7kK0AAAAHdElNRQfoBA4QMTmm4s52AAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAHdElNRQfoBA4QMTmm4s52AAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAG05JREFUeF7tnQd4VNeVx6VR7wUhhJAE
         AoRoooNEsQAJgTrdBoTpokgyCEwTBlMNNi4kBhtsisGYYgy2193BcagG27jEMTjZ7GZTNruJk93sZpM4
         iZOc/f8vmsdo9EZG0kia0dzzfb8PY0Yzb977695zzj33XC9t2rRp06ZNmzZt2rRp06ZNmzZtDbEA0A70

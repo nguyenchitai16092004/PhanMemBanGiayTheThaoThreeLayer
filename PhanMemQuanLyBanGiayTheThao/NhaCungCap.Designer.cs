@@ -392,6 +392,7 @@
             this.Name = "frm_NhaCungCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhaCungCap";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_NhaCungCap_FormClosing);
             this.Load += new System.EventHandler(this.NhaCungCap_Load);
             this.grb_NhaCungCap.ResumeLayout(false);
             this.grb_NhaCungCap.PerformLayout();

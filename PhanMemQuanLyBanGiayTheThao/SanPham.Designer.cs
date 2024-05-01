@@ -49,7 +49,6 @@
             this.nud_GiaNhap = new System.Windows.Forms.NumericUpDown();
             this.nud_DonGiaSanPham = new System.Windows.Forms.NumericUpDown();
             this.txt_KhuyenMai = new System.Windows.Forms.TextBox();
-            this.txt_MaNhaCungCapSanPham = new System.Windows.Forms.TextBox();
             this.txt_TenSanPhamSanPham = new System.Windows.Forms.TextBox();
             this.txt_MaSanPhamSanPham = new System.Windows.Forms.TextBox();
             this.lb_KhuyenMaiSanPham = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@
             this.btn_QuayLaiSanPham = new System.Windows.Forms.Button();
             this.lb_DangXuatSanPham = new System.Windows.Forms.Label();
             this.btn_DangXuatSanPham = new System.Windows.Forms.Button();
+            this.cbo_MaNCC = new System.Windows.Forms.ComboBox();
             this.grb_SanPham.SuspendLayout();
             this.grb_SanPhamSanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SanPham)).BeginInit();
@@ -90,6 +90,7 @@
             // 
             // grb_SanPhamSanPham
             // 
+            this.grb_SanPhamSanPham.Controls.Add(this.cbo_MaNCC);
             this.grb_SanPhamSanPham.Controls.Add(this.lb_Note);
             this.grb_SanPhamSanPham.Controls.Add(this.cbo_Search);
             this.grb_SanPhamSanPham.Controls.Add(this.btn_LamMoi);
@@ -107,7 +108,6 @@
             this.grb_SanPhamSanPham.Controls.Add(this.nud_GiaNhap);
             this.grb_SanPhamSanPham.Controls.Add(this.nud_DonGiaSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.txt_KhuyenMai);
-            this.grb_SanPhamSanPham.Controls.Add(this.txt_MaNhaCungCapSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.txt_TenSanPhamSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.txt_MaSanPhamSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.lb_KhuyenMaiSanPham);
@@ -125,7 +125,6 @@
             this.grb_SanPhamSanPham.TabIndex = 16;
             this.grb_SanPhamSanPham.TabStop = false;
             this.grb_SanPhamSanPham.Text = "Sản phẩm";
-            this.grb_SanPhamSanPham.Enter += new System.EventHandler(this.grb_SanPhamSanPham_Enter);
             // 
             // lb_Note
             // 
@@ -224,7 +223,9 @@
             this.btn_XuatThongTinSanPham.Size = new System.Drawing.Size(149, 51);
             this.btn_XuatThongTinSanPham.TabIndex = 49;
             this.btn_XuatThongTinSanPham.Text = "Xuất thông tin";
+            this.btn_XuatThongTinSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_XuatThongTinSanPham.UseVisualStyleBackColor = false;
+            this.btn_XuatThongTinSanPham.Click += new System.EventHandler(this.btn_XuatThongTinSanPham_Click);
             // 
             // lb_TimKiemSanPham
             // 
@@ -346,14 +347,6 @@
             this.txt_KhuyenMai.Name = "txt_KhuyenMai";
             this.txt_KhuyenMai.Size = new System.Drawing.Size(142, 28);
             this.txt_KhuyenMai.TabIndex = 8;
-            // 
-            // txt_MaNhaCungCapSanPham
-            // 
-            this.txt_MaNhaCungCapSanPham.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaNhaCungCapSanPham.Location = new System.Drawing.Point(7, 542);
-            this.txt_MaNhaCungCapSanPham.Name = "txt_MaNhaCungCapSanPham";
-            this.txt_MaNhaCungCapSanPham.Size = new System.Drawing.Size(137, 28);
-            this.txt_MaNhaCungCapSanPham.TabIndex = 8;
             // 
             // txt_TenSanPhamSanPham
             // 
@@ -504,6 +497,14 @@
             this.btn_DangXuatSanPham.TabIndex = 22;
             this.btn_DangXuatSanPham.UseVisualStyleBackColor = false;
             // 
+            // cbo_MaNCC
+            // 
+            this.cbo_MaNCC.FormattingEnabled = true;
+            this.cbo_MaNCC.Location = new System.Drawing.Point(11, 547);
+            this.cbo_MaNCC.Name = "cbo_MaNCC";
+            this.cbo_MaNCC.Size = new System.Drawing.Size(133, 28);
+            this.cbo_MaNCC.TabIndex = 60;
+            // 
             // frm_SanPham
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -516,6 +517,7 @@
             this.Name = "frm_SanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SanPham";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_SanPham_FormClosing);
             this.Load += new System.EventHandler(this.SanPham_Load);
             this.grb_SanPham.ResumeLayout(false);
             this.grb_SanPhamSanPham.ResumeLayout(false);
@@ -541,7 +543,6 @@
         private System.Windows.Forms.CheckBox chk_TrangThai;
         private System.Windows.Forms.NumericUpDown nud_SoLuongSanPham;
         private System.Windows.Forms.NumericUpDown nud_DonGiaSanPham;
-        private System.Windows.Forms.TextBox txt_MaNhaCungCapSanPham;
         private System.Windows.Forms.TextBox txt_TenSanPhamSanPham;
         private System.Windows.Forms.TextBox txt_MaSanPhamSanPham;
         private System.Windows.Forms.Label lb_KhuyenMaiSanPham;
@@ -567,5 +568,6 @@
         private System.Windows.Forms.ComboBox cbo_Search;
         private System.Windows.Forms.Label lb_Note;
         private System.Windows.Forms.PictureBox pic_Logo;
+        private System.Windows.Forms.ComboBox cbo_MaNCC;
     }
 }

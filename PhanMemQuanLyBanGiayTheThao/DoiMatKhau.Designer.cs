@@ -198,6 +198,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_DoiMatKhau";
             this.Text = "DoiMatKhau";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_DoiMatKhau_FormClosing);
             this.grb_Body.ResumeLayout(false);
             this.grb_Body.PerformLayout();
             this.grb_Header.ResumeLayout(false);

@@ -459,6 +459,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.Name = "frm_HoaDonBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoaDonBanHang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_HoaDonBanHang_FormClosing_1);
             this.Load += new System.EventHandler(this.HoaDonBanHang_Load);
             this.grb_Header.ResumeLayout(false);
             this.grb_Header.PerformLayout();

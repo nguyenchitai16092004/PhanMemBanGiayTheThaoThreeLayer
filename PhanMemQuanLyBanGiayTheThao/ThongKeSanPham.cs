@@ -22,7 +22,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XemThongKe()
         {
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT  CHITIETHOADON.MaSP , SANPHAM.TenSP , COUNT(CHITIETHOADON.SoLuong) as 'Số Lượng sản phẩm bán được' ,SANPHAM.SoLuong as 'Số lượng còn lại' FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP GROUP BY CHITIETHOADON.MaSP,SANPHAM.TenSP,CHITIETHOADON.TenSP,SANPHAM.SoLuong";
+            string sSQL = "SELECT  CHITIETHOADON.MaSP , SANPHAM.TenSP , COUNT(CHITIETHOADON.SoLuong) as 'Số Lượng sản phẩm bán được' ,SANPHAM.SoLuong as 'Số lượng còn lại' FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP GROUP BY CHITIETHOADON.MaSP,SANPHAM.TenSP, SANPHAM.SoLuong";
             try
             {
                 myConnection.Open();
@@ -51,11 +51,11 @@ namespace PhanMemQuanLyBanGiayTheThao
                     string sSQL;
                     if (TimKiemTheo == "MaSP")
                     {
-                        sSQL = "SELECT CHITIETHOADON.MaSP, SANPHAM.TenSP, COUNT(CHITIETHOADON.SoLuong) as 'Số Lượng sản phẩm bán được', SANPHAM.SoLuong as 'Số lượng còn lại' FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE CHITIETHOADON.MaSP = @TimKiem GROUP BY CHITIETHOADON.MaSP, SANPHAM.TenSP, CHITIETHOADON.TenSP, SANPHAM.SoLuong";
+                        sSQL = "SELECT CHITIETHOADON.MaSP, SANPHAM.TenSP, COUNT(CHITIETHOADON.SoLuong) as 'Số Lượng sản phẩm bán được', SANPHAM.SoLuong as 'Số lượng còn lại' FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE CHITIETHOADON.MaSP = @TimKiem GROUP BY CHITIETHOADON.MaSP, SANPHAM.TenSP, SANPHAM.SoLuong";
                     }
                     else
                     {
-                        sSQL = "SELECT CHITIETHOADON.MaSP, SANPHAM.TenSP, COUNT(CHITIETHOADON.SoLuong) as 'Số Lượng sản phẩm bán được', SANPHAM.SoLuong as 'Số lượng còn lại' FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE SANPHAM.TenSP like '%' + @TimKiem + '%' GROUP BY CHITIETHOADON.MaSP, SANPHAM.TenSP, CHITIETHOADON.TenSP, SANPHAM.SoLuong";
+                        sSQL = "SELECT CHITIETHOADON.MaSP, SANPHAM.TenSP, COUNT(CHITIETHOADON.SoLuong) as 'Số Lượng sản phẩm bán được', SANPHAM.SoLuong as 'Số lượng còn lại' FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE SANPHAM.TenSP like '%' + @TimKiem + '%' GROUP BY CHITIETHOADON.MaSP, SANPHAM.TenSP, SANPHAM.SoLuong";
                     }
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
@@ -89,6 +89,39 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void btn_SearchThongKe_Click(object sender, EventArgs e)
         {
             TimKiem();
+        }
+
+        private void frm_ThongKeSanPham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btn_SanPham_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_HoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grb_HeaderThongKe_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_HoaDon_Click(object sender, EventArgs e)
+        {
+            frm_ThongKeDoanhThu tkdt = new frm_ThongKeDoanhThu();
+            tkdt.Show();
+            this.Hide();
         }
     }
 }

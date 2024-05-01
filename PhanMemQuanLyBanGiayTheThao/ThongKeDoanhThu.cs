@@ -180,6 +180,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             frm_ThongKeSanPham TKSP = new frm_ThongKeSanPham();
             TKSP.Show();
+            this.Hide();
         }
         private void Cbb_DoanhThu_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ThongKeDoanhThu));
             this.grb_HeaderThongKe = new System.Windows.Forms.GroupBox();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
-            this.lb_HoaDon = new System.Windows.Forms.Label();
-            this.btn_HoaDon = new System.Windows.Forms.Button();
             this.lb_SanPham = new System.Windows.Forms.Label();
             this.btn_SanPham = new System.Windows.Forms.Button();
             this.btn_QuayLaiThongKe = new System.Windows.Forms.Button();
@@ -61,8 +59,6 @@
             // 
             this.grb_HeaderThongKe.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grb_HeaderThongKe.Controls.Add(this.pic_Logo);
-            this.grb_HeaderThongKe.Controls.Add(this.lb_HoaDon);
-            this.grb_HeaderThongKe.Controls.Add(this.btn_HoaDon);
             this.grb_HeaderThongKe.Controls.Add(this.lb_SanPham);
             this.grb_HeaderThongKe.Controls.Add(this.btn_SanPham);
             this.grb_HeaderThongKe.Controls.Add(this.btn_QuayLaiThongKe);
@@ -84,41 +80,20 @@
             this.pic_Logo.TabIndex = 65;
             this.pic_Logo.TabStop = false;
             // 
-            // lb_HoaDon
-            // 
-            this.lb_HoaDon.AutoSize = true;
-            this.lb_HoaDon.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_HoaDon.Location = new System.Drawing.Point(1185, 104);
-            this.lb_HoaDon.Name = "lb_HoaDon";
-            this.lb_HoaDon.Size = new System.Drawing.Size(67, 19);
-            this.lb_HoaDon.TabIndex = 43;
-            this.lb_HoaDon.Text = "Hóa đơn";
-            // 
-            // btn_HoaDon
-            // 
-            this.btn_HoaDon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.BackgroundImage")));
-            this.btn_HoaDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_HoaDon.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_HoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HoaDon.Location = new System.Drawing.Point(1177, 21);
-            this.btn_HoaDon.Name = "btn_HoaDon";
-            this.btn_HoaDon.Size = new System.Drawing.Size(80, 80);
-            this.btn_HoaDon.TabIndex = 42;
-            this.btn_HoaDon.UseVisualStyleBackColor = true;
-            // 
             // lb_SanPham
             // 
             this.lb_SanPham.AutoSize = true;
             this.lb_SanPham.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SanPham.ForeColor = System.Drawing.Color.Black;
-            this.lb_SanPham.Location = new System.Drawing.Point(1046, 104);
+            this.lb_SanPham.Location = new System.Drawing.Point(1022, 104);
             this.lb_SanPham.Name = "lb_SanPham";
-            this.lb_SanPham.Size = new System.Drawing.Size(73, 19);
+            this.lb_SanPham.Size = new System.Drawing.Size(137, 19);
             this.lb_SanPham.TabIndex = 41;
-            this.lb_SanPham.Text = "Sản phẩm";
+            this.lb_SanPham.Text = "Thống kê sản phẩm";
             // 
             // btn_SanPham
             // 
+            this.btn_SanPham.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_SanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_SanPham.BackgroundImage")));
             this.btn_SanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SanPham.Cursor = System.Windows.Forms.Cursors.SizeAll;
@@ -127,7 +102,7 @@
             this.btn_SanPham.Name = "btn_SanPham";
             this.btn_SanPham.Size = new System.Drawing.Size(80, 80);
             this.btn_SanPham.TabIndex = 40;
-            this.btn_SanPham.UseVisualStyleBackColor = true;
+            this.btn_SanPham.UseVisualStyleBackColor = false;
             this.btn_SanPham.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_QuayLaiThongKe
@@ -182,7 +157,7 @@
             this.cbb_DoanhThu.FormattingEnabled = true;
             this.cbb_DoanhThu.Items.AddRange(new object[] {
             "Tháng ",
-            "Quỹ ",
+            "Quý",
             "Năm"});
             this.cbb_DoanhThu.Location = new System.Drawing.Point(28, 32);
             this.cbb_DoanhThu.Name = "cbb_DoanhThu";
@@ -341,8 +316,6 @@
         private System.Windows.Forms.Button btn_QuayLaiThongKe;
         private System.Windows.Forms.DataGridView dgv_ThongKeHoaDon;
         private System.Windows.Forms.Button btn_LamMoi;
-        private System.Windows.Forms.Label lb_HoaDon;
-        private System.Windows.Forms.Button btn_HoaDon;
         private System.Windows.Forms.Label lb_SanPham;
         private System.Windows.Forms.Button btn_SanPham;
         private System.Windows.Forms.TextBox txt_TimKiemThongKe;

@@ -190,6 +190,7 @@
             // 
             // btn_LamMoi
             // 
+            this.btn_LamMoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,11 +200,12 @@
             this.btn_LamMoi.TabIndex = 59;
             this.btn_LamMoi.Text = "Làm mới";
             this.btn_LamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_LamMoi.UseVisualStyleBackColor = true;
+            this.btn_LamMoi.UseVisualStyleBackColor = false;
             // 
             // btn_XuatThongTinThongKe
             // 
             this.btn_XuatThongTinThongKe.AutoSize = true;
+            this.btn_XuatThongTinThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_XuatThongTinThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinThongKe.Image")));
             this.btn_XuatThongTinThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_XuatThongTinThongKe.Location = new System.Drawing.Point(1145, 397);
@@ -212,7 +214,7 @@
             this.btn_XuatThongTinThongKe.TabIndex = 59;
             this.btn_XuatThongTinThongKe.Text = "Xuất thông tin";
             this.btn_XuatThongTinThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_XuatThongTinThongKe.UseVisualStyleBackColor = true;
+            this.btn_XuatThongTinThongKe.UseVisualStyleBackColor = false;
             // 
             // frm_ThongKeSanPham
             // 

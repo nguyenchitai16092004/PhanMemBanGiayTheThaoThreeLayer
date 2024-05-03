@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace PhanMemQuanLyBanGiayTheThao
 {
+
     public partial class frm_DoiMatKhau : Form
     {
         public int MaTK;
@@ -113,6 +114,23 @@ namespace PhanMemQuanLyBanGiayTheThao
             if (dlg == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void chk_HienMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_HienMatKhau.Checked == true)
+            {
+                txt_MatKhauCu.PasswordChar = '\0';
+                txt_MatKhauMoi.PasswordChar = '\0';
+                txt_NhapLaiMatKhau.PasswordChar = '\0';
+
+            }
+            else
+            {
+                txt_MatKhauCu.PasswordChar = '*';
+                txt_MatKhauMoi.PasswordChar = '*';
+                txt_NhapLaiMatKhau.PasswordChar = '*';
             }
         }
     }

@@ -16,6 +16,52 @@ namespace PhanMemQuanLyBanGiayTheThao
     {
         public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
 
+
+        public bool KiemTraSoLuongSanPham()
+        {
+            int soluongmuahang = (int)nud_SoLuong.Value;
+            SqlConnection myConnection = new SqlConnection(scon);
+            try
+            {
+                myConnection.Open();
+
+                // Lấy số lượng hiện tại của sản phẩm từ CSDL
+                string sSQL = "SELECT SoLuong FROM SANPHAM WHERE MaSP = @MaSP";
+                SqlCommand command = new SqlCommand(sSQL, myConnection);
+                command.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
+                int soluongdb = (int)command.ExecuteScalar();
+
+                // Tính số lượng còn lại sau khi mua
+                int soluongtravedb = soluongdb - soluongmuahang;
+
+                if (soluongtravedb < 0)
+                {
+                    MessageBox.Show("Hiện số lượng không đủ để bán, hãy thử giảm số lượng mua hoặc quay lại lần sau nhé!!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    return false; // Trả về false nếu số lượng không đủ
+                }
+                else
+                {
+                    // Cập nhật số lượng sản phẩm
+                    string updateSQL = "UPDATE SANPHAM SET SoLuong = @SoLuongTraVedb WHERE MaSP = @MaSP";
+                    SqlCommand updateCommand = new SqlCommand(updateSQL, myConnection);
+                    updateCommand.Parameters.AddWithValue("@SoLuongTraVedb", soluongtravedb);
+                    updateCommand.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
+                    updateCommand.ExecuteNonQuery();
+
+                    return true; // Trả về true nếu cập nhật thành công
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                return false; // Trả về false nếu có lỗi
+            }
+            finally
+            {
+                myConnection.Close(); // Đảm bảo kết nối được đóng lại
+            }
+        }
+
         public void XemChiTietHoaDon(int MaHD)
         {
             // Khai báo chuỗi kết nối CSDL
@@ -443,22 +489,33 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void btn_ThemTaoChiTietHoaDon_Click_1(object sender, EventArgs e)
         {
             int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
-            int SoLuong = int.Parse(nud_SoLuong.Value.ToString());
+            int SoLuong = (int)nud_SoLuong.Value;
+
             if (SoLuong == 0)
             {
                 MessageBox.Show("Hãy chọn số lượng sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Thoát khỏi hàm nếu không có số lượng
             }
-            else
-            {
 
-                if (KhuyenMai > 0)
-                {
-                    MessageBox.Show("Sản phẩm hiện đang được khuyên mãi: " + KhuyenMai + "%", "Bạn có biết?", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            if (KhuyenMai > 0)
+            {
+                MessageBox.Show("Sản phẩm hiện đang được khuyên mãi: " + KhuyenMai + "%", "Bạn có biết?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            // Kiểm tra số lượng sản phẩm trước khi thực hiện các thao tác khác
+            bool soLuongDu = KiemTraSoLuongSanPham();
+            if (soLuongDu)
+            {
+                // Chỉ thực hiện nếu số lượng đủ
                 ThemChiTietHoaDon(MaHD);
                 XemChiTietHoaDon(MaHD);
                 TongHD();
             }
+        }
+
+        private void pic_ImageSP_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

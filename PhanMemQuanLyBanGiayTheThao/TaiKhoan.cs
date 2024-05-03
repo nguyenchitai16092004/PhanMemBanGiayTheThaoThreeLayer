@@ -170,6 +170,11 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemDanhSachTaiKhoan();
             txt_TimKiem.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
+            txt_MataiKhoanTaiKhoan.Clear();
+            txt_TenTaiKhoanTaiKhoan.Clear();
+            txt_MatKhauTaiKhoan.Clear();
+            cbo_LoaiTaiKhoan.SelectedIndex = -1;
+            chk_HoatDongTaiKhoan.Checked = false;
 
         }
 
@@ -259,6 +264,11 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btn_XuatThongTinTaiKhoan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

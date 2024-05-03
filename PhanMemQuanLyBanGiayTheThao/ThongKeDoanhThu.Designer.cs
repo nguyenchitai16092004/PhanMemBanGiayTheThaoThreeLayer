@@ -107,6 +107,7 @@
             // 
             // btn_QuayLaiThongKe
             // 
+            this.btn_QuayLaiThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_QuayLaiThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiThongKe.Image")));
             this.btn_QuayLaiThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_QuayLaiThongKe.Location = new System.Drawing.Point(180, 21);
@@ -115,7 +116,7 @@
             this.btn_QuayLaiThongKe.TabIndex = 34;
             this.btn_QuayLaiThongKe.Text = "Quay lại";
             this.btn_QuayLaiThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_QuayLaiThongKe.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiThongKe.UseVisualStyleBackColor = false;
             this.btn_QuayLaiThongKe.Click += new System.EventHandler(this.btn_QuayLaiThongKe_Click);
             // 
             // grb_ThongKeThongKe

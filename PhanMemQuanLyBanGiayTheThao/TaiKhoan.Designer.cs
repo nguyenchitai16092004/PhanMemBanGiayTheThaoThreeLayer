@@ -67,13 +67,14 @@
             this.btn_XuatThongTinTaiKhoan.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_XuatThongTinTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinTaiKhoan.Image")));
             this.btn_XuatThongTinTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThongTinTaiKhoan.Location = new System.Drawing.Point(1244, 706);
+            this.btn_XuatThongTinTaiKhoan.Location = new System.Drawing.Point(1221, 706);
             this.btn_XuatThongTinTaiKhoan.Name = "btn_XuatThongTinTaiKhoan";
-            this.btn_XuatThongTinTaiKhoan.Size = new System.Drawing.Size(139, 51);
+            this.btn_XuatThongTinTaiKhoan.Size = new System.Drawing.Size(162, 51);
             this.btn_XuatThongTinTaiKhoan.TabIndex = 47;
             this.btn_XuatThongTinTaiKhoan.Text = "Xuất thông tin";
             this.btn_XuatThongTinTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_XuatThongTinTaiKhoan.UseVisualStyleBackColor = false;
+            this.btn_XuatThongTinTaiKhoan.Click += new System.EventHandler(this.btn_XuatThongTinTaiKhoan_Click);
             // 
             // btn_SearchTaiKhoan
             // 
@@ -128,7 +129,7 @@
             // txt_MataiKhoanTaiKhoan
             // 
             this.txt_MataiKhoanTaiKhoan.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txt_MataiKhoanTaiKhoan.Location = new System.Drawing.Point(26, 99);
+            this.txt_MataiKhoanTaiKhoan.Location = new System.Drawing.Point(22, 99);
             this.txt_MataiKhoanTaiKhoan.Multiline = true;
             this.txt_MataiKhoanTaiKhoan.Name = "txt_MataiKhoanTaiKhoan";
             this.txt_MataiKhoanTaiKhoan.ReadOnly = true;
@@ -215,7 +216,7 @@
             "Nhân viên",
             "Khách hàng",
             "Quản lý"});
-            this.cbo_LoaiTaiKhoan.Location = new System.Drawing.Point(26, 281);
+            this.cbo_LoaiTaiKhoan.Location = new System.Drawing.Point(22, 281);
             this.cbo_LoaiTaiKhoan.Name = "cbo_LoaiTaiKhoan";
             this.cbo_LoaiTaiKhoan.Size = new System.Drawing.Size(317, 28);
             this.cbo_LoaiTaiKhoan.TabIndex = 42;
@@ -348,7 +349,7 @@
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(1078, 707);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1027, 707);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 50);
             this.btn_LamMoi.TabIndex = 54;

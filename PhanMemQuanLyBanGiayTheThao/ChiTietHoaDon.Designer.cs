@@ -129,6 +129,7 @@
             this.pic_ImageSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_ImageSP.TabIndex = 57;
             this.pic_ImageSP.TabStop = false;
+            this.pic_ImageSP.Click += new System.EventHandler(this.pic_ImageSP_Click);
             // 
             // txt_TienGuiKhach
             // 

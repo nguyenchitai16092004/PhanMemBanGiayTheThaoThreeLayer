@@ -62,7 +62,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_TaiKhoanMenu_Click(object sender, EventArgs e)
         {
-            if (Quyen == "Admin")
+            if (Quyen == "Quản lý")
             {
                 frm_TaiKhoan homeForm = new frm_TaiKhoan();
                 homeForm.MaTK = MaTK;
@@ -93,7 +93,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_NhaCungCapMenu_Click(object sender, EventArgs e)
         {
-            if (Quyen == "Admin")
+            if (Quyen == "Quản lý")
             {
                 frm_NhaCungCap homeForm = new frm_NhaCungCap();
                 homeForm.MaTK = MaTK;
@@ -110,7 +110,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void btn_SanPhamMenu_Click(object sender, EventArgs e)
         {
 
-            if (Quyen == "Admin")
+            if (Quyen == "Quản lý")
             {
                 frm_SanPham homeForm = new frm_SanPham();
                 homeForm.MaTK = MaTK;
@@ -133,7 +133,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_NhanVienMenu_Click(object sender, EventArgs e)
         {
-            if (Quyen == "Admin")
+            if (Quyen == "Quản lý")
             {
                 frm_NhanVien homeForm = new frm_NhanVien();
                 homeForm.MaTK = MaTK;

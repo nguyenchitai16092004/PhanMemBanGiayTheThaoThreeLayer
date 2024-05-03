@@ -42,6 +42,7 @@
             this.grb_Header = new System.Windows.Forms.GroupBox();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiNhaCungCap = new System.Windows.Forms.Button();
+            this.chk_HienMatKhau = new System.Windows.Forms.CheckBox();
             this.grb_Body.SuspendLayout();
             this.grb_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
@@ -62,11 +63,13 @@
             this.txt_MatKhauMoi.Location = new System.Drawing.Point(291, 175);
             this.txt_MatKhauMoi.Multiline = true;
             this.txt_MatKhauMoi.Name = "txt_MatKhauMoi";
+            this.txt_MatKhauMoi.PasswordChar = '*';
             this.txt_MatKhauMoi.Size = new System.Drawing.Size(192, 38);
             this.txt_MatKhauMoi.TabIndex = 1;
             // 
             // grb_Body
             // 
+            this.grb_Body.Controls.Add(this.chk_HienMatKhau);
             this.grb_Body.Controls.Add(this.txt_NhapLaiMatKhau);
             this.grb_Body.Controls.Add(this.txt_MatKhauMoi);
             this.grb_Body.Controls.Add(this.lb_TenDangNhapCu);
@@ -78,7 +81,7 @@
             this.grb_Body.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_Body.Location = new System.Drawing.Point(4, 170);
             this.grb_Body.Name = "grb_Body";
-            this.grb_Body.Size = new System.Drawing.Size(563, 330);
+            this.grb_Body.Size = new System.Drawing.Size(607, 330);
             this.grb_Body.TabIndex = 2;
             this.grb_Body.TabStop = false;
             this.grb_Body.Text = "Đổi mật khẩu";
@@ -88,6 +91,7 @@
             this.txt_NhapLaiMatKhau.Location = new System.Drawing.Point(291, 243);
             this.txt_NhapLaiMatKhau.Multiline = true;
             this.txt_NhapLaiMatKhau.Name = "txt_NhapLaiMatKhau";
+            this.txt_NhapLaiMatKhau.PasswordChar = '*';
             this.txt_NhapLaiMatKhau.Size = new System.Drawing.Size(192, 38);
             this.txt_NhapLaiMatKhau.TabIndex = 1;
             // 
@@ -134,6 +138,7 @@
             this.txt_MatKhauCu.Location = new System.Drawing.Point(291, 115);
             this.txt_MatKhauCu.Multiline = true;
             this.txt_MatKhauCu.Name = "txt_MatKhauCu";
+            this.txt_MatKhauCu.PasswordChar = '*';
             this.txt_MatKhauCu.Size = new System.Drawing.Size(192, 38);
             this.txt_MatKhauCu.TabIndex = 1;
             // 
@@ -156,7 +161,7 @@
             this.grb_Header.Controls.Add(this.btn_QuayLaiNhaCungCap);
             this.grb_Header.Location = new System.Drawing.Point(4, 4);
             this.grb_Header.Name = "grb_Header";
-            this.grb_Header.Size = new System.Drawing.Size(563, 160);
+            this.grb_Header.Size = new System.Drawing.Size(607, 160);
             this.grb_Header.TabIndex = 4;
             this.grb_Header.TabStop = false;
             // 
@@ -186,12 +191,23 @@
             this.btn_QuayLaiNhaCungCap.UseVisualStyleBackColor = false;
             this.btn_QuayLaiNhaCungCap.Click += new System.EventHandler(this.btn_QuayLaiNhaCungCap_Click);
             // 
+            // chk_HienMatKhau
+            // 
+            this.chk_HienMatKhau.AutoSize = true;
+            this.chk_HienMatKhau.Location = new System.Drawing.Point(70, 304);
+            this.chk_HienMatKhau.Name = "chk_HienMatKhau";
+            this.chk_HienMatKhau.Size = new System.Drawing.Size(139, 24);
+            this.chk_HienMatKhau.TabIndex = 2;
+            this.chk_HienMatKhau.Text = "Hiện mật khẩu";
+            this.chk_HienMatKhau.UseVisualStyleBackColor = true;
+            this.chk_HienMatKhau.CheckedChanged += new System.EventHandler(this.chk_HienMatKhau_CheckedChanged);
+            // 
             // frm_DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(571, 589);
+            this.ClientSize = new System.Drawing.Size(607, 589);
             this.Controls.Add(this.grb_Header);
             this.Controls.Add(this.btn_DoiMatKhau);
             this.Controls.Add(this.grb_Body);
@@ -221,5 +237,6 @@
         private System.Windows.Forms.TextBox txt_TenDangNhapCu;
         private System.Windows.Forms.TextBox txt_MatKhauCu;
         private System.Windows.Forms.PictureBox pic_Logo;
+        private System.Windows.Forms.CheckBox chk_HienMatKhau;
     }
 }

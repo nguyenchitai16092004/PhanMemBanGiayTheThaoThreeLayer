@@ -44,7 +44,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
             this.txt_MaKH = new System.Windows.Forms.TextBox();
             this.btn_TaoHoaDon = new System.Windows.Forms.Button();
-            this.cbo_MaNV = new System.Windows.Forms.ComboBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.dgv_HoaDonBanHang = new System.Windows.Forms.DataGridView();
             this.dtp_NgayLapHoaDonBanHang = new System.Windows.Forms.DateTimePicker();
@@ -61,6 +60,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XuatThongTinHoaDonBanHang = new System.Windows.Forms.Button();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.grb_HoaDonBanHang = new System.Windows.Forms.GroupBox();
+            this.cbo_MaNV = new System.Windows.Forms.ComboBox();
             this.grb_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.grb_SanPham.SuspendLayout();
@@ -245,14 +245,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_TaoHoaDon.Text = "Tạo hóa đơn";
             this.btn_TaoHoaDon.UseVisualStyleBackColor = false;
             this.btn_TaoHoaDon.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cbo_MaNV
-            // 
-            this.cbo_MaNV.FormattingEnabled = true;
-            this.cbo_MaNV.Location = new System.Drawing.Point(13, 211);
-            this.cbo_MaNV.Name = "cbo_MaNV";
-            this.cbo_MaNV.Size = new System.Drawing.Size(311, 28);
-            this.cbo_MaNV.TabIndex = 43;
             // 
             // btn_Search
             // 
@@ -449,6 +441,14 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_HoaDonBanHang.TabIndex = 19;
             this.grb_HoaDonBanHang.TabStop = false;
             // 
+            // cbo_MaNV
+            // 
+            this.cbo_MaNV.FormattingEnabled = true;
+            this.cbo_MaNV.Location = new System.Drawing.Point(13, 211);
+            this.cbo_MaNV.Name = "cbo_MaNV";
+            this.cbo_MaNV.Size = new System.Drawing.Size(311, 28);
+            this.cbo_MaNV.TabIndex = 43;
+            // 
             // frm_HoaDonBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -498,7 +498,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         private System.Windows.Forms.Button btn_KHHoaDonBanHang;
         private System.Windows.Forms.DataGridView dgv_HoaDonBanHang;
         private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.ComboBox cbo_MaNV;
         private System.Windows.Forms.Button btn_TaoHoaDon;
         private System.Windows.Forms.TextBox txt_MaKH;
         private System.Windows.Forms.DateTimePicker dtp_Ngay;
@@ -506,5 +505,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         private System.Windows.Forms.Label lb_DoiMatKhauNhanVien;
         private System.Windows.Forms.Button btn_DoiMatKhauNhanVien;
         private System.Windows.Forms.PictureBox pic_Logo;
+        private System.Windows.Forms.ComboBox cbo_MaNV;
     }
 }

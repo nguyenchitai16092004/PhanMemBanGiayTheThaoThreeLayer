@@ -15,7 +15,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_HoaDonBanHang : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         int TienKhachDua;
         public int MaTK;
         public frm_HoaDonBanHang()
@@ -26,7 +26,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             //khai báo chuoi ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT * FROM HOADON";
+            string sSQL = "SELECT NHANVIEN.TenNV AS 'Nhân viên lập hóa đơn', HOADON.MaHD, HOADON.MaKH, HOADON.NgayLap, HOADON.TienKhachDua, HOADON.TienGuiLai, HOADON.TongHD " +
+                       "FROM HOADON INNER JOIN NHANVIEN ON NHANVIEN.MaNV = HOADON.MaNV;";
             try
             {
                 myConnection.Open();
@@ -58,7 +59,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
                         cmd.Parameters.AddWithValue("@MaKH", txt_MaKH.Text);
-                        cmd.Parameters.AddWithValue("@MaNV", cbo_MaNV.Text);
+                        cmd.Parameters.AddWithValue("@MaNV", cbo_MaNV.SelectedValue.ToString());
                         cmd.Parameters.AddWithValue("@NgayLap", dtp_NgayLapHoaDonBanHang.Value.ToString("yyyy/MM/dd"));
                         cmd.Parameters.AddWithValue("@TienKhachDua", DBNull.Value);
                         cmd.Parameters.AddWithValue("@TienGuiLai", DBNull.Value);
@@ -91,7 +92,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
                         cmd.Parameters.AddWithValue("@MaHD", int.Parse(txt_MaHoaDon.Text));
-                        cmd.Parameters.AddWithValue("@MaNV", int.Parse(cbo_MaNV.Text));
+                        cmd.Parameters.AddWithValue("@MaNV", int.Parse(cbo_MaNV.SelectedValue.ToString()));
                         cmd.Parameters.AddWithValue("@MaKH", int.Parse(txt_MaKH.Text));
                         cmd.Parameters.AddWithValue("@NgayLap", DateTime.Parse(dtp_NgayLapHoaDonBanHang.Text));
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -166,23 +167,26 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        public void HienThiMaNhanVien()
+        public void HienThiMaNhanVien(int MaTK)
         {
             //Doi tuong ket noi CSDL
+            MessageBox.Show(MaTK.ToString());
             SqlConnection myConnection = new SqlConnection(scon);
             string sSql;
-            sSql = "SELECT MaNV, TenNV FROM NHANVIEN";
+            sSql = "SELECT MaNV, TenNV FROM NHANVIEN WHERE MaTK = @MaTK";
             try
             {
                 myConnection.Open();
-                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
+                SqlCommand cmd = new SqlCommand(sSql, myConnection);
+                cmd.Parameters.AddWithValue("@MaTK",MaTK);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 //DataSet: du lieu tren bo nho RAM
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 myConnection.Close();
                 cbo_MaNV.DataSource = ds.Tables[0];
-                cbo_MaNV.DisplayMember = "MaNV";
-                cbo_MaNV.ValueMember = "TenNV";
+                cbo_MaNV.DisplayMember = "TenNV";
+                cbo_MaNV.ValueMember = "MaNV";
             }
             catch (Exception ex)
             {
@@ -271,8 +275,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void dgv_HoaDonBanHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_HoaDonBanHang.CurrentRow.Index;
-            txt_MaHoaDon.Text = dgv_HoaDonBanHang.Rows[i].Cells[0].Value.ToString();
-            cbo_MaNV.Text = dgv_HoaDonBanHang.Rows[i].Cells[1].Value.ToString();
+            txt_MaHoaDon.Text = dgv_HoaDonBanHang.Rows[i].Cells[1].Value.ToString();
+            cbo_MaNV.Text = dgv_HoaDonBanHang.Rows[i].Cells[0].Value.ToString();
             txt_MaKH.Text = dgv_HoaDonBanHang.Rows[i].Cells[2].Value.ToString();
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Parse(dgv_HoaDonBanHang.Rows[i].Cells[3].Value.ToString());
             //TienKhachDua = int.Parse(dgv_HoaDonBanHang.Rows[i].Cells[4].Value.ToString());
@@ -342,16 +346,17 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         private void HoaDonBanHang_Load(object sender, EventArgs e)
         {
+
             XemHoaDon();
-            HienThiMaNhanVien();
+            HienThiMaNhanVien(MaTK);
             cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             frm_ChiTietHoaDon chiTietHoaDon = new frm_ChiTietHoaDon();
+            chiTietHoaDon.MaTK = MaTK;
             ThemHoaDon();
             this.Hide();
             chiTietHoaDon.Show();
@@ -361,6 +366,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
 
             frm_ChiTietHoaDon chiTietHoaDon = new frm_ChiTietHoaDon();
+            chiTietHoaDon.MaTK = MaTK;
             chiTietHoaDon.MaHD = int.Parse(txt_MaHoaDon.Text);
             this.Hide();
             chiTietHoaDon.Show();
@@ -405,7 +411,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
             XemHoaDon();
-            HienThiMaNhanVien();
+            HienThiMaNhanVien(MaTK);
             txt_TimKiemHoaDonBanHang.Clear();
             cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
@@ -453,6 +459,11 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 e.Cancel = true;
             }
+        }
+
+        private void cbo_MaNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

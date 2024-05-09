@@ -32,6 +32,7 @@
             this.lb_MatKhauMoi = new System.Windows.Forms.Label();
             this.txt_MatKhauMoi = new System.Windows.Forms.TextBox();
             this.grb_Body = new System.Windows.Forms.GroupBox();
+            this.chk_HienMatKhau = new System.Windows.Forms.CheckBox();
             this.txt_NhapLaiMatKhau = new System.Windows.Forms.TextBox();
             this.lb_TenDangNhapCu = new System.Windows.Forms.Label();
             this.lb_MatKhauCu = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.grb_Header = new System.Windows.Forms.GroupBox();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiNhaCungCap = new System.Windows.Forms.Button();
-            this.chk_HienMatKhau = new System.Windows.Forms.CheckBox();
             this.grb_Body.SuspendLayout();
             this.grb_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
@@ -85,6 +85,17 @@
             this.grb_Body.TabIndex = 2;
             this.grb_Body.TabStop = false;
             this.grb_Body.Text = "Đổi mật khẩu";
+            // 
+            // chk_HienMatKhau
+            // 
+            this.chk_HienMatKhau.AutoSize = true;
+            this.chk_HienMatKhau.Location = new System.Drawing.Point(70, 304);
+            this.chk_HienMatKhau.Name = "chk_HienMatKhau";
+            this.chk_HienMatKhau.Size = new System.Drawing.Size(139, 24);
+            this.chk_HienMatKhau.TabIndex = 2;
+            this.chk_HienMatKhau.Text = "Hiện mật khẩu";
+            this.chk_HienMatKhau.UseVisualStyleBackColor = true;
+            this.chk_HienMatKhau.CheckedChanged += new System.EventHandler(this.chk_HienMatKhau_CheckedChanged);
             // 
             // txt_NhapLaiMatKhau
             // 
@@ -191,17 +202,6 @@
             this.btn_QuayLaiNhaCungCap.UseVisualStyleBackColor = false;
             this.btn_QuayLaiNhaCungCap.Click += new System.EventHandler(this.btn_QuayLaiNhaCungCap_Click);
             // 
-            // chk_HienMatKhau
-            // 
-            this.chk_HienMatKhau.AutoSize = true;
-            this.chk_HienMatKhau.Location = new System.Drawing.Point(70, 304);
-            this.chk_HienMatKhau.Name = "chk_HienMatKhau";
-            this.chk_HienMatKhau.Size = new System.Drawing.Size(139, 24);
-            this.chk_HienMatKhau.TabIndex = 2;
-            this.chk_HienMatKhau.Text = "Hiện mật khẩu";
-            this.chk_HienMatKhau.UseVisualStyleBackColor = true;
-            this.chk_HienMatKhau.CheckedChanged += new System.EventHandler(this.chk_HienMatKhau_CheckedChanged);
-            // 
             // frm_DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,6 +215,7 @@
             this.Name = "frm_DoiMatKhau";
             this.Text = "DoiMatKhau";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_DoiMatKhau_FormClosing);
+            this.Load += new System.EventHandler(this.frm_DoiMatKhau_Load);
             this.grb_Body.ResumeLayout(false);
             this.grb_Body.PerformLayout();
             this.grb_Header.ResumeLayout(false);

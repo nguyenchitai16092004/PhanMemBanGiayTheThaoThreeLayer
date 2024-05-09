@@ -16,3 +16,9 @@ C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.cs
 C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.dll
 C:\Users\ADMIN\Source\Repos\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.pdb
+C:\Users\ASUS\Source\Repos\nguyenchitai16092004\PhanMemBanGiayTheThaoThreeLayer\DTO\bin\Debug\DTO.dll
+C:\Users\ASUS\Source\Repos\nguyenchitai16092004\PhanMemBanGiayTheThaoThreeLayer\DTO\bin\Debug\DTO.pdb
+C:\Users\ASUS\Source\Repos\nguyenchitai16092004\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ASUS\Source\Repos\nguyenchitai16092004\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Source\Repos\nguyenchitai16092004\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.dll
+C:\Users\ASUS\Source\Repos\nguyenchitai16092004\PhanMemBanGiayTheThaoThreeLayer\DTO\obj\Debug\DTO.pdb

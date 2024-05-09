@@ -42,7 +42,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
 
             // Khai báo chuỗi kết nối
-            string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+            string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
 
             // Kết nối tới cơ sở dữ liệu
             using (SqlConnection myConnection = new SqlConnection(scon))
@@ -132,6 +132,11 @@ namespace PhanMemQuanLyBanGiayTheThao
                 txt_MatKhauMoi.PasswordChar = '*';
                 txt_NhapLaiMatKhau.PasswordChar = '*';
             }
+        }
+
+        private void frm_DoiMatKhau_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

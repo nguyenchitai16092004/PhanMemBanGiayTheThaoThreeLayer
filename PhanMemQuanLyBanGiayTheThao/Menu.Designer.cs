@@ -45,7 +45,6 @@
             this.btn_DangXuatMenu = new System.Windows.Forms.Button();
             this.btn_NhanVienMenu = new System.Windows.Forms.Button();
             this.btn_SanPhamMenu = new System.Windows.Forms.Button();
-            this.btn_ThoatMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lb_NhanVien
@@ -224,24 +223,12 @@
             this.btn_SanPhamMenu.UseVisualStyleBackColor = false;
             this.btn_SanPhamMenu.Click += new System.EventHandler(this.btn_SanPhamMenu_Click);
             // 
-            // btn_ThoatMenu
-            // 
-            this.btn_ThoatMenu.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThoatMenu.Image")));
-            this.btn_ThoatMenu.Location = new System.Drawing.Point(1188, 12);
-            this.btn_ThoatMenu.Name = "btn_ThoatMenu";
-            this.btn_ThoatMenu.Size = new System.Drawing.Size(54, 50);
-            this.btn_ThoatMenu.TabIndex = 58;
-            this.btn_ThoatMenu.UseVisualStyleBackColor = true;
-            this.btn_ThoatMenu.Click += new System.EventHandler(this.btn_ThoatMenu_Click);
-            // 
             // frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1254, 770);
-            this.ControlBox = false;
-            this.Controls.Add(this.btn_ThoatMenu);
             this.Controls.Add(this.btn_SanPhamMenu);
             this.Controls.Add(this.btn_NhanVienMenu);
             this.Controls.Add(this.btn_DangXuatMenu);
@@ -284,6 +271,5 @@
         private System.Windows.Forms.Button btn_DangXuatMenu;
         private System.Windows.Forms.Button btn_NhanVienMenu;
         private System.Windows.Forms.Button btn_SanPhamMenu;
-        private System.Windows.Forms.Button btn_ThoatMenu;
     }
 }

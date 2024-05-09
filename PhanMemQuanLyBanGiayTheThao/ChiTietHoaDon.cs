@@ -14,8 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ChiTietHoaDon : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
-
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
 
         public bool KiemTraSoLuongSanPham()
         {
@@ -335,6 +334,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         public int TienKhachDua;
         private void ChiTietHoaDon_Load(object sender, EventArgs e)
         {
+            MessageBox.Show(MaTK.ToString());
             txt_TienKhachDua.Text = TienKhachDua.ToString();
             XemChiTietHoaDon(MaHD);
             HienThiMaSanPham();
@@ -401,16 +401,22 @@ namespace PhanMemQuanLyBanGiayTheThao
                 return;
             }
 
+
             double tienGuiKhach = tienKhachDua - TongTien;
+            if (tienGuiKhach < 0)
+            {
+                MessageBox.Show("Số tiền đưa không đủ !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                txt_TienGuiKhach.Text = tienGuiKhach.ToString();
+                HoanThienHoaDon(MaHD);
+                frm_HoaDonBanHang hoaDonBanHang = new frm_HoaDonBanHang();
+                hoaDonBanHang.MaTK = MaTK;
+                hoaDonBanHang.Show();
+                this.Hide();
+            }
 
-            txt_TienGuiKhach.Text = tienGuiKhach.ToString();
-
-            HoanThienHoaDon(MaHD);
-            frm_HoaDonBanHang hoaDonBanHang = new frm_HoaDonBanHang();
-            hoaDonBanHang.Show();
-            hoaDonBanHang.MaTK = MaTK;
-
-            this.Hide();
         }
 
         private void btn_SuaHoaDonBanHang_Click(object sender, EventArgs e)

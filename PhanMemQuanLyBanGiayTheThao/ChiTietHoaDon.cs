@@ -334,6 +334,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         public int TienKhachDua;
         private void ChiTietHoaDon_Load(object sender, EventArgs e)
         {
+            //
             MessageBox.Show(MaTK.ToString());
             txt_TienKhachDua.Text = TienKhachDua.ToString();
             XemChiTietHoaDon(MaHD);

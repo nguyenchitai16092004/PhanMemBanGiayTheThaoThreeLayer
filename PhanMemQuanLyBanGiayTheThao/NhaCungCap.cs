@@ -13,7 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_NhaCungCap : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_NhaCungCap()
         {
             InitializeComponent();
@@ -249,6 +249,45 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btn_DangXuatNhaCungCap_Click(object sender, EventArgs e)
+        {
+            frm_DangNhap dn = new frm_DangNhap();
+            dn.Show();
+            this.Hide();
+        }
+
+        private void btn_quaylai_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_Menu ql = new frm_Menu();
+            ql.MaTK = MaTK;
+            ql.Show();
+            this.Close();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            frm_DangNhap dn = new frm_DangNhap();
+            dn.Show();
+            this.Close();
+        }
+
+        private void grb_Header_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

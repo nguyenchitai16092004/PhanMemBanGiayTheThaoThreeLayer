@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ChiTietHoaDon : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
 
         public bool KiemTraSoLuongSanPham()
         {
@@ -523,6 +523,26 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void pic_ImageSP_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_quaylai_Click(object sender, EventArgs e)
+        {
+            frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
+            ql.MaTK = MaTK;
+            ql.Show();
+            this.Close();
+        }
+
+        private void grb_Menu_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            frm_DangNhap dn = new frm_DangNhap();
+            dn.Show();
+            this.Close();
         }
     }
 }

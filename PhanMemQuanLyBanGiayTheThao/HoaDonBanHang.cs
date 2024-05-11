@@ -15,7 +15,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_HoaDonBanHang : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         int TienKhachDua;
         public int MaTK;
         public frm_HoaDonBanHang()
@@ -178,7 +178,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 myConnection.Open();
                 SqlCommand cmd = new SqlCommand(sSql, myConnection);
-                cmd.Parameters.AddWithValue("@MaTK",MaTK);
+                cmd.Parameters.AddWithValue("@MaTK", MaTK);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 //DataSet: du lieu tren bo nho RAM
                 DataSet ds = new DataSet();
@@ -258,16 +258,12 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void lb_QuayLaiBanHang_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frm_Menu ql = new frm_Menu();
-            ql.MaTK = MaTK;
-            ql.Show();
+            
         }
 
         private void btn_DangXuatHoaDonBanHang_Click(object sender, EventArgs e)
         {
-
-            frm_Menu mn = new frm_Menu();
+            frm_DangNhap mn = new frm_DangNhap();
             mn.Show();
             this.Hide();
         }
@@ -420,7 +416,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            if (cbo_TimKiem_Theo.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemHoaDonBanHang.Text))
+            if (cbo_TimKiem_Theo.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemHoaDonBanHang.Text) && cbo_TimKiem_Theo.Text != "Ngày")
             {
                 MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
@@ -428,7 +424,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 TimKiem();
             }
-
         }
         private void Cbb_TimKiem_Theo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -461,9 +456,51 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        private void cbo_MaNV_SelectedIndexChanged(object sender, EventArgs e)
+        private void grb_Header_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_quaylai_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_Menu ql = new frm_Menu();
+            ql.MaTK = MaTK;
+            ql.Show();
+            this.Close();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btn_TaoHoaDon_Click(object sender, EventArgs e)
+        {
+            frm_ChiTietHoaDon chiTietHoaDon = new frm_ChiTietHoaDon();
+            chiTietHoaDon.MaTK = MaTK;
+            ThemHoaDon();
+            this.Hide();
+            chiTietHoaDon.Show();
+            chiTietHoaDon.MaHD = LayMaHD();
+        }
+
+        private void grb_Menu_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            frm_DangNhap dn = new frm_DangNhap();
+            dn.Show();
+            this.Close();
         }
     }
 }

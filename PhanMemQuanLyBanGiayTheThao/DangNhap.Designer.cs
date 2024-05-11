@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_DangNhap));
             this.pn_Header = new System.Windows.Forms.Panel();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.lb_SprotsShoeShop = new System.Windows.Forms.Label();
             this.txt_TenDangNhap = new System.Windows.Forms.TextBox();
@@ -54,12 +55,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.pn_Header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pn_Header.BackgroundImage")));
+            this.pn_Header.Controls.Add(this.btn_exit);
             this.pn_Header.Controls.Add(this.pic_Logo);
             this.pn_Header.Controls.Add(this.lb_SprotsShoeShop);
             this.pn_Header.Location = new System.Drawing.Point(0, 0);
             this.pn_Header.Name = "pn_Header";
             this.pn_Header.Size = new System.Drawing.Size(1027, 146);
             this.pn_Header.TabIndex = 0;
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
+            this.btn_exit.Location = new System.Drawing.Point(987, 0);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(37, 41);
+            this.btn_exit.TabIndex = 58;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // pic_Logo
             // 
@@ -89,6 +102,7 @@
             // 
             // txt_TenDangNhap
             // 
+            this.txt_TenDangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenDangNhap.Location = new System.Drawing.Point(675, 91);
             this.txt_TenDangNhap.Multiline = true;
             this.txt_TenDangNhap.Name = "txt_TenDangNhap";
@@ -100,6 +114,7 @@
             this.lb_TenDangNhap.AutoSize = true;
             this.lb_TenDangNhap.BackColor = System.Drawing.Color.Transparent;
             this.lb_TenDangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TenDangNhap.ForeColor = System.Drawing.Color.AliceBlue;
             this.lb_TenDangNhap.Location = new System.Drawing.Point(509, 91);
             this.lb_TenDangNhap.Name = "lb_TenDangNhap";
             this.lb_TenDangNhap.Size = new System.Drawing.Size(144, 23);
@@ -108,6 +123,7 @@
             // 
             // txt_MatKhau
             // 
+            this.txt_MatKhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MatKhau.Location = new System.Drawing.Point(675, 151);
             this.txt_MatKhau.Multiline = true;
             this.txt_MatKhau.Name = "txt_MatKhau";
@@ -120,6 +136,7 @@
             this.lb_MatKhau.AutoSize = true;
             this.lb_MatKhau.BackColor = System.Drawing.Color.Transparent;
             this.lb_MatKhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_MatKhau.ForeColor = System.Drawing.Color.AliceBlue;
             this.lb_MatKhau.Location = new System.Drawing.Point(545, 151);
             this.lb_MatKhau.Name = "lb_MatKhau";
             this.lb_MatKhau.Size = new System.Drawing.Size(103, 23);
@@ -151,7 +168,6 @@
             this.btn_eyeopen.Size = new System.Drawing.Size(30, 30);
             this.btn_eyeopen.TabIndex = 5;
             this.btn_eyeopen.UseVisualStyleBackColor = true;
-            this.btn_eyeopen.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_eyeclose
             // 
@@ -162,7 +178,7 @@
             this.btn_eyeclose.Size = new System.Drawing.Size(30, 30);
             this.btn_eyeclose.TabIndex = 5;
             this.btn_eyeclose.UseVisualStyleBackColor = false;
-            this.btn_eyeclose.Click += new System.EventHandler(this.button1_Click);
+            this.btn_eyeclose.Click += new System.EventHandler(this.btn_eyeclose_Click);
             // 
             // grb_2
             // 
@@ -176,6 +192,7 @@
             this.grb_2.Controls.Add(this.txt_MatKhau);
             this.grb_2.Controls.Add(this.lb_MatKhau);
             this.grb_2.Controls.Add(this.lb_TenDangNhap);
+            this.grb_2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_2.Location = new System.Drawing.Point(3, 145);
             this.grb_2.Name = "grb_2";
             this.grb_2.Size = new System.Drawing.Size(1030, 345);
@@ -200,14 +217,13 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1023, 490);
+            this.ControlBox = false;
             this.Controls.Add(this.grb_2);
             this.Controls.Add(this.pn_Header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_DangNhap_FormClosing);
-            this.Load += new System.EventHandler(this.frm_DangNhap_Load);
             this.pn_Header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.grb_2.ResumeLayout(false);
@@ -231,6 +247,7 @@
         private System.Windows.Forms.GroupBox grb_2;
         private System.Windows.Forms.PictureBox pic_Logo;
         private System.Windows.Forms.PictureBox pic_Image;
+        private System.Windows.Forms.Button btn_exit;
     }
 }
 

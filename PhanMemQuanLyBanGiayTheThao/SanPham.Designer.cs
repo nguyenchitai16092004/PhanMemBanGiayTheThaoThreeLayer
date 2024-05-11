@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
             this.grb_SanPhamSanPham = new System.Windows.Forms.GroupBox();
+            this.cbo_MaNCC = new System.Windows.Forms.ComboBox();
             this.lb_Note = new System.Windows.Forms.Label();
             this.cbo_Search = new System.Windows.Forms.ComboBox();
             this.btn_LamMoi = new System.Windows.Forms.Button();
@@ -59,11 +60,11 @@
             this.lb_TenSanPhamSanPham = new System.Windows.Forms.Label();
             this.lb_MaSanPhamSanPham = new System.Windows.Forms.Label();
             this.grb_HeaderSanPham = new System.Windows.Forms.GroupBox();
+            this.grb_Menu = new System.Windows.Forms.GroupBox();
+            this.btn_dangxuat = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.btn_quaylai = new System.Windows.Forms.Button();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
-            this.btn_QuayLaiSanPham = new System.Windows.Forms.Button();
-            this.lb_DangXuatSanPham = new System.Windows.Forms.Label();
-            this.btn_DangXuatSanPham = new System.Windows.Forms.Button();
-            this.cbo_MaNCC = new System.Windows.Forms.ComboBox();
             this.grb_SanPham.SuspendLayout();
             this.grb_SanPhamSanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SanPham)).BeginInit();
@@ -72,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_GiaNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_DonGiaSanPham)).BeginInit();
             this.grb_HeaderSanPham.SuspendLayout();
+            this.grb_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,6 +127,14 @@
             this.grb_SanPhamSanPham.TabIndex = 16;
             this.grb_SanPhamSanPham.TabStop = false;
             this.grb_SanPhamSanPham.Text = "Sản phẩm";
+            // 
+            // cbo_MaNCC
+            // 
+            this.cbo_MaNCC.FormattingEnabled = true;
+            this.cbo_MaNCC.Location = new System.Drawing.Point(11, 547);
+            this.cbo_MaNCC.Name = "cbo_MaNCC";
+            this.cbo_MaNCC.Size = new System.Drawing.Size(133, 28);
+            this.cbo_MaNCC.TabIndex = 60;
             // 
             // lb_Note
             // 
@@ -438,16 +448,60 @@
             // grb_HeaderSanPham
             // 
             this.grb_HeaderSanPham.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grb_HeaderSanPham.Controls.Add(this.grb_Menu);
             this.grb_HeaderSanPham.Controls.Add(this.pic_Logo);
-            this.grb_HeaderSanPham.Controls.Add(this.btn_QuayLaiSanPham);
-            this.grb_HeaderSanPham.Controls.Add(this.lb_DangXuatSanPham);
-            this.grb_HeaderSanPham.Controls.Add(this.btn_DangXuatSanPham);
             this.grb_HeaderSanPham.Dock = System.Windows.Forms.DockStyle.Top;
             this.grb_HeaderSanPham.Location = new System.Drawing.Point(3, 24);
             this.grb_HeaderSanPham.Name = "grb_HeaderSanPham";
             this.grb_HeaderSanPham.Size = new System.Drawing.Size(1269, 147);
             this.grb_HeaderSanPham.TabIndex = 15;
             this.grb_HeaderSanPham.TabStop = false;
+            this.grb_HeaderSanPham.Enter += new System.EventHandler(this.grb_HeaderSanPham_Enter);
+            // 
+            // grb_Menu
+            // 
+            this.grb_Menu.BackColor = System.Drawing.Color.Transparent;
+            this.grb_Menu.Controls.Add(this.btn_dangxuat);
+            this.grb_Menu.Controls.Add(this.btn_exit);
+            this.grb_Menu.Controls.Add(this.btn_quaylai);
+            this.grb_Menu.ForeColor = System.Drawing.Color.Black;
+            this.grb_Menu.Location = new System.Drawing.Point(1108, 4);
+            this.grb_Menu.Name = "grb_Menu";
+            this.grb_Menu.Size = new System.Drawing.Size(158, 80);
+            this.grb_Menu.TabIndex = 66;
+            this.grb_Menu.TabStop = false;
+            this.grb_Menu.Enter += new System.EventHandler(this.grb_Menu_Enter);
+            // 
+            // btn_dangxuat
+            // 
+            this.btn_dangxuat.Image = ((System.Drawing.Image)(resources.GetObject("btn_dangxuat.Image")));
+            this.btn_dangxuat.Location = new System.Drawing.Point(63, 20);
+            this.btn_dangxuat.Name = "btn_dangxuat";
+            this.btn_dangxuat.Size = new System.Drawing.Size(37, 41);
+            this.btn_dangxuat.TabIndex = 67;
+            this.btn_dangxuat.UseVisualStyleBackColor = true;
+            this.btn_dangxuat.Click += new System.EventHandler(this.btn_dangxuat_Click);
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
+            this.btn_exit.Location = new System.Drawing.Point(112, 20);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(37, 41);
+            this.btn_exit.TabIndex = 58;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // btn_quaylai
+            // 
+            this.btn_quaylai.Image = ((System.Drawing.Image)(resources.GetObject("btn_quaylai.Image")));
+            this.btn_quaylai.Location = new System.Drawing.Point(15, 21);
+            this.btn_quaylai.Name = "btn_quaylai";
+            this.btn_quaylai.Size = new System.Drawing.Size(37, 41);
+            this.btn_quaylai.TabIndex = 59;
+            this.btn_quaylai.UseVisualStyleBackColor = true;
+            this.btn_quaylai.Click += new System.EventHandler(this.btn_quaylai_Click);
             // 
             // pic_Logo
             // 
@@ -460,51 +514,6 @@
             this.pic_Logo.TabIndex = 65;
             this.pic_Logo.TabStop = false;
             // 
-            // btn_QuayLaiSanPham
-            // 
-            this.btn_QuayLaiSanPham.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_QuayLaiSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiSanPham.Image")));
-            this.btn_QuayLaiSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QuayLaiSanPham.Location = new System.Drawing.Point(167, 27);
-            this.btn_QuayLaiSanPham.Name = "btn_QuayLaiSanPham";
-            this.btn_QuayLaiSanPham.Size = new System.Drawing.Size(127, 43);
-            this.btn_QuayLaiSanPham.TabIndex = 27;
-            this.btn_QuayLaiSanPham.Text = "Quay lại";
-            this.btn_QuayLaiSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_QuayLaiSanPham.UseVisualStyleBackColor = false;
-            this.btn_QuayLaiSanPham.Click += new System.EventHandler(this.btn_QuayLaiSanPham_Click);
-            // 
-            // lb_DangXuatSanPham
-            // 
-            this.lb_DangXuatSanPham.AutoSize = true;
-            this.lb_DangXuatSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DangXuatSanPham.Location = new System.Drawing.Point(1173, 103);
-            this.lb_DangXuatSanPham.Name = "lb_DangXuatSanPham";
-            this.lb_DangXuatSanPham.Size = new System.Drawing.Size(84, 20);
-            this.lb_DangXuatSanPham.TabIndex = 23;
-            this.lb_DangXuatSanPham.Text = "Đăng xuất";
-            // 
-            // btn_DangXuatSanPham
-            // 
-            this.btn_DangXuatSanPham.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_DangXuatSanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_DangXuatSanPham.BackgroundImage")));
-            this.btn_DangXuatSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_DangXuatSanPham.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_DangXuatSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DangXuatSanPham.Location = new System.Drawing.Point(1186, 27);
-            this.btn_DangXuatSanPham.Name = "btn_DangXuatSanPham";
-            this.btn_DangXuatSanPham.Size = new System.Drawing.Size(50, 61);
-            this.btn_DangXuatSanPham.TabIndex = 22;
-            this.btn_DangXuatSanPham.UseVisualStyleBackColor = false;
-            // 
-            // cbo_MaNCC
-            // 
-            this.cbo_MaNCC.FormattingEnabled = true;
-            this.cbo_MaNCC.Location = new System.Drawing.Point(11, 547);
-            this.cbo_MaNCC.Name = "cbo_MaNCC";
-            this.cbo_MaNCC.Size = new System.Drawing.Size(133, 28);
-            this.cbo_MaNCC.TabIndex = 60;
-            // 
             // frm_SanPham
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -512,12 +521,12 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1275, 754);
+            this.ControlBox = false;
             this.Controls.Add(this.grb_SanPham);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_SanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SanPham";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_SanPham_FormClosing);
             this.Load += new System.EventHandler(this.SanPham_Load);
             this.grb_SanPham.ResumeLayout(false);
             this.grb_SanPhamSanPham.ResumeLayout(false);
@@ -528,7 +537,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_GiaNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_DonGiaSanPham)).EndInit();
             this.grb_HeaderSanPham.ResumeLayout(false);
-            this.grb_HeaderSanPham.PerformLayout();
+            this.grb_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -556,9 +565,6 @@
         private System.Windows.Forms.Button btn_XuatThongTinSanPham;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.GroupBox grb_HeaderSanPham;
-        private System.Windows.Forms.Button btn_QuayLaiSanPham;
-        private System.Windows.Forms.Label lb_DangXuatSanPham;
-        private System.Windows.Forms.Button btn_DangXuatSanPham;
         private System.Windows.Forms.DataGridView dgv_SanPham;
         private System.Windows.Forms.Button btn_LamMoi;
         private System.Windows.Forms.TextBox txt_KhuyenMai;
@@ -569,5 +575,9 @@
         private System.Windows.Forms.Label lb_Note;
         private System.Windows.Forms.PictureBox pic_Logo;
         private System.Windows.Forms.ComboBox cbo_MaNCC;
+        private System.Windows.Forms.GroupBox grb_Menu;
+        private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Button btn_quaylai;
+        private System.Windows.Forms.Button btn_dangxuat;
     }
 }

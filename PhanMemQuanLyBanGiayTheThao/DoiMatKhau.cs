@@ -21,10 +21,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         private void btn_QuayLaiNhaCungCap_Click(object sender, EventArgs e)
         {
-            frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
-            ql.Show();
-            ql.MaTK = MaTK;
-            this.Hide();
         }
         public void DoiMatKhau()
         {
@@ -106,17 +102,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             DoiMatKhau();
         }
 
-        private void frm_DoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dlg = new DialogResult();
-            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dlg == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void chk_HienMatKhau_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_HienMatKhau.Checked == true)
@@ -135,6 +120,24 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
 
         private void frm_DoiMatKhau_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_quaylai_Click(object sender, EventArgs e)
+        {
+            frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
+            ql.Show();
+            ql.MaTK = MaTK;
+            this.Close();
+        }
+
+        private void grb_Menu_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
         {
 
         }

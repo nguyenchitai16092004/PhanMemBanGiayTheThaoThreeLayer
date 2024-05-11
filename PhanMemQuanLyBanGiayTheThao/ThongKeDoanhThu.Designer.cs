@@ -30,10 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ThongKeDoanhThu));
             this.grb_HeaderThongKe = new System.Windows.Forms.GroupBox();
+            this.grb_Menu = new System.Windows.Forms.GroupBox();
+            this.btn_dangxuat = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.btn_quaylai = new System.Windows.Forms.Button();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.lb_SanPham = new System.Windows.Forms.Label();
             this.btn_SanPham = new System.Windows.Forms.Button();
-            this.btn_QuayLaiThongKe = new System.Windows.Forms.Button();
             this.grb_ThongKeThongKe = new System.Windows.Forms.GroupBox();
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.cbb_DoanhThu = new System.Windows.Forms.ComboBox();
@@ -49,6 +52,7 @@
             this.lb_TimKiem = new System.Windows.Forms.Label();
             this.grb_BoLoc = new System.Windows.Forms.GroupBox();
             this.grb_HeaderThongKe.SuspendLayout();
+            this.grb_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.grb_ThongKeThongKe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ThongKeHoaDon)).BeginInit();
@@ -58,16 +62,61 @@
             // grb_HeaderThongKe
             // 
             this.grb_HeaderThongKe.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grb_HeaderThongKe.Controls.Add(this.grb_Menu);
             this.grb_HeaderThongKe.Controls.Add(this.pic_Logo);
             this.grb_HeaderThongKe.Controls.Add(this.lb_SanPham);
             this.grb_HeaderThongKe.Controls.Add(this.btn_SanPham);
-            this.grb_HeaderThongKe.Controls.Add(this.btn_QuayLaiThongKe);
             this.grb_HeaderThongKe.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.grb_HeaderThongKe.Location = new System.Drawing.Point(11, 1);
             this.grb_HeaderThongKe.Name = "grb_HeaderThongKe";
             this.grb_HeaderThongKe.Size = new System.Drawing.Size(1263, 142);
             this.grb_HeaderThongKe.TabIndex = 55;
             this.grb_HeaderThongKe.TabStop = false;
+            this.grb_HeaderThongKe.Enter += new System.EventHandler(this.grb_HeaderThongKe_Enter);
+            // 
+            // grb_Menu
+            // 
+            this.grb_Menu.BackColor = System.Drawing.Color.Transparent;
+            this.grb_Menu.Controls.Add(this.btn_dangxuat);
+            this.grb_Menu.Controls.Add(this.btn_exit);
+            this.grb_Menu.Controls.Add(this.btn_quaylai);
+            this.grb_Menu.ForeColor = System.Drawing.Color.Black;
+            this.grb_Menu.Location = new System.Drawing.Point(1111, 11);
+            this.grb_Menu.Name = "grb_Menu";
+            this.grb_Menu.Size = new System.Drawing.Size(153, 80);
+            this.grb_Menu.TabIndex = 66;
+            this.grb_Menu.TabStop = false;
+            // 
+            // btn_dangxuat
+            // 
+            this.btn_dangxuat.Image = ((System.Drawing.Image)(resources.GetObject("btn_dangxuat.Image")));
+            this.btn_dangxuat.Location = new System.Drawing.Point(62, 20);
+            this.btn_dangxuat.Name = "btn_dangxuat";
+            this.btn_dangxuat.Size = new System.Drawing.Size(37, 41);
+            this.btn_dangxuat.TabIndex = 69;
+            this.btn_dangxuat.UseVisualStyleBackColor = true;
+            this.btn_dangxuat.Click += new System.EventHandler(this.btn_dangxuat_Click);
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
+            this.btn_exit.Location = new System.Drawing.Point(109, 21);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(37, 41);
+            this.btn_exit.TabIndex = 58;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // btn_quaylai
+            // 
+            this.btn_quaylai.Image = ((System.Drawing.Image)(resources.GetObject("btn_quaylai.Image")));
+            this.btn_quaylai.Location = new System.Drawing.Point(15, 21);
+            this.btn_quaylai.Name = "btn_quaylai";
+            this.btn_quaylai.Size = new System.Drawing.Size(37, 41);
+            this.btn_quaylai.TabIndex = 59;
+            this.btn_quaylai.UseVisualStyleBackColor = true;
+            this.btn_quaylai.Click += new System.EventHandler(this.btn_quaylai_Click);
             // 
             // pic_Logo
             // 
@@ -85,7 +134,7 @@
             this.lb_SanPham.AutoSize = true;
             this.lb_SanPham.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SanPham.ForeColor = System.Drawing.Color.Black;
-            this.lb_SanPham.Location = new System.Drawing.Point(1022, 104);
+            this.lb_SanPham.Location = new System.Drawing.Point(209, 94);
             this.lb_SanPham.Name = "lb_SanPham";
             this.lb_SanPham.Size = new System.Drawing.Size(137, 19);
             this.lb_SanPham.TabIndex = 41;
@@ -98,26 +147,12 @@
             this.btn_SanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SanPham.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.btn_SanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SanPham.Location = new System.Drawing.Point(1045, 21);
+            this.btn_SanPham.Location = new System.Drawing.Point(232, 11);
             this.btn_SanPham.Name = "btn_SanPham";
             this.btn_SanPham.Size = new System.Drawing.Size(80, 80);
             this.btn_SanPham.TabIndex = 40;
             this.btn_SanPham.UseVisualStyleBackColor = false;
             this.btn_SanPham.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_QuayLaiThongKe
-            // 
-            this.btn_QuayLaiThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_QuayLaiThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiThongKe.Image")));
-            this.btn_QuayLaiThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QuayLaiThongKe.Location = new System.Drawing.Point(180, 21);
-            this.btn_QuayLaiThongKe.Name = "btn_QuayLaiThongKe";
-            this.btn_QuayLaiThongKe.Size = new System.Drawing.Size(109, 40);
-            this.btn_QuayLaiThongKe.TabIndex = 34;
-            this.btn_QuayLaiThongKe.Text = "Quay lại";
-            this.btn_QuayLaiThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_QuayLaiThongKe.UseVisualStyleBackColor = false;
-            this.btn_QuayLaiThongKe.Click += new System.EventHandler(this.btn_QuayLaiThongKe_Click);
             // 
             // grb_ThongKeThongKe
             // 
@@ -287,6 +322,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1294, 736);
+            this.ControlBox = false;
             this.Controls.Add(this.grb_BoLoc);
             this.Controls.Add(this.dgv_ThongKeHoaDon);
             this.Controls.Add(this.grb_HeaderThongKe);
@@ -299,6 +335,7 @@
             this.Load += new System.EventHandler(this.ThongKe_Load);
             this.grb_HeaderThongKe.ResumeLayout(false);
             this.grb_HeaderThongKe.PerformLayout();
+            this.grb_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.grb_ThongKeThongKe.ResumeLayout(false);
             this.grb_ThongKeThongKe.PerformLayout();
@@ -314,7 +351,6 @@
         private System.Windows.Forms.GroupBox grb_ThongKeThongKe;
         private System.Windows.Forms.Label lb_TongDoanhThuThongKe;
         private System.Windows.Forms.TextBox txt_TongDoanhThuThongKe;
-        private System.Windows.Forms.Button btn_QuayLaiThongKe;
         private System.Windows.Forms.DataGridView dgv_ThongKeHoaDon;
         private System.Windows.Forms.Button btn_LamMoi;
         private System.Windows.Forms.Label lb_SanPham;
@@ -329,5 +365,9 @@
         private System.Windows.Forms.Label lb_TongSoLuongHoaDon;
         private System.Windows.Forms.TextBox txt_SLHoaDon;
         private System.Windows.Forms.PictureBox pic_Logo;
+        private System.Windows.Forms.GroupBox grb_Menu;
+        private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Button btn_quaylai;
+        private System.Windows.Forms.Button btn_dangxuat;
     }
 }

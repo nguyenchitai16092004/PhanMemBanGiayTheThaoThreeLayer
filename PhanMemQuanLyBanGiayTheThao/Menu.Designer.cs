@@ -45,6 +45,7 @@
             this.btn_DangXuatMenu = new System.Windows.Forms.Button();
             this.btn_NhanVienMenu = new System.Windows.Forms.Button();
             this.btn_SanPhamMenu = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lb_NhanVien
@@ -223,12 +224,25 @@
             this.btn_SanPhamMenu.UseVisualStyleBackColor = false;
             this.btn_SanPhamMenu.Click += new System.EventHandler(this.btn_SanPhamMenu_Click);
             // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
+            this.btn_exit.Location = new System.Drawing.Point(1214, 2);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(37, 41);
+            this.btn_exit.TabIndex = 58;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
             // frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1254, 770);
+            this.ControlBox = false;
+            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_SanPhamMenu);
             this.Controls.Add(this.btn_NhanVienMenu);
             this.Controls.Add(this.btn_DangXuatMenu);
@@ -247,8 +261,8 @@
             this.Controls.Add(this.lb_BanHangHoaDon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
@@ -271,5 +285,6 @@
         private System.Windows.Forms.Button btn_DangXuatMenu;
         private System.Windows.Forms.Button btn_NhanVienMenu;
         private System.Windows.Forms.Button btn_SanPhamMenu;
+        private System.Windows.Forms.Button btn_exit;
     }
 }

@@ -14,7 +14,8 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_SanPham : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        private bool isChangeImage = false;
         public frm_SanPham()
         {
             InitializeComponent();
@@ -96,7 +97,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                         cmd.Parameters.AddWithValue("@MaSP", MaSP);
 
                         // Chỉ cập nhật ảnh nếu có ảnh mới
-                        if (pic_ImageSP.Image != null)
+                        if (this.isChangeImage)
                         {
                             MemoryStream ms = new MemoryStream();
                             try
@@ -186,6 +187,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void dgv_SanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.isChangeImage = false;
             int rowIndex = e.RowIndex;
             if (rowIndex >= 0 && rowIndex < dgv_SanPham.Rows.Count)
             {
@@ -320,6 +322,8 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 pic_ImageSP.Image = Image.FromFile(open_image.FileName);
             }
+
+            this.isChangeImage = true;
         }
 
         private void dgv_SanPham_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -385,6 +389,50 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void btn_XuatThongTinSanPham_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_DangXuatSanPham_Click(object sender, EventArgs e)
+        {
+            frm_DangNhap dn = new frm_DangNhap();
+            dn.Show();
+            this.Hide();
+        }
+
+        private void grb_HeaderSanPham_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_quaylai_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_Menu ql = new frm_Menu();
+            ql.MaTK = MaTK;
+            ql.Show();
+            this.Close();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void grb_Menu_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            frm_DangNhap dn = new frm_DangNhap();
+            dn.Show();
+            this.Close();
         }
     }
 }

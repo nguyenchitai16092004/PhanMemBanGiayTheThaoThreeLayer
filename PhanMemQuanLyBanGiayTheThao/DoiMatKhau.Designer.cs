@@ -41,10 +41,13 @@
             this.txt_MatKhauCu = new System.Windows.Forms.TextBox();
             this.btn_DoiMatKhau = new System.Windows.Forms.Button();
             this.grb_Header = new System.Windows.Forms.GroupBox();
+            this.grb_Menu = new System.Windows.Forms.GroupBox();
+            this.btn_dangxuat = new System.Windows.Forms.Button();
+            this.btn_quaylai = new System.Windows.Forms.Button();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
-            this.btn_QuayLaiNhaCungCap = new System.Windows.Forms.Button();
             this.grb_Body.SuspendLayout();
             this.grb_Header.SuspendLayout();
+            this.grb_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,13 +171,44 @@
             // grb_Header
             // 
             this.grb_Header.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.grb_Header.Controls.Add(this.grb_Menu);
             this.grb_Header.Controls.Add(this.pic_Logo);
-            this.grb_Header.Controls.Add(this.btn_QuayLaiNhaCungCap);
             this.grb_Header.Location = new System.Drawing.Point(4, 4);
             this.grb_Header.Name = "grb_Header";
             this.grb_Header.Size = new System.Drawing.Size(607, 160);
             this.grb_Header.TabIndex = 4;
             this.grb_Header.TabStop = false;
+            // 
+            // grb_Menu
+            // 
+            this.grb_Menu.Controls.Add(this.btn_dangxuat);
+            this.grb_Menu.Controls.Add(this.btn_quaylai);
+            this.grb_Menu.Location = new System.Drawing.Point(491, 8);
+            this.grb_Menu.Name = "grb_Menu";
+            this.grb_Menu.Size = new System.Drawing.Size(110, 80);
+            this.grb_Menu.TabIndex = 60;
+            this.grb_Menu.TabStop = false;
+            this.grb_Menu.Enter += new System.EventHandler(this.grb_Menu_Enter);
+            // 
+            // btn_dangxuat
+            // 
+            this.btn_dangxuat.Image = ((System.Drawing.Image)(resources.GetObject("btn_dangxuat.Image")));
+            this.btn_dangxuat.Location = new System.Drawing.Point(57, 21);
+            this.btn_dangxuat.Name = "btn_dangxuat";
+            this.btn_dangxuat.Size = new System.Drawing.Size(37, 41);
+            this.btn_dangxuat.TabIndex = 62;
+            this.btn_dangxuat.UseVisualStyleBackColor = true;
+            this.btn_dangxuat.Click += new System.EventHandler(this.btn_dangxuat_Click);
+            // 
+            // btn_quaylai
+            // 
+            this.btn_quaylai.Image = ((System.Drawing.Image)(resources.GetObject("btn_quaylai.Image")));
+            this.btn_quaylai.Location = new System.Drawing.Point(14, 21);
+            this.btn_quaylai.Name = "btn_quaylai";
+            this.btn_quaylai.Size = new System.Drawing.Size(37, 41);
+            this.btn_quaylai.TabIndex = 59;
+            this.btn_quaylai.UseVisualStyleBackColor = true;
+            this.btn_quaylai.Click += new System.EventHandler(this.btn_quaylai_Click);
             // 
             // pic_Logo
             // 
@@ -187,38 +221,25 @@
             this.pic_Logo.TabIndex = 22;
             this.pic_Logo.TabStop = false;
             // 
-            // btn_QuayLaiNhaCungCap
-            // 
-            this.btn_QuayLaiNhaCungCap.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_QuayLaiNhaCungCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuayLaiNhaCungCap.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiNhaCungCap.Image")));
-            this.btn_QuayLaiNhaCungCap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QuayLaiNhaCungCap.Location = new System.Drawing.Point(183, 21);
-            this.btn_QuayLaiNhaCungCap.Name = "btn_QuayLaiNhaCungCap";
-            this.btn_QuayLaiNhaCungCap.Size = new System.Drawing.Size(145, 49);
-            this.btn_QuayLaiNhaCungCap.TabIndex = 21;
-            this.btn_QuayLaiNhaCungCap.Text = "Quay lại";
-            this.btn_QuayLaiNhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_QuayLaiNhaCungCap.UseVisualStyleBackColor = false;
-            this.btn_QuayLaiNhaCungCap.Click += new System.EventHandler(this.btn_QuayLaiNhaCungCap_Click);
-            // 
             // frm_DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(607, 589);
+            this.ControlBox = false;
             this.Controls.Add(this.grb_Header);
             this.Controls.Add(this.btn_DoiMatKhau);
             this.Controls.Add(this.grb_Body);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_DoiMatKhau";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoiMatKhau";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_DoiMatKhau_FormClosing);
             this.Load += new System.EventHandler(this.frm_DoiMatKhau_Load);
             this.grb_Body.ResumeLayout(false);
             this.grb_Body.PerformLayout();
             this.grb_Header.ResumeLayout(false);
+            this.grb_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -232,12 +253,14 @@
         private System.Windows.Forms.GroupBox grb_Header;
         private System.Windows.Forms.TextBox txt_NhapLaiMatKhau;
         private System.Windows.Forms.Label lb_NhapLaiMatKhau;
-        private System.Windows.Forms.Button btn_QuayLaiNhaCungCap;
         private System.Windows.Forms.Label lb_TenDangNhapCu;
         private System.Windows.Forms.Label lb_MatKhauCu;
         private System.Windows.Forms.TextBox txt_TenDangNhapCu;
         private System.Windows.Forms.TextBox txt_MatKhauCu;
         private System.Windows.Forms.PictureBox pic_Logo;
         private System.Windows.Forms.CheckBox chk_HienMatKhau;
+        private System.Windows.Forms.Button btn_quaylai;
+        private System.Windows.Forms.GroupBox grb_Menu;
+        private System.Windows.Forms.Button btn_dangxuat;
     }
 }

@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using BLL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_DangNhap : Form
     {
-        int count = 0;
         public frm_DangNhap()
         {
             InitializeComponent();
@@ -35,50 +35,42 @@ namespace PhanMemQuanLyBanGiayTheThao
                 DangNhapBLL PhanQuyenBLL = new DangNhapBLL();
                 int MaTK = PhanQuyenBLL.PhanQuyen(username, password);
                 frm_Menu home = new frm_Menu();
-                home.MaTK= int.Parse(MaTK.ToString());
+                home.MaTK = int.Parse(MaTK.ToString());
                 home.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Đăng Nhập không thành công, hãy kiểm tra lại tên đăng nhập và mật khẩu !","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Đăng Nhập không thành công, hãy kiểm tra lại tên đăng nhập và mật khẩu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-                if ((count % 2) == 0)
-                {
-                    txt_MatKhau.PasswordChar = '\0';
-                    btn_eyeopen.Visible = true;
-                    btn_eyeclose.Visible = false;
-                }
-                else
-                {
-                    txt_MatKhau.PasswordChar = '*';
-                    btn_eyeclose.Visible = true;
-                    btn_eyeopen.Visible = false;
-                }
-                count += 1;
-        }
-
-        private void frm_DangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frm_DangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        private void btn_exit_Click(object sender, EventArgs e)
         {
             DialogResult dlg = new DialogResult();
             dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (dlg == DialogResult.No)
+            if (dlg == DialogResult.Yes)
             {
-                e.Cancel = true;
+                Application.Exit();
             }
         }
+
+        private void btn_eyeclose_Click(object sender, EventArgs e)
+        {
+            txt_MatKhau.UseSystemPasswordChar = !txt_MatKhau.UseSystemPasswordChar;
+            if (txt_MatKhau.UseSystemPasswordChar)
+            {
+                btn_eyeclose.Visible = false;
+                btn_eyeopen.Visible = true;
+            }
+            else
+            {
+                btn_eyeclose.Visible = true;
+                btn_eyeopen.Visible = false;
+            }
+        }
+
     }
 
 }

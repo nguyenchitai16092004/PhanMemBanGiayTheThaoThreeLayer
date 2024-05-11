@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NhanVien));
             this.grb_HeaderNhanVien = new System.Windows.Forms.GroupBox();
+            this.grb_Menu = new System.Windows.Forms.GroupBox();
+            this.btn_dangxuat = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.btn_quaylai = new System.Windows.Forms.Button();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
-            this.btn_QuayLaiNhanVien = new System.Windows.Forms.Button();
-            this.lb_DangXuatNhanVien = new System.Windows.Forms.Label();
-            this.btn_DangXuatNhanVien = new System.Windows.Forms.Button();
             this.grb_NhanVien = new System.Windows.Forms.GroupBox();
             this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.cbo_Search = new System.Windows.Forms.ComboBox();
@@ -60,6 +61,7 @@
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.grb_HeaderNhanVien.SuspendLayout();
+            this.grb_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.grb_NhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
@@ -68,16 +70,60 @@
             // grb_HeaderNhanVien
             // 
             this.grb_HeaderNhanVien.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grb_HeaderNhanVien.Controls.Add(this.grb_Menu);
             this.grb_HeaderNhanVien.Controls.Add(this.pic_Logo);
-            this.grb_HeaderNhanVien.Controls.Add(this.btn_QuayLaiNhanVien);
-            this.grb_HeaderNhanVien.Controls.Add(this.lb_DangXuatNhanVien);
-            this.grb_HeaderNhanVien.Controls.Add(this.btn_DangXuatNhanVien);
             this.grb_HeaderNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.grb_HeaderNhanVien.Location = new System.Drawing.Point(0, 0);
             this.grb_HeaderNhanVien.Name = "grb_HeaderNhanVien";
             this.grb_HeaderNhanVien.Size = new System.Drawing.Size(1382, 163);
             this.grb_HeaderNhanVien.TabIndex = 2;
             this.grb_HeaderNhanVien.TabStop = false;
+            this.grb_HeaderNhanVien.Enter += new System.EventHandler(this.grb_HeaderNhanVien_Enter);
+            // 
+            // grb_Menu
+            // 
+            this.grb_Menu.BackColor = System.Drawing.Color.Transparent;
+            this.grb_Menu.Controls.Add(this.btn_dangxuat);
+            this.grb_Menu.Controls.Add(this.btn_exit);
+            this.grb_Menu.Controls.Add(this.btn_quaylai);
+            this.grb_Menu.ForeColor = System.Drawing.Color.Black;
+            this.grb_Menu.Location = new System.Drawing.Point(1228, 12);
+            this.grb_Menu.Name = "grb_Menu";
+            this.grb_Menu.Size = new System.Drawing.Size(154, 80);
+            this.grb_Menu.TabIndex = 66;
+            this.grb_Menu.TabStop = false;
+            this.grb_Menu.Enter += new System.EventHandler(this.grb_Menu_Enter);
+            // 
+            // btn_dangxuat
+            // 
+            this.btn_dangxuat.Image = ((System.Drawing.Image)(resources.GetObject("btn_dangxuat.Image")));
+            this.btn_dangxuat.Location = new System.Drawing.Point(63, 20);
+            this.btn_dangxuat.Name = "btn_dangxuat";
+            this.btn_dangxuat.Size = new System.Drawing.Size(37, 41);
+            this.btn_dangxuat.TabIndex = 66;
+            this.btn_dangxuat.UseVisualStyleBackColor = true;
+            this.btn_dangxuat.Click += new System.EventHandler(this.btn_dangxuat_Click);
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
+            this.btn_exit.Location = new System.Drawing.Point(111, 21);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(37, 41);
+            this.btn_exit.TabIndex = 58;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // btn_quaylai
+            // 
+            this.btn_quaylai.Image = ((System.Drawing.Image)(resources.GetObject("btn_quaylai.Image")));
+            this.btn_quaylai.Location = new System.Drawing.Point(15, 21);
+            this.btn_quaylai.Name = "btn_quaylai";
+            this.btn_quaylai.Size = new System.Drawing.Size(37, 41);
+            this.btn_quaylai.TabIndex = 59;
+            this.btn_quaylai.UseVisualStyleBackColor = true;
+            this.btn_quaylai.Click += new System.EventHandler(this.btn_quaylai_Click);
             // 
             // pic_Logo
             // 
@@ -89,45 +135,6 @@
             this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_Logo.TabIndex = 65;
             this.pic_Logo.TabStop = false;
-            // 
-            // btn_QuayLaiNhanVien
-            // 
-            this.btn_QuayLaiNhanVien.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_QuayLaiNhanVien.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_QuayLaiNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiNhanVien.Image")));
-            this.btn_QuayLaiNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QuayLaiNhanVien.Location = new System.Drawing.Point(178, 21);
-            this.btn_QuayLaiNhanVien.Name = "btn_QuayLaiNhanVien";
-            this.btn_QuayLaiNhanVien.Size = new System.Drawing.Size(127, 39);
-            this.btn_QuayLaiNhanVien.TabIndex = 20;
-            this.btn_QuayLaiNhanVien.Text = "Quay lại";
-            this.btn_QuayLaiNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_QuayLaiNhanVien.UseVisualStyleBackColor = false;
-            this.btn_QuayLaiNhanVien.Click += new System.EventHandler(this.btn_QuayLaiNhanVien_Click);
-            // 
-            // lb_DangXuatNhanVien
-            // 
-            this.lb_DangXuatNhanVien.AutoSize = true;
-            this.lb_DangXuatNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DangXuatNhanVien.Location = new System.Drawing.Point(1233, 113);
-            this.lb_DangXuatNhanVien.Name = "lb_DangXuatNhanVien";
-            this.lb_DangXuatNhanVien.Size = new System.Drawing.Size(84, 20);
-            this.lb_DangXuatNhanVien.TabIndex = 16;
-            this.lb_DangXuatNhanVien.Text = "Đăng xuất";
-            // 
-            // btn_DangXuatNhanVien
-            // 
-            this.btn_DangXuatNhanVien.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_DangXuatNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_DangXuatNhanVien.BackgroundImage")));
-            this.btn_DangXuatNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_DangXuatNhanVien.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_DangXuatNhanVien.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_DangXuatNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DangXuatNhanVien.Location = new System.Drawing.Point(1246, 37);
-            this.btn_DangXuatNhanVien.Name = "btn_DangXuatNhanVien";
-            this.btn_DangXuatNhanVien.Size = new System.Drawing.Size(50, 61);
-            this.btn_DangXuatNhanVien.TabIndex = 15;
-            this.btn_DangXuatNhanVien.UseVisualStyleBackColor = false;
             // 
             // grb_NhanVien
             // 
@@ -435,15 +442,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1382, 699);
+            this.ControlBox = false;
             this.Controls.Add(this.grb_NhanVien);
             this.Controls.Add(this.grb_HeaderNhanVien);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_NhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhanVien";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_NhanVien_FormClosing);
             this.Load += new System.EventHandler(this.NhanVien_Load);
             this.grb_HeaderNhanVien.ResumeLayout(false);
-            this.grb_HeaderNhanVien.PerformLayout();
+            this.grb_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.grb_NhanVien.ResumeLayout(false);
             this.grb_NhanVien.PerformLayout();
@@ -455,9 +463,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grb_HeaderNhanVien;
-        private System.Windows.Forms.Button btn_QuayLaiNhanVien;
-        private System.Windows.Forms.Label lb_DangXuatNhanVien;
-        private System.Windows.Forms.Button btn_DangXuatNhanVien;
         private System.Windows.Forms.GroupBox grb_NhanVien;
         private System.Windows.Forms.Button btn_LamMoi;
         private System.Windows.Forms.Button btn_XoaNhanVien;
@@ -484,5 +489,9 @@
         private System.Windows.Forms.Label lb_MaTK;
         private System.Windows.Forms.ComboBox cbo_MaTK;
         private System.Windows.Forms.PictureBox pic_Logo;
+        private System.Windows.Forms.GroupBox grb_Menu;
+        private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Button btn_quaylai;
+        private System.Windows.Forms.Button btn_dangxuat;
     }
 }

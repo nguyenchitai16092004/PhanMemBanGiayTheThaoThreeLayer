@@ -13,7 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_Menu : Form
     {
-        public string connectionString = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string connectionString = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         string Quyen;
         int MaTaiKhoan ;
         public string QuyenHang(int MaTK)
@@ -173,6 +173,22 @@ namespace PhanMemQuanLyBanGiayTheThao
             if (dlg == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void grb_Menu_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }

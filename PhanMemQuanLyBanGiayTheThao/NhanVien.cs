@@ -322,13 +322,56 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void frm_NhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
+
+        }
+
+        private void btn_DangXuatNhanVien_Click(object sender, EventArgs e)
+        {
+            frm_DangNhap dn = new frm_DangNhap();
+            dn.Show();
+            this.Hide();
+        }
+
+        private void btn_quaylai_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_Menu ql = new frm_Menu();
+            ql.MaTK = MaTK;
+            ql.Show();
+            this.Close();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
             DialogResult dlg = new DialogResult();
             dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (dlg == DialogResult.No)
+            if (dlg == DialogResult.Yes)
             {
-                e.Cancel = true;
+                Application.Exit();
             }
+        }
+
+        private void grb_HeaderNhanVien_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_DangXuatNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grb_Menu_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            frm_DangNhap dn = new frm_DangNhap();
+            dn.Show();
+            this.Close();
         }
     }
 

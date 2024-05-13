@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_SanPham : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         private bool isChangeImage = false;
         public frm_SanPham()
         {
@@ -44,7 +44,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         public void XoaSanPham()
         {
-            string MaSP = txt_MaSanPhamSanPham.Text;
+            string MaSP = txt_MaSanPham.Text;
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "DELETE FROM SANPHAM WHERE MaSP like '" + MaSP.ToString() + "'";
             try
@@ -65,7 +65,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void SuaSP()
         {
             int TrangThai;
-            string MaSP = txt_MaSanPhamSanPham.Text;
+            string MaSP = txt_MaSanPham.Text;
 
             if (chk_TrangThai.Checked == false)
             {
@@ -136,34 +136,48 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         public void ThemSP()
         {
-            if (pic_ImageSP.Image == null)
-            {
-                MessageBox.Show("Bạn hãy thêm ảnh của sản phẩm trước khi thêm sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string sSQL = "INSERT INTO SANPHAM (TenSP, GiaBan, MaNCC, SoLuong, TrangThai, KhuyenMai, GiaNhap, Anh) VALUES (@TenSP, @GiaBan, @MaNCC, @SoLuong, @TrangThai, @KhuyenMai, @GiaNhap, @Anh)";
+            string maSanPham = txt_MaSanPham.Text;
+            string sSQLKiemTra = "SELECT COUNT(*) FROM SANPHAM WHERE MaSP = @MaSP";
             try
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     myConnection.Open();
-                    using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
+                    using (SqlCommand cmdKiemTra = new SqlCommand(sSQLKiemTra, myConnection))
                     {
-                        cmd.Parameters.AddWithValue("@TenSP", txt_TenSanPhamSanPham.Text);
-                        cmd.Parameters.AddWithValue("@GiaBan", nud_DonGiaSanPham.Text);
-                        cmd.Parameters.AddWithValue("@MaNCC", cbo_MaNCC.Text);
-                        cmd.Parameters.AddWithValue("@SoLuong", nud_SoLuongSanPham.Text);
-                        cmd.Parameters.AddWithValue("@TrangThai", 1);
-                        cmd.Parameters.AddWithValue("@KhuyenMai", txt_KhuyenMai.Text);
-                        cmd.Parameters.AddWithValue("@GiaNhap", nud_GiaNhap.Text);
+                        cmdKiemTra.Parameters.AddWithValue("@MaSP", maSanPham);
+                        int count = (int)cmdKiemTra.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Mã sản phẩm đã tồn tại. Hãy chọn nút 'Làm mới' trước thêm sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return; // thoát khỏi hàm
+                        }
+                    }
+
+                    // nếu không ktra không trùng mã sản phẩm thì tiếp tục thực hiện thêm sản phẩm
+                    if (pic_ImageSP.Image == null)
+                    {
+                        MessageBox.Show("Bạn hãy thêm ảnh của sản phẩm trước khi thêm sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    string sSQL = "INSERT INTO SANPHAM (TenSP, GiaBan, MaNCC, SoLuong, TrangThai, KhuyenMai, GiaNhap, Anh) VALUES (@TenSP, @GiaBan, @MaNCC, @SoLuong, @TrangThai, @KhuyenMai, @GiaNhap, @Anh)";
+                    using (SqlCommand cmdThemSP = new SqlCommand(sSQL, myConnection))
+                    {
+                        cmdThemSP.Parameters.AddWithValue("@TenSP", txt_TenSanPhamSanPham.Text);
+                        cmdThemSP.Parameters.AddWithValue("@GiaBan", nud_DonGiaSanPham.Text);
+                        cmdThemSP.Parameters.AddWithValue("@MaNCC", cbo_MaNCC.Text);
+                        cmdThemSP.Parameters.AddWithValue("@SoLuong", nud_SoLuongSanPham.Text);
+                        cmdThemSP.Parameters.AddWithValue("@TrangThai", 1);
+                        cmdThemSP.Parameters.AddWithValue("@KhuyenMai", txt_KhuyenMai.Text);
+                        cmdThemSP.Parameters.AddWithValue("@GiaNhap", nud_GiaNhap.Text);
 
                         // Chuyển ảnh sang dạng byte array và thêm vào parameter
                         MemoryStream ms = new MemoryStream();
                         pic_ImageSP.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                         byte[] imgByte = ms.GetBuffer();
-                        cmd.Parameters.AddWithValue("@Anh", imgByte);
+                        cmdThemSP.Parameters.AddWithValue("@Anh", imgByte);
 
-                        cmd.ExecuteNonQuery();
+                        cmdThemSP.ExecuteNonQuery();
                     }
                     MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo");
                 }
@@ -194,7 +208,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                 DataGridViewRow selectedRow = dgv_SanPham.Rows[rowIndex];
                 if (selectedRow != null)
                 {
-                    txt_MaSanPhamSanPham.Text = selectedRow.Cells[0].Value.ToString();
+                    txt_MaSanPham.Text = selectedRow.Cells[0].Value.ToString();
                     txt_TenSanPhamSanPham.Text = selectedRow.Cells[1].Value.ToString();
                     nud_DonGiaSanPham.Value = Convert.ToDecimal(selectedRow.Cells[2].Value);
                     cbo_MaNCC.Text = selectedRow.Cells[3].Value.ToString();
@@ -338,7 +352,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_Search.Text = "Tìm kiếm theo :";
             chk_TrangThai.Checked = false;
             cbo_MaNCC.SelectedIndex = -1;
-            txt_MaSanPhamSanPham.Clear();
+            txt_MaSanPham.Clear();
             txt_TenSanPhamSanPham.Clear();
             txt_KhuyenMai.Clear();
             nud_DonGiaSanPham.Value = 0;
@@ -434,5 +448,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             dn.Show();
             this.Close();
         }
+
     }
 }
+

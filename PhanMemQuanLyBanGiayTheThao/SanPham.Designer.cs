@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_SanPham));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
             this.grb_SanPhamSanPham = new System.Windows.Forms.GroupBox();
             this.cbo_MaNCC = new System.Windows.Forms.ComboBox();
@@ -51,7 +51,7 @@
             this.nud_DonGiaSanPham = new System.Windows.Forms.NumericUpDown();
             this.txt_KhuyenMai = new System.Windows.Forms.TextBox();
             this.txt_TenSanPhamSanPham = new System.Windows.Forms.TextBox();
-            this.txt_MaSanPhamSanPham = new System.Windows.Forms.TextBox();
+            this.txt_MaSanPham = new System.Windows.Forms.TextBox();
             this.lb_KhuyenMaiSanPham = new System.Windows.Forms.Label();
             this.lb_MaNhaCungCapSanPham = new System.Windows.Forms.Label();
             this.lb_GiaNhap = new System.Windows.Forms.Label();
@@ -111,7 +111,7 @@
             this.grb_SanPhamSanPham.Controls.Add(this.nud_DonGiaSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.txt_KhuyenMai);
             this.grb_SanPhamSanPham.Controls.Add(this.txt_TenSanPhamSanPham);
-            this.grb_SanPhamSanPham.Controls.Add(this.txt_MaSanPhamSanPham);
+            this.grb_SanPhamSanPham.Controls.Add(this.txt_MaSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.lb_KhuyenMaiSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.lb_MaNhaCungCapSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.lb_GiaNhap);
@@ -186,8 +186,8 @@
             this.dgv_SanPham.Name = "dgv_SanPham";
             this.dgv_SanPham.ReadOnly = true;
             this.dgv_SanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_SanPham.RowTemplate.Height = 24;
             this.dgv_SanPham.Size = new System.Drawing.Size(852, 400);
             this.dgv_SanPham.TabIndex = 51;
@@ -366,14 +366,15 @@
             this.txt_TenSanPhamSanPham.Size = new System.Drawing.Size(330, 28);
             this.txt_TenSanPhamSanPham.TabIndex = 8;
             // 
-            // txt_MaSanPhamSanPham
+            // txt_MaSanPham
             // 
-            this.txt_MaSanPhamSanPham.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txt_MaSanPhamSanPham.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaSanPhamSanPham.Location = new System.Drawing.Point(7, 277);
-            this.txt_MaSanPhamSanPham.Name = "txt_MaSanPhamSanPham";
-            this.txt_MaSanPhamSanPham.Size = new System.Drawing.Size(333, 28);
-            this.txt_MaSanPhamSanPham.TabIndex = 8;
+            this.txt_MaSanPham.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txt_MaSanPham.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaSanPham.Location = new System.Drawing.Point(7, 277);
+            this.txt_MaSanPham.Name = "txt_MaSanPham";
+            this.txt_MaSanPham.ReadOnly = true;
+            this.txt_MaSanPham.Size = new System.Drawing.Size(333, 28);
+            this.txt_MaSanPham.TabIndex = 8;
             // 
             // lb_KhuyenMaiSanPham
             // 
@@ -553,7 +554,7 @@
         private System.Windows.Forms.NumericUpDown nud_SoLuongSanPham;
         private System.Windows.Forms.NumericUpDown nud_DonGiaSanPham;
         private System.Windows.Forms.TextBox txt_TenSanPhamSanPham;
-        private System.Windows.Forms.TextBox txt_MaSanPhamSanPham;
+        private System.Windows.Forms.TextBox txt_MaSanPham;
         private System.Windows.Forms.Label lb_KhuyenMaiSanPham;
         private System.Windows.Forms.Label lb_MaNhaCungCapSanPham;
         private System.Windows.Forms.Label lb_SoLuongSanPham;

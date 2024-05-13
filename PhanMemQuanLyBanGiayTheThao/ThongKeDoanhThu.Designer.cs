@@ -251,17 +251,18 @@
             // txt_TimKiemThongKe
             // 
             this.txt_TimKiemThongKe.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_TimKiemThongKe.Location = new System.Drawing.Point(97, 42);
+            this.txt_TimKiemThongKe.Location = new System.Drawing.Point(18, 68);
             this.txt_TimKiemThongKe.Name = "txt_TimKiemThongKe";
             this.txt_TimKiemThongKe.Size = new System.Drawing.Size(309, 27);
             this.txt_TimKiemThongKe.TabIndex = 50;
+            this.txt_TimKiemThongKe.TextChanged += new System.EventHandler(this.txt_TimKiemThongKe_TextChanged);
             // 
             // btn_SearchThongKe
             // 
             this.btn_SearchThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_SearchThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_SearchThongKe.Image")));
             this.btn_SearchThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SearchThongKe.Location = new System.Drawing.Point(271, 69);
+            this.btn_SearchThongKe.Location = new System.Drawing.Point(333, 45);
             this.btn_SearchThongKe.Name = "btn_SearchThongKe";
             this.btn_SearchThongKe.Size = new System.Drawing.Size(135, 39);
             this.btn_SearchThongKe.TabIndex = 52;
@@ -278,17 +279,17 @@
             "MaNV",
             "MaKH",
             "Ngày"});
-            this.cbb_TimKiem_Theo.Location = new System.Drawing.Point(412, 40);
+            this.cbb_TimKiem_Theo.Location = new System.Drawing.Point(191, 34);
             this.cbb_TimKiem_Theo.Name = "cbb_TimKiem_Theo";
-            this.cbb_TimKiem_Theo.Size = new System.Drawing.Size(239, 28);
+            this.cbb_TimKiem_Theo.Size = new System.Drawing.Size(136, 28);
             this.cbb_TimKiem_Theo.TabIndex = 58;
             this.cbb_TimKiem_Theo.SelectedIndexChanged += new System.EventHandler(this.Cbb_TimKiem_Theo_SelectedIndexChanged);
             // 
             // dtp_Ngay
             // 
-            this.dtp_Ngay.Location = new System.Drawing.Point(657, 42);
+            this.dtp_Ngay.Location = new System.Drawing.Point(18, 68);
             this.dtp_Ngay.Name = "dtp_Ngay";
-            this.dtp_Ngay.Size = new System.Drawing.Size(239, 27);
+            this.dtp_Ngay.Size = new System.Drawing.Size(309, 27);
             this.dtp_Ngay.TabIndex = 59;
             this.dtp_Ngay.Visible = false;
             // 

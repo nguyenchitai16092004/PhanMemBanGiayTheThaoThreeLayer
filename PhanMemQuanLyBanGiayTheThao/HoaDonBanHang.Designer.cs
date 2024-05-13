@@ -41,11 +41,12 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_DoiMatKhauNhanVien = new System.Windows.Forms.Button();
             this.btn_KHHoaDonBanHang = new System.Windows.Forms.Button();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
+            this.cbo_TenNhanVien = new System.Windows.Forms.ComboBox();
             this.cbo_TimKiem_Theo = new System.Windows.Forms.ComboBox();
             this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
             this.txt_MaKH = new System.Windows.Forms.TextBox();
             this.btn_TaoHoaDon = new System.Windows.Forms.Button();
-            this.cbo_MaNV = new System.Windows.Forms.ComboBox();
+            this.cbo_TenNV = new System.Windows.Forms.ComboBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.dgv_HoaDonBanHang = new System.Windows.Forms.DataGridView();
             this.dtp_NgayLapHoaDonBanHang = new System.Windows.Forms.DateTimePicker();
@@ -62,6 +63,8 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XuatThongTinHoaDonBanHang = new System.Windows.Forms.Button();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.grb_HoaDonBanHang = new System.Windows.Forms.GroupBox();
+            this.txt_MaNV = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grb_Header.SuspendLayout();
             this.grb_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
@@ -83,7 +86,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_Header.Size = new System.Drawing.Size(1270, 153);
             this.grb_Header.TabIndex = 15;
             this.grb_Header.TabStop = false;
-            this.grb_Header.Enter += new System.EventHandler(this.grb_Header_Enter);
             // 
             // grb_Menu
             // 
@@ -183,11 +185,14 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // grb_SanPham
             // 
+            this.grb_SanPham.Controls.Add(this.txt_MaNV);
+            this.grb_SanPham.Controls.Add(this.label1);
+            this.grb_SanPham.Controls.Add(this.cbo_TenNhanVien);
             this.grb_SanPham.Controls.Add(this.cbo_TimKiem_Theo);
             this.grb_SanPham.Controls.Add(this.dtp_Ngay);
             this.grb_SanPham.Controls.Add(this.txt_MaKH);
             this.grb_SanPham.Controls.Add(this.btn_TaoHoaDon);
-            this.grb_SanPham.Controls.Add(this.cbo_MaNV);
+            this.grb_SanPham.Controls.Add(this.cbo_TenNV);
             this.grb_SanPham.Controls.Add(this.btn_Search);
             this.grb_SanPham.Controls.Add(this.btn_KHHoaDonBanHang);
             this.grb_SanPham.Controls.Add(this.dgv_HoaDonBanHang);
@@ -213,12 +218,21 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_SanPham.TabStop = false;
             this.grb_SanPham.Text = "Sản phẩm";
             // 
+            // cbo_TenNhanVien
+            // 
+            this.cbo_TenNhanVien.FormattingEnabled = true;
+            this.cbo_TenNhanVien.Location = new System.Drawing.Point(377, 27);
+            this.cbo_TenNhanVien.Name = "cbo_TenNhanVien";
+            this.cbo_TenNhanVien.Size = new System.Drawing.Size(321, 28);
+            this.cbo_TenNhanVien.TabIndex = 62;
+            this.cbo_TenNhanVien.Visible = false;
+            // 
             // cbo_TimKiem_Theo
             // 
             this.cbo_TimKiem_Theo.FormattingEnabled = true;
             this.cbo_TimKiem_Theo.Items.AddRange(new object[] {
             "MaHD",
-            "MaNV",
+            "Tên Nhân viên",
             "MaKH",
             "Ngày"});
             this.cbo_TimKiem_Theo.Location = new System.Drawing.Point(721, 30);
@@ -229,15 +243,15 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // dtp_Ngay
             // 
-            this.dtp_Ngay.Location = new System.Drawing.Point(886, 31);
+            this.dtp_Ngay.Location = new System.Drawing.Point(377, 28);
             this.dtp_Ngay.Name = "dtp_Ngay";
-            this.dtp_Ngay.Size = new System.Drawing.Size(239, 27);
+            this.dtp_Ngay.Size = new System.Drawing.Size(321, 27);
             this.dtp_Ngay.TabIndex = 60;
             this.dtp_Ngay.Visible = false;
             // 
             // txt_MaKH
             // 
-            this.txt_MaKH.Location = new System.Drawing.Point(13, 281);
+            this.txt_MaKH.Location = new System.Drawing.Point(17, 359);
             this.txt_MaKH.Name = "txt_MaKH";
             this.txt_MaKH.Size = new System.Drawing.Size(311, 27);
             this.txt_MaKH.TabIndex = 45;
@@ -247,7 +261,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_TaoHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btn_TaoHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btn_TaoHoaDon.Image")));
             this.btn_TaoHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_TaoHoaDon.Location = new System.Drawing.Point(13, 342);
+            this.btn_TaoHoaDon.Location = new System.Drawing.Point(17, 397);
             this.btn_TaoHoaDon.Name = "btn_TaoHoaDon";
             this.btn_TaoHoaDon.Size = new System.Drawing.Size(311, 45);
             this.btn_TaoHoaDon.TabIndex = 44;
@@ -255,13 +269,13 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_TaoHoaDon.UseVisualStyleBackColor = false;
             this.btn_TaoHoaDon.Click += new System.EventHandler(this.btn_TaoHoaDon_Click);
             // 
-            // cbo_MaNV
+            // cbo_TenNV
             // 
-            this.cbo_MaNV.FormattingEnabled = true;
-            this.cbo_MaNV.Location = new System.Drawing.Point(13, 211);
-            this.cbo_MaNV.Name = "cbo_MaNV";
-            this.cbo_MaNV.Size = new System.Drawing.Size(311, 28);
-            this.cbo_MaNV.TabIndex = 43;
+            this.cbo_TenNV.FormattingEnabled = true;
+            this.cbo_TenNV.Location = new System.Drawing.Point(17, 289);
+            this.cbo_TenNV.Name = "cbo_TenNV";
+            this.cbo_TenNV.Size = new System.Drawing.Size(311, 28);
+            this.cbo_TenNV.TabIndex = 43;
             // 
             // btn_Search
             // 
@@ -298,7 +312,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             this.dtp_NgayLapHoaDonBanHang.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_NgayLapHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_NgayLapHoaDonBanHang.Location = new System.Drawing.Point(13, 153);
+            this.dtp_NgayLapHoaDonBanHang.Location = new System.Drawing.Point(17, 156);
             this.dtp_NgayLapHoaDonBanHang.Name = "dtp_NgayLapHoaDonBanHang";
             this.dtp_NgayLapHoaDonBanHang.Size = new System.Drawing.Size(311, 22);
             this.dtp_NgayLapHoaDonBanHang.TabIndex = 30;
@@ -322,16 +336,16 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             this.lb_MaNVHoaDonBanHang.AutoSize = true;
             this.lb_MaNVHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MaNVHoaDonBanHang.Location = new System.Drawing.Point(9, 188);
+            this.lb_MaNVHoaDonBanHang.Location = new System.Drawing.Point(17, 258);
             this.lb_MaNVHoaDonBanHang.Name = "lb_MaNVHoaDonBanHang";
-            this.lb_MaNVHoaDonBanHang.Size = new System.Drawing.Size(60, 20);
+            this.lb_MaNVHoaDonBanHang.Size = new System.Drawing.Size(113, 20);
             this.lb_MaNVHoaDonBanHang.TabIndex = 28;
-            this.lb_MaNVHoaDonBanHang.Text = "Mã NV";
+            this.lb_MaNVHoaDonBanHang.Text = "Tên nhân viên";
             // 
             // txt_MaHoaDon
             // 
             this.txt_MaHoaDon.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txt_MaHoaDon.Location = new System.Drawing.Point(13, 87);
+            this.txt_MaHoaDon.Location = new System.Drawing.Point(17, 87);
             this.txt_MaHoaDon.Name = "txt_MaHoaDon";
             this.txt_MaHoaDon.ReadOnly = true;
             this.txt_MaHoaDon.Size = new System.Drawing.Size(311, 27);
@@ -341,7 +355,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             this.lb_MaHoaDonHoaDonBanHang.AutoSize = true;
             this.lb_MaHoaDonHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MaHoaDonHoaDonBanHang.Location = new System.Drawing.Point(13, 56);
+            this.lb_MaHoaDonHoaDonBanHang.Location = new System.Drawing.Point(17, 56);
             this.lb_MaHoaDonHoaDonBanHang.Name = "lb_MaHoaDonHoaDonBanHang";
             this.lb_MaHoaDonHoaDonBanHang.Size = new System.Drawing.Size(96, 20);
             this.lb_MaHoaDonHoaDonBanHang.TabIndex = 26;
@@ -366,7 +380,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             this.lb_NgayLapHoaDonBanHang.AutoSize = true;
             this.lb_NgayLapHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NgayLapHoaDonBanHang.Location = new System.Drawing.Point(9, 117);
+            this.lb_NgayLapHoaDonBanHang.Location = new System.Drawing.Point(17, 125);
             this.lb_NgayLapHoaDonBanHang.Name = "lb_NgayLapHoaDonBanHang";
             this.lb_NgayLapHoaDonBanHang.Size = new System.Drawing.Size(74, 20);
             this.lb_NgayLapHoaDonBanHang.TabIndex = 23;
@@ -388,7 +402,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.txt_TimKiemHoaDonBanHang.Location = new System.Drawing.Point(377, 26);
             this.txt_TimKiemHoaDonBanHang.Multiline = true;
             this.txt_TimKiemHoaDonBanHang.Name = "txt_TimKiemHoaDonBanHang";
-            this.txt_TimKiemHoaDonBanHang.Size = new System.Drawing.Size(321, 32);
+            this.txt_TimKiemHoaDonBanHang.Size = new System.Drawing.Size(321, 27);
             this.txt_TimKiemHoaDonBanHang.TabIndex = 21;
             // 
             // btn_XoaHoaDonBanHang
@@ -412,7 +426,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XemDanhSachHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XemDanhSachHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btn_XemDanhSachHoaDon.Image")));
             this.btn_XemDanhSachHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XemDanhSachHoaDon.Location = new System.Drawing.Point(17, 421);
+            this.btn_XemDanhSachHoaDon.Location = new System.Drawing.Point(21, 484);
             this.btn_XemDanhSachHoaDon.Name = "btn_XemDanhSachHoaDon";
             this.btn_XemDanhSachHoaDon.Size = new System.Drawing.Size(175, 59);
             this.btn_XemDanhSachHoaDon.TabIndex = 18;
@@ -439,7 +453,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             this.lb_MaKH.AutoSize = true;
             this.lb_MaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MaKH.Location = new System.Drawing.Point(9, 258);
+            this.lb_MaKH.Location = new System.Drawing.Point(17, 328);
             this.lb_MaKH.Name = "lb_MaKH";
             this.lb_MaKH.Size = new System.Drawing.Size(61, 20);
             this.lb_MaKH.TabIndex = 2;
@@ -457,6 +471,23 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_HoaDonBanHang.Size = new System.Drawing.Size(1276, 746);
             this.grb_HoaDonBanHang.TabIndex = 19;
             this.grb_HoaDonBanHang.TabStop = false;
+            // 
+            // txt_MaNV
+            // 
+            this.txt_MaNV.Location = new System.Drawing.Point(17, 220);
+            this.txt_MaNV.Name = "txt_MaNV";
+            this.txt_MaNV.Size = new System.Drawing.Size(311, 27);
+            this.txt_MaNV.TabIndex = 64;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Mã nhân viên";
             // 
             // frm_HoaDonBanHang
             // 
@@ -511,11 +542,14 @@ namespace PhanMemQuanLyBanGiayTheThao
         private System.Windows.Forms.ComboBox cbo_TimKiem_Theo;
         private System.Windows.Forms.Button btn_DoiMatKhauNhanVien;
         private System.Windows.Forms.PictureBox pic_Logo;
-        private System.Windows.Forms.ComboBox cbo_MaNV;
+        private System.Windows.Forms.ComboBox cbo_TenNV;
         private System.Windows.Forms.GroupBox grb_Menu;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_quaylai;
         private System.Windows.Forms.Label lb_DoiMatKhauNhanVien;
         private System.Windows.Forms.Button btn_dangxuat;
+        private System.Windows.Forms.ComboBox cbo_TenNhanVien;
+        private System.Windows.Forms.TextBox txt_MaNV;
+        private System.Windows.Forms.Label label1;
     }
 }

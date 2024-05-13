@@ -15,7 +15,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_HoaDonBanHang : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         int TienKhachDua;
         public int MaTK;
         public frm_HoaDonBanHang()
@@ -24,9 +24,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         public void XemHoaDon()
         {
-            //khai báo chuoi ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT NHANVIEN.TenNV AS 'Nhân viên lập hóa đơn', HOADON.MaHD, HOADON.MaKH, HOADON.NgayLap, HOADON.TienKhachDua, HOADON.TienGuiLai, HOADON.TongHD " +
+            string sSQL = "SELECT NHANVIEN.MaNV , NHANVIEN.TenNV AS 'Nhân viên lập hóa đơn', HOADON.MaHD, HOADON.MaKH, HOADON.NgayLap, HOADON.TienKhachDua, HOADON.TienGuiLai, HOADON.TongHD " +
                        "FROM HOADON INNER JOIN NHANVIEN ON NHANVIEN.MaNV = HOADON.MaNV;";
             try
             {
@@ -43,6 +42,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
+            dgv_HoaDonBanHang.ClearSelection();
         }
 
         //
@@ -59,7 +59,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
                         cmd.Parameters.AddWithValue("@MaKH", txt_MaKH.Text);
-                        cmd.Parameters.AddWithValue("@MaNV", cbo_MaNV.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@MaNV", cbo_TenNV.SelectedValue.ToString());
                         cmd.Parameters.AddWithValue("@NgayLap", dtp_NgayLapHoaDonBanHang.Value.ToString("yyyy/MM/dd"));
                         cmd.Parameters.AddWithValue("@TienKhachDua", DBNull.Value);
                         cmd.Parameters.AddWithValue("@TienGuiLai", DBNull.Value);
@@ -79,20 +79,17 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         public void SuaHoaDon()
         {
-            // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
-                // Chuỗi truy vấn cập nhật
                 string sSQL = "UPDATE HOADON SET MaNV = @MaNV, MaKH = @MaKH ,NgayLap = @NgayLap WHERE MaHD = @MaHD";
 
                 try
                 {
                     myConnection.Open();
-                    // Khởi tạo đối tượng SqlCommand
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
                         cmd.Parameters.AddWithValue("@MaHD", int.Parse(txt_MaHoaDon.Text));
-                        cmd.Parameters.AddWithValue("@MaNV", int.Parse(cbo_MaNV.SelectedValue.ToString()));
+                        cmd.Parameters.AddWithValue("@MaNV", int.Parse(txt_MaNV.Text));
                         cmd.Parameters.AddWithValue("@MaKH", int.Parse(txt_MaKH.Text));
                         cmd.Parameters.AddWithValue("@NgayLap", DateTime.Parse(dtp_NgayLapHoaDonBanHang.Text));
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -169,8 +166,6 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         public void HienThiMaNhanVien(int MaTK)
         {
-            //Doi tuong ket noi CSDL
-            MessageBox.Show(MaTK.ToString());
             SqlConnection myConnection = new SqlConnection(scon);
             string sSql;
             sSql = "SELECT MaNV, TenNV FROM NHANVIEN WHERE MaTK = @MaTK";
@@ -184,9 +179,36 @@ namespace PhanMemQuanLyBanGiayTheThao
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 myConnection.Close();
-                cbo_MaNV.DataSource = ds.Tables[0];
-                cbo_MaNV.DisplayMember = "TenNV";
-                cbo_MaNV.ValueMember = "MaNV";
+                cbo_TenNV.DataSource = ds.Tables[0];
+                cbo_TenNV.DisplayMember = "TenNV";
+                cbo_TenNV.ValueMember = "MaNV";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+            }
+        }
+
+        //
+
+        public void HienThiTenNhanVien()
+        {
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql;
+            sSql = "SELECT MaNV, TenNV FROM NHANVIEN";
+            try
+            {
+                myConnection.Open();
+                SqlCommand cmd = new SqlCommand(sSql, myConnection);
+                cmd.Parameters.AddWithValue("@MaTK", MaTK);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //DataSet: du lieu tren bo nho RAM
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                myConnection.Close();
+                cbo_TenNhanVien.DataSource = ds.Tables[0];
+                cbo_TenNhanVien.DisplayMember = "TenNV";
+                cbo_TenNhanVien.ValueMember = "MaNV";
             }
             catch (Exception ex)
             {
@@ -271,16 +293,18 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void dgv_HoaDonBanHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_HoaDonBanHang.CurrentRow.Index;
-            txt_MaHoaDon.Text = dgv_HoaDonBanHang.Rows[i].Cells[1].Value.ToString();
-            cbo_MaNV.Text = dgv_HoaDonBanHang.Rows[i].Cells[0].Value.ToString();
-            txt_MaKH.Text = dgv_HoaDonBanHang.Rows[i].Cells[2].Value.ToString();
-            dtp_NgayLapHoaDonBanHang.Value = DateTime.Parse(dgv_HoaDonBanHang.Rows[i].Cells[3].Value.ToString());
-            //TienKhachDua = int.Parse(dgv_HoaDonBanHang.Rows[i].Cells[4].Value.ToString());
+            txt_MaNV.Text = dgv_HoaDonBanHang.Rows[i].Cells[0].Value.ToString();
+            txt_MaHoaDon.Text = dgv_HoaDonBanHang.Rows[i].Cells[2].Value.ToString();
+            cbo_TenNV.Text = dgv_HoaDonBanHang.Rows[i].Cells[1].Value.ToString();
+            txt_MaKH.Text = dgv_HoaDonBanHang.Rows[i].Cells[3].Value.ToString();
+            dtp_NgayLapHoaDonBanHang.Value = DateTime.Parse(dgv_HoaDonBanHang.Rows[i].Cells[4].Value.ToString());
+
         }
+
 
         private void btn_XoaHoaDonBanHang_Click(object sender, EventArgs e)
         {
-            if (txt_MaHoaDon.Text != "")
+            if (dgv_HoaDonBanHang.SelectedCells.Count>0)
             {
                 XoaHoaDon();
                 XemHoaDon();
@@ -297,54 +321,11 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             SuaHoaDon();
         }
-
-        private void btn_TinhTienHoaDonBanHang_Click(object sender, EventArgs e)
-        {
-            //int soluong = int.Parse(txt_SoLuong.Text);
-            //int dongia = int.Parse(cbo_DonGia.Text);
-            //int tienkhachdua = int.Parse(txt_TienKhachDuaHoaDonBanHang.Text);
-            //if (tienkhachdua == 0)
-            //{
-            //    MessageBox.Show("Bạn chưa nhập tiền khách đưa!!", "THÔNG BÁO");
-            //}
-            //else
-            //{
-            //    int khuyenmai = 0;
-            //    string khuyenmaiText = txt_KhuyenMai.Text.Trim();
-            //    if (khuyenmaiText == "CTKMKT")
-            //    {
-            //        khuyenmai = 1;
-            //    }
-
-            //    int tmp;
-
-            //    if (khuyenmai == 1)
-            //    {
-            //        tmp = (int)(soluong * dongia * 0.9); // giảm 10% là giá trị sản phẩm còn 90%
-            //    }
-            //    else
-            //    {
-            //        tmp = soluong * dongia;
-            //    }
-
-            //    int tonghoadon = tmp;
-            //    if (tienkhachdua < tonghoadon)
-            //    {
-            //        MessageBox.Show("Tiền khách đưa phải lớn hơn hoặc bằng Tổng hóa đơn", "THÔNG BÁO");
-            //    }
-            //    else
-            //    {
-            //        int tienguilai = tienkhachdua - tonghoadon;
-            //        txt_TongHoaDonHoaDonBanHang.Text = tonghoadon.ToString();
-            //        txt_TienGuiKhachHoaDonBanHang.Text = tienguilai.ToString();
-            //    }
-            //}
-        }
         private void HoaDonBanHang_Load(object sender, EventArgs e)
         {
-
             XemHoaDon();
             HienThiMaNhanVien(MaTK);
+            HienThiTenNhanVien();
             cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
         }
@@ -360,12 +341,19 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         private void btn_XemDanhSachHoaDon_Click(object sender, EventArgs e)
         {
+            if (dgv_HoaDonBanHang.SelectedCells.Count > 0)
+            {
+                frm_ChiTietHoaDon chiTietHoaDon = new frm_ChiTietHoaDon();
+                chiTietHoaDon.MaTK = MaTK;
+                chiTietHoaDon.MaHD = int.Parse(txt_MaHoaDon.Text);
+                this.Hide();
+                chiTietHoaDon.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn hóa đơn bạn cần xem");
+            }
 
-            frm_ChiTietHoaDon chiTietHoaDon = new frm_ChiTietHoaDon();
-            chiTietHoaDon.MaTK = MaTK;
-            chiTietHoaDon.MaHD = int.Parse(txt_MaHoaDon.Text);
-            this.Hide();
-            chiTietHoaDon.Show();
         }
         public void TimKiem()
         {
@@ -374,6 +362,11 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 TimKiemTheo = "NgayLap";
                 TimKiemThongKe = dtp_Ngay.Value.ToString("yyyy/MM/dd");
+            }
+            else if(cbo_TimKiem_Theo.Text == "Tên Nhân viên")
+            {
+                TimKiemTheo = "MaNV";
+                TimKiemThongKe = cbo_TenNhanVien.SelectedValue.ToString();
             }
             else
             {
@@ -384,7 +377,10 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
-                    string sSQL = "SELECT * FROM HOADON WHERE " + TimKiemTheo + " = @TimKiemThongKe";
+                    string sSQL = "SELECT NHANVIEN.MaNV, NHANVIEN.TenNV AS 'Nhân viên lập hóa đơn', HOADON.MaHD, HOADON.MaKH, HOADON.NgayLap, HOADON.TienKhachDua, HOADON.TienGuiLai, HOADON.TongHD " +
+                                  "FROM HOADON INNER JOIN NHANVIEN ON NHANVIEN.MaNV = HOADON.MaNV " +
+                                  "WHERE HOADON." + TimKiemTheo + " = @TimKiemThongKe";
+
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
@@ -411,12 +407,13 @@ namespace PhanMemQuanLyBanGiayTheThao
             txt_TimKiemHoaDonBanHang.Clear();
             cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
+            cbo_TenNhanVien.Visible = false;
 
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            if (cbo_TimKiem_Theo.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemHoaDonBanHang.Text) && cbo_TimKiem_Theo.Text != "Ngày")
+            if (cbo_TimKiem_Theo.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemHoaDonBanHang.Text) && cbo_TimKiem_Theo.Text != "Ngày" && cbo_TimKiem_Theo.Text != "Tên Nhân viên")
             {
                 MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
@@ -430,11 +427,19 @@ namespace PhanMemQuanLyBanGiayTheThao
             if (cbo_TimKiem_Theo.Text == "Ngày")
             {
                 dtp_Ngay.Visible = true;
+                cbo_TenNhanVien.Visible = false;
+            }
+            else if(cbo_TimKiem_Theo.Text == "Tên Nhân viên")
+            {
+                cbo_TenNhanVien.Visible = true;
+                dtp_Ngay.Visible = false;
             }
             else
             {
+                cbo_TenNhanVien.Visible = false;
                 dtp_Ngay.Visible = false;
             }
+
         }
 
         private void btn_DoiMatKhauNhanVien_Click(object sender, EventArgs e)
@@ -455,12 +460,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 e.Cancel = true;
             }
         }
-
-        private void grb_Header_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Hide();

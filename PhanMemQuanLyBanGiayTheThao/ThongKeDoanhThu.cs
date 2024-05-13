@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ThongKeDoanhThu : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_ThongKeDoanhThu()
         {
             InitializeComponent();
@@ -155,7 +155,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         private void btn_SearchThongKe_Click(object sender, EventArgs e)
         {
-            if (cbb_TimKiem_Theo.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemThongKe.Text))
+            if (cbb_TimKiem_Theo.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemThongKe.Text) && cbb_TimKiem_Theo.Text != "Ngày")
             {
                 MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
@@ -222,6 +222,11 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
 
         private void grb_HeaderThongKe_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_TimKiemThongKe_TextChanged(object sender, EventArgs e)
         {
 
         }

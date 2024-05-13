@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_SanPham : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         private bool isChangeImage = false;
         public frm_SanPham()
         {

@@ -14,7 +14,11 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ChiTietHoaDon : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+
+        private bool isThemTaoChiTietHoaDonClicked = false;
+        private bool isHoanTatClicked = false;
+
 
         public bool KiemTraSoLuongSanPham()
         {
@@ -139,7 +143,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                         {
                             if (reader.Read())
                             {
-                                // Set other text fields
                                 txt_TenSP.Text = reader["TenSP"].ToString();
                                 txt_DonGia.Text = reader["GiaBan"].ToString();
                                 txt_KhuyenMai.Text = reader["KhuyenMai"].ToString();
@@ -362,6 +365,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_HoanTat_Click(object sender, EventArgs e)
         {
+            isHoanTatClicked = true;
             // Kiểm tra xem giá trị nhập vào có rỗng hoặc trống không
             string tienKhachDuaText = txt_TienKhachDua.Text.Trim();
             if (string.IsNullOrEmpty(tienKhachDuaText))
@@ -391,7 +395,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             double TongTien;
             try
             {
-                TongTien = double.Parse(txt_TongTien.Text); // Giả sử giá trị này luôn hợp lệ
+                TongTien = double.Parse(txt_TongTien.Text);
             }
             catch (FormatException ex)
             {
@@ -492,6 +496,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_ThemTaoChiTietHoaDon_Click_1(object sender, EventArgs e)
         {
+            isThemTaoChiTietHoaDonClicked = true;
             int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
             int SoLuong = (int)nud_SoLuong.Value;
 
@@ -524,11 +529,27 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
-            frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
-            ql.MaTK = MaTK;
-            ql.Show();
-            this.Close();
+            if (!isThemTaoChiTietHoaDonClicked || !isHoanTatClicked)
+            {
+                MessageBox.Show("Hóa đơn chưa được hoàn thành, hãy hoàn thành hóa đơn trước khi trở về trang trước!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (nud_SoLuong.Value < 0)
+            {
+                MessageBox.Show("Số lượng không hợp lệ. Vui lòng nhập số lượng lớn hơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            bool tmp = ChekcOut();
+            if (tmp == true)
+            {
+                frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
+                ql.MaTK = MaTK;
+                ql.Show();
+                this.Close();
+            }
         }
+
 
         private void grb_Menu_Enter(object sender, EventArgs e)
         {
@@ -537,9 +558,66 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
-            frm_DangNhap dn = new frm_DangNhap();
-            dn.Show();
-            this.Close();
+            if (!isThemTaoChiTietHoaDonClicked || !isHoanTatClicked)
+            {
+                MessageBox.Show("Hóa đơn chưa được hoàn thành, hãy hoàn thành hóa đơn trước khi đăng xuất!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (nud_SoLuong.Value < 0)
+            {
+                MessageBox.Show("Số lượng không hợp lệ. Vui lòng nhập số lượng lớn hơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            bool tmp = ChekcOut();
+            if (tmp == true)
+            {
+                frm_DangNhap dn = new frm_DangNhap();
+                dn.Show();
+                this.Close();
+            }
+           
+        }
+
+        public bool ChekcOut()
+        {
+            // Kiểm tra xem giá trị nhập vào có rỗng hoặc trống không
+            string tienKhachDuaText = txt_TienKhachDua.Text.Trim();
+            if (string.IsNullOrEmpty(tienKhachDuaText))
+            {
+                MessageBox.Show("Hãy nhập số tiền mà khách đã đưa cho bạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            double tienKhachDua;
+            try
+            {
+                // Chuyển đổi giá trị sang kiểu số
+                tienKhachDua = double.Parse(tienKhachDuaText);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Giá trị nhập vào không hợp lệ. Hãy nhập số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tienKhachDua <= 0)
+            {
+                MessageBox.Show("Số tiền của khách đưa không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            double TongTien;
+            try
+            {
+                TongTien = double.Parse(txt_TongTien.Text);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Tổng tiền không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

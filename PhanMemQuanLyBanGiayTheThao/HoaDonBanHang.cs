@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_HoaDonBanHang : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         int TienKhachDua;
         public int MaTK;
         public frm_HoaDonBanHang()
@@ -59,7 +60,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
-                        cmd.Parameters.AddWithValue("@MaKH", txt_MaKH.Text);
+                        cmd.Parameters.AddWithValue("@MaKH", cbo_MaKH.Text);
                         cmd.Parameters.AddWithValue("@MaNV", cbo_TenNV.SelectedValue.ToString());
                         cmd.Parameters.AddWithValue("@NgayLap", dtp_NgayLapHoaDonBanHang.Value.ToString("yyyy/MM/dd"));
                         cmd.Parameters.AddWithValue("@TienKhachDua", DBNull.Value);
@@ -91,7 +92,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     {
                         cmd.Parameters.AddWithValue("@MaHD", int.Parse(txt_MaHoaDon.Text));
                         cmd.Parameters.AddWithValue("@MaNV", int.Parse(txt_MaNV.Text));
-                        cmd.Parameters.AddWithValue("@MaKH", int.Parse(txt_MaKH.Text));
+                        cmd.Parameters.AddWithValue("@MaKH", int.Parse(cbo_MaKH.Text));
                         cmd.Parameters.AddWithValue("@NgayLap", DateTime.Parse(dtp_NgayLapHoaDonBanHang.Text));
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -187,43 +188,41 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
             catch (Exception ex)
             {
-                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
             }
         }
 
-        //
-
-        public void HienThiTenNhanVien()
+        public void HienThiMaKhachHang()
         {
+
+            //Doi tuong ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
             string sSql;
-            sSql = "SELECT MaNV, TenNV FROM NHANVIEN";
+            sSql = "SELECT MaKH, TenKH FROM KHACHHANG";
             try
             {
                 myConnection.Open();
-                SqlCommand cmd = new SqlCommand(sSql, myConnection);
-                cmd.Parameters.AddWithValue("@MaTK", MaTK);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
                 //DataSet: du lieu tren bo nho RAM
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 myConnection.Close();
-                cbo_TenNhanVien.DataSource = ds.Tables[0];
-                cbo_TenNhanVien.DisplayMember = "TenNV";
-                cbo_TenNhanVien.ValueMember = "MaNV";
+
+                //cbo_MaSP
+                cbo_MaKH.DataSource = ds.Tables[0];
+                cbo_MaKH.DisplayMember = "MaKH";
+                cbo_MaKH.ValueMember = "TenKH";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
             }
         }
 
-        //
-
-        public int LayMaHDLonNhat()
+        public void XuatThongTinKhachHang()
         {
-            int maxMaHD = 0; // Khởi tạo giá trị mặc định cho trường hợp không có dữ liệu
-            string sSQL = "SELECT MAX(MaHD) AS MaxMaHD FROM HOADON";
+            String MaKH = cbo_MaKH.Text;
+            string sSQL = "SELECT MaKH, TenKH FROM KHACHHANG WHERE MaKH = @MaKH";
 
             try
             {
@@ -232,21 +231,25 @@ namespace PhanMemQuanLyBanGiayTheThao
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
-                        object result = cmd.ExecuteScalar();
-                        if (result != DBNull.Value && result != null)
+                        cmd.Parameters.AddWithValue("@MaKH", MaKH);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            maxMaHD = Convert.ToInt32(result);
+                            if (reader.Read())
+                            {
+                                txt_TenKH.Text = reader["TenKH"].ToString();
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                //
             }
-
-            return maxMaHD;
         }
+
+
         public int LayMaHD()
         {
             int MaHD = 0;
@@ -272,23 +275,10 @@ namespace PhanMemQuanLyBanGiayTheThao
             return MaHD;
         }
 
-        //-------------------------------------------------------------------------------------------------------------------
         private void btn_KHHoaDonBanHang_Click(object sender, EventArgs e)
         {
             frm_KhachHang kh = new frm_KhachHang();
             kh.Show();
-            this.Hide();
-        }
-
-        private void lb_QuayLaiBanHang_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btn_DangXuatHoaDonBanHang_Click(object sender, EventArgs e)
-        {
-            frm_DangNhap mn = new frm_DangNhap();
-            mn.Show();
             this.Hide();
         }
 
@@ -298,7 +288,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             txt_MaNV.Text = dgv_HoaDonBanHang.Rows[i].Cells[0].Value.ToString();
             txt_MaHoaDon.Text = dgv_HoaDonBanHang.Rows[i].Cells[2].Value.ToString();
             cbo_TenNV.Text = dgv_HoaDonBanHang.Rows[i].Cells[1].Value.ToString();
-            txt_MaKH.Text = dgv_HoaDonBanHang.Rows[i].Cells[3].Value.ToString();
+            cbo_MaKH.Text = dgv_HoaDonBanHang.Rows[i].Cells[3].Value.ToString();
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Parse(dgv_HoaDonBanHang.Rows[i].Cells[4].Value.ToString());
 
         }
@@ -311,7 +301,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                 XoaHoaDon();
                 XemHoaDon();
                 txt_MaHoaDon.Clear();
-                txt_MaKH.Clear();
+                cbo_MaKH.SelectedIndex = -1;
             }
             else
             {
@@ -325,22 +315,14 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         private void HoaDonBanHang_Load(object sender, EventArgs e)
         {
+            cbo_MaKH.SelectedIndex = -1;
             XemHoaDon();
             HienThiMaNhanVien(MaTK);
-            HienThiTenNhanVien();
             cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
+            HienThiMaKhachHang();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frm_ChiTietHoaDon chiTietHoaDon = new frm_ChiTietHoaDon();
-            chiTietHoaDon.MaTK = MaTK;
-            ThemHoaDon();
-            this.Hide();
-            chiTietHoaDon.Show();
-            chiTietHoaDon.MaHD = LayMaHD();
-        }
         private void btn_XemDanhSachHoaDon_Click(object sender, EventArgs e)
         {
             if (dgv_HoaDonBanHang.SelectedCells.Count > 0)
@@ -406,13 +388,12 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemHoaDon();
             txt_MaHoaDon.Clear();
-            txt_MaNV.Clear();
             txt_TimKiemHoaDonBanHang.Clear();
             cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
-            cbo_TenNhanVien.SelectedIndex = -1;
-            txt_MaKH.Clear();
+            cbo_MaKH.SelectedIndex = -1;
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Now;
+            txt_TenKH.Clear();
             HienThiMaNhanVien(MaTK);
         }
 
@@ -499,6 +480,11 @@ namespace PhanMemQuanLyBanGiayTheThao
             frm_DangNhap dn = new frm_DangNhap();
             dn.Show();
             this.Close();
+        }
+
+        private void cbo_MaKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            XuatThongTinKhachHang();
         }
     }
 }

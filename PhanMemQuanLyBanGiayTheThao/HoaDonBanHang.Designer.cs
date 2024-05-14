@@ -46,7 +46,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.cbo_TenNhanVien = new System.Windows.Forms.ComboBox();
             this.cbo_TimKiem_Theo = new System.Windows.Forms.ComboBox();
             this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
-            this.txt_MaKH = new System.Windows.Forms.TextBox();
             this.btn_TaoHoaDon = new System.Windows.Forms.Button();
             this.cbo_TenNV = new System.Windows.Forms.ComboBox();
             this.btn_Search = new System.Windows.Forms.Button();
@@ -65,6 +64,9 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XuatThongTinHoaDonBanHang = new System.Windows.Forms.Button();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.grb_HoaDonBanHang = new System.Windows.Forms.GroupBox();
+            this.lb_TenKH = new System.Windows.Forms.Label();
+            this.cbo_MaKH = new System.Windows.Forms.ComboBox();
+            this.txt_TenKH = new System.Windows.Forms.TextBox();
             this.grb_Header.SuspendLayout();
             this.grb_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
@@ -184,12 +186,14 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // grb_SanPham
             // 
+            this.grb_SanPham.Controls.Add(this.cbo_MaKH);
+            this.grb_SanPham.Controls.Add(this.lb_TenKH);
             this.grb_SanPham.Controls.Add(this.txt_MaNV);
             this.grb_SanPham.Controls.Add(this.label1);
             this.grb_SanPham.Controls.Add(this.cbo_TenNhanVien);
             this.grb_SanPham.Controls.Add(this.cbo_TimKiem_Theo);
             this.grb_SanPham.Controls.Add(this.dtp_Ngay);
-            this.grb_SanPham.Controls.Add(this.txt_MaKH);
+            this.grb_SanPham.Controls.Add(this.txt_TenKH);
             this.grb_SanPham.Controls.Add(this.btn_TaoHoaDon);
             this.grb_SanPham.Controls.Add(this.cbo_TenNV);
             this.grb_SanPham.Controls.Add(this.btn_Search);
@@ -267,19 +271,12 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.dtp_Ngay.TabIndex = 60;
             this.dtp_Ngay.Visible = false;
             // 
-            // txt_MaKH
-            // 
-            this.txt_MaKH.Location = new System.Drawing.Point(17, 359);
-            this.txt_MaKH.Name = "txt_MaKH";
-            this.txt_MaKH.Size = new System.Drawing.Size(311, 27);
-            this.txt_MaKH.TabIndex = 45;
-            // 
             // btn_TaoHoaDon
             // 
             this.btn_TaoHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btn_TaoHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btn_TaoHoaDon.Image")));
             this.btn_TaoHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_TaoHoaDon.Location = new System.Drawing.Point(17, 397);
+            this.btn_TaoHoaDon.Location = new System.Drawing.Point(21, 411);
             this.btn_TaoHoaDon.Name = "btn_TaoHoaDon";
             this.btn_TaoHoaDon.Size = new System.Drawing.Size(311, 45);
             this.btn_TaoHoaDon.TabIndex = 44;
@@ -490,6 +487,31 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_HoaDonBanHang.TabIndex = 19;
             this.grb_HoaDonBanHang.TabStop = false;
             // 
+            // lb_TenKH
+            // 
+            this.lb_TenKH.AutoSize = true;
+            this.lb_TenKH.Location = new System.Drawing.Point(141, 328);
+            this.lb_TenKH.Name = "lb_TenKH";
+            this.lb_TenKH.Size = new System.Drawing.Size(66, 20);
+            this.lb_TenKH.TabIndex = 65;
+            this.lb_TenKH.Text = "Tên KH";
+            // 
+            // cbo_MaKH
+            // 
+            this.cbo_MaKH.FormattingEnabled = true;
+            this.cbo_MaKH.Location = new System.Drawing.Point(17, 358);
+            this.cbo_MaKH.Name = "cbo_MaKH";
+            this.cbo_MaKH.Size = new System.Drawing.Size(96, 28);
+            this.cbo_MaKH.TabIndex = 66;
+            this.cbo_MaKH.SelectedIndexChanged += new System.EventHandler(this.cbo_MaKH_SelectedIndexChanged);
+            // 
+            // txt_TenKH
+            // 
+            this.txt_TenKH.Location = new System.Drawing.Point(145, 359);
+            this.txt_TenKH.Name = "txt_TenKH";
+            this.txt_TenKH.Size = new System.Drawing.Size(183, 27);
+            this.txt_TenKH.TabIndex = 45;
+            // 
             // frm_HoaDonBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -538,7 +560,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         private System.Windows.Forms.DataGridView dgv_HoaDonBanHang;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Button btn_TaoHoaDon;
-        private System.Windows.Forms.TextBox txt_MaKH;
         private System.Windows.Forms.DateTimePicker dtp_Ngay;
         private System.Windows.Forms.ComboBox cbo_TimKiem_Theo;
         private System.Windows.Forms.Button btn_DoiMatKhauNhanVien;
@@ -552,5 +573,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         private System.Windows.Forms.ComboBox cbo_TenNhanVien;
         private System.Windows.Forms.TextBox txt_MaNV;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbo_MaKH;
+        private System.Windows.Forms.Label lb_TenKH;
+        private System.Windows.Forms.TextBox txt_TenKH;
     }
 }

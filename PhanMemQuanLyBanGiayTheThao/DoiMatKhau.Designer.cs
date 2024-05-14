@@ -188,7 +188,6 @@
             this.grb_Menu.Size = new System.Drawing.Size(110, 80);
             this.grb_Menu.TabIndex = 60;
             this.grb_Menu.TabStop = false;
-            this.grb_Menu.Enter += new System.EventHandler(this.grb_Menu_Enter);
             // 
             // btn_dangxuat
             // 
@@ -198,7 +197,6 @@
             this.btn_dangxuat.Size = new System.Drawing.Size(37, 41);
             this.btn_dangxuat.TabIndex = 62;
             this.btn_dangxuat.UseVisualStyleBackColor = true;
-            this.btn_dangxuat.Click += new System.EventHandler(this.btn_dangxuat_Click);
             // 
             // btn_quaylai
             // 
@@ -235,7 +233,6 @@
             this.Name = "frm_DoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoiMatKhau";
-            this.Load += new System.EventHandler(this.frm_DoiMatKhau_Load);
             this.grb_Body.ResumeLayout(false);
             this.grb_Body.PerformLayout();
             this.grb_Header.ResumeLayout(false);

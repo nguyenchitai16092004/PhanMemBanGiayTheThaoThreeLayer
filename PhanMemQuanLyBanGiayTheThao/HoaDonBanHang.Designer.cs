@@ -41,6 +41,8 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_DoiMatKhauNhanVien = new System.Windows.Forms.Button();
             this.btn_KHHoaDonBanHang = new System.Windows.Forms.Button();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
+            this.txt_MaNV = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbo_TenNhanVien = new System.Windows.Forms.ComboBox();
             this.cbo_TimKiem_Theo = new System.Windows.Forms.ComboBox();
             this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
@@ -63,8 +65,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XuatThongTinHoaDonBanHang = new System.Windows.Forms.Button();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.grb_HoaDonBanHang = new System.Windows.Forms.GroupBox();
-            this.txt_MaNV = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grb_Header.SuspendLayout();
             this.grb_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
@@ -99,7 +99,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_Menu.Size = new System.Drawing.Size(158, 80);
             this.grb_Menu.TabIndex = 65;
             this.grb_Menu.TabStop = false;
-            this.grb_Menu.Enter += new System.EventHandler(this.grb_Menu_Enter);
             // 
             // btn_dangxuat
             // 
@@ -217,6 +216,25 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_SanPham.TabIndex = 16;
             this.grb_SanPham.TabStop = false;
             this.grb_SanPham.Text = "Sản phẩm";
+            // 
+            // txt_MaNV
+            // 
+            this.txt_MaNV.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txt_MaNV.Location = new System.Drawing.Point(17, 220);
+            this.txt_MaNV.Name = "txt_MaNV";
+            this.txt_MaNV.ReadOnly = true;
+            this.txt_MaNV.Size = new System.Drawing.Size(311, 27);
+            this.txt_MaNV.TabIndex = 64;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Mã nhân viên";
             // 
             // cbo_TenNhanVien
             // 
@@ -471,23 +489,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_HoaDonBanHang.Size = new System.Drawing.Size(1276, 746);
             this.grb_HoaDonBanHang.TabIndex = 19;
             this.grb_HoaDonBanHang.TabStop = false;
-            // 
-            // txt_MaNV
-            // 
-            this.txt_MaNV.Location = new System.Drawing.Point(17, 220);
-            this.txt_MaNV.Name = "txt_MaNV";
-            this.txt_MaNV.Size = new System.Drawing.Size(311, 27);
-            this.txt_MaNV.TabIndex = 64;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "Mã nhân viên";
             // 
             // frm_HoaDonBanHang
             // 

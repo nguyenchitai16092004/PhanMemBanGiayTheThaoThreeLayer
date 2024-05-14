@@ -19,9 +19,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             InitializeComponent();
         }
-        private void btn_QuayLaiNhaCungCap_Click(object sender, EventArgs e)
-        {
-        }
         public void DoiMatKhau()
         {
             // Lấy giá trị từ các ô nhập liệu
@@ -119,27 +116,12 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        private void frm_DoiMatKhau_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
             ql.Show();
             ql.MaTK = MaTK;
             this.Close();
-        }
-
-        private void grb_Menu_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_dangxuat_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

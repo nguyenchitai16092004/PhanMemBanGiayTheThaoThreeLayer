@@ -404,10 +404,14 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemHoaDon();
             HienThiMaNhanVien(MaTK);
+            txt_MaHoaDon.Clear();
+            txt_MaNV.Clear();
             txt_TimKiemHoaDonBanHang.Clear();
             cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
-            cbo_TenNhanVien.Visible = false;
+            cbo_TenNhanVien.SelectedIndex = -1;
+            txt_MaKH.Clear();
+            dtp_NgayLapHoaDonBanHang.Value = DateTime.Now;
 
         }
 
@@ -489,12 +493,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             chiTietHoaDon.Show();
             chiTietHoaDon.MaHD = LayMaHD();
         }
-
-        private void grb_Menu_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
             frm_DangNhap dn = new frm_DangNhap();

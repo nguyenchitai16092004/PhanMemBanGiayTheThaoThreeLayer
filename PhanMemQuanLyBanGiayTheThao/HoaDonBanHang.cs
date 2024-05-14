@@ -15,7 +15,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_HoaDonBanHang : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         int TienKhachDua;
         public int MaTK;
         public frm_HoaDonBanHang()
@@ -50,6 +50,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void ThemHoaDon()
         {
             // Khai báo chuỗi kết nối CSDL
+            dtp_NgayLapHoaDonBanHang.Value = DateTime.Now;
             string sSQL = "INSERT INTO HOADON (MaNV, MaKH, NgayLap, TienKhachDua, TienGuiLai, TongHD) VALUES (@MaNV, @MaKH, @NgayLap, @TienKhachDua, @TienGuiLai, @TongHD)";
             try
             {
@@ -182,6 +183,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                 cbo_TenNV.DataSource = ds.Tables[0];
                 cbo_TenNV.DisplayMember = "TenNV";
                 cbo_TenNV.ValueMember = "MaNV";
+                txt_MaNV.Text = ds.Tables[0].Rows[0]["MaNV"].ToString();
             }
             catch (Exception ex)
             {
@@ -403,7 +405,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
             XemHoaDon();
-            HienThiMaNhanVien(MaTK);
             txt_MaHoaDon.Clear();
             txt_MaNV.Clear();
             txt_TimKiemHoaDonBanHang.Clear();
@@ -412,7 +413,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_TenNhanVien.SelectedIndex = -1;
             txt_MaKH.Clear();
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Now;
-
+            HienThiMaNhanVien(MaTK);
         }
 
         private void btn_Search_Click(object sender, EventArgs e)

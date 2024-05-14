@@ -520,6 +520,13 @@ namespace PhanMemQuanLyBanGiayTheThao
                 XemChiTietHoaDon(MaHD);
                 TongHD();
             }
+            else
+            {
+                frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
+                ql.MaTK = MaTK;
+                ql.Show();
+                this.Close();
+            }
         }
 
         private void pic_ImageSP_Click(object sender, EventArgs e)

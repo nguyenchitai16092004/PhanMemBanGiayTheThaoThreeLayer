@@ -41,14 +41,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
         }
-
-        private void btn_QuayLaiNhanVien_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frm_Menu ql = new frm_Menu();
-            ql.MaTK = MaTK;
-            ql.Show();
-        }
         private void dgv_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_NhanVien.CurrentRow.Index;
@@ -320,18 +312,6 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         }
 
-        private void frm_NhanVien_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void btn_DangXuatNhanVien_Click(object sender, EventArgs e)
-        {
-            frm_DangNhap dn = new frm_DangNhap();
-            dn.Show();
-            this.Hide();
-        }
-
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -351,22 +331,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 Application.Exit();
             }
         }
-
-        private void grb_HeaderNhanVien_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_DangXuatNhanVien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grb_Menu_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
             frm_DangNhap dn = new frm_DangNhap();

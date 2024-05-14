@@ -37,7 +37,6 @@
             this.dgv_KhachHang = new System.Windows.Forms.DataGridView();
             this.btn_XoaKhachHang = new System.Windows.Forms.Button();
             this.btn_SuaKhachHang = new System.Windows.Forms.Button();
-            this.btn_XuatThongTinKhachHang = new System.Windows.Forms.Button();
             this.btn_ThemKhachHang = new System.Windows.Forms.Button();
             this.btn_SearchKhachHang = new System.Windows.Forms.Button();
             this.lb_TimKiemKhachHang = new System.Windows.Forms.Label();
@@ -121,7 +120,6 @@
             this.grb_HienThiThongTin.Controls.Add(this.dgv_KhachHang);
             this.grb_HienThiThongTin.Controls.Add(this.btn_XoaKhachHang);
             this.grb_HienThiThongTin.Controls.Add(this.btn_SuaKhachHang);
-            this.grb_HienThiThongTin.Controls.Add(this.btn_XuatThongTinKhachHang);
             this.grb_HienThiThongTin.Controls.Add(this.btn_ThemKhachHang);
             this.grb_HienThiThongTin.Controls.Add(this.btn_SearchKhachHang);
             this.grb_HienThiThongTin.Controls.Add(this.lb_TimKiemKhachHang);
@@ -152,7 +150,7 @@
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(554, 491);
+            this.btn_LamMoi.Location = new System.Drawing.Point(762, 487);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 49);
             this.btn_LamMoi.TabIndex = 43;
@@ -207,19 +205,6 @@
             this.btn_SuaKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_SuaKhachHang.UseVisualStyleBackColor = false;
             this.btn_SuaKhachHang.Click += new System.EventHandler(this.btn_SuaKhachHang_Click);
-            // 
-            // btn_XuatThongTinKhachHang
-            // 
-            this.btn_XuatThongTinKhachHang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_XuatThongTinKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinKhachHang.Image")));
-            this.btn_XuatThongTinKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThongTinKhachHang.Location = new System.Drawing.Point(728, 490);
-            this.btn_XuatThongTinKhachHang.Name = "btn_XuatThongTinKhachHang";
-            this.btn_XuatThongTinKhachHang.Size = new System.Drawing.Size(180, 50);
-            this.btn_XuatThongTinKhachHang.TabIndex = 39;
-            this.btn_XuatThongTinKhachHang.Text = "Xuất thông tin";
-            this.btn_XuatThongTinKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_XuatThongTinKhachHang.UseVisualStyleBackColor = false;
             // 
             // btn_ThemKhachHang
             // 
@@ -419,7 +404,6 @@
             this.grb_HeaderKhachHang.Size = new System.Drawing.Size(1409, 695);
             this.grb_HeaderKhachHang.TabIndex = 15;
             this.grb_HeaderKhachHang.TabStop = false;
-            this.grb_HeaderKhachHang.Enter += new System.EventHandler(this.grb_HeaderKhachHang_Enter);
             // 
             // grb_Menu
             // 
@@ -524,7 +508,6 @@
         private System.Windows.Forms.DataGridView dgv_KhachHang;
         private System.Windows.Forms.Button btn_XoaKhachHang;
         private System.Windows.Forms.Button btn_SuaKhachHang;
-        private System.Windows.Forms.Button btn_XuatThongTinKhachHang;
         private System.Windows.Forms.Button btn_ThemKhachHang;
         private System.Windows.Forms.Button btn_SearchKhachHang;
         private System.Windows.Forms.Label lb_TimKiemKhachHang;

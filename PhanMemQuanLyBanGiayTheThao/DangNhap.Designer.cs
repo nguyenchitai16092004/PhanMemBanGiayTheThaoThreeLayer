@@ -213,6 +213,7 @@
             // 
             // frm_DangNhap
             // 
+            this.AcceptButton = this.btn_DangNhap;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;

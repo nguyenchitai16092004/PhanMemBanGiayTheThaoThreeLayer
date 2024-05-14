@@ -51,13 +51,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                 MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
         }
-        private void btn_QuayLaiNhaCungCap_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frm_Menu ql = new frm_Menu();
-            ql.MaTK = MaTK;
-            ql.Show();
-        }
+
 
         private void dgv_NhaCungCap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -108,10 +102,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void SuaNhaCungCap()
         {
             string MaNhaCungCap = txt_MaNhaCungCap.Text;
-            // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
-                // Chuỗi truy vấn cập nhật
                 string sSQL = "UPDATE NHACUNGCAP SET TenNCC = @TenNCC, DiaChi = @DiaChi, SDT = @SDT, TrangThai = @TrangThai WHERE MaNCC = @MaNCC";
 
                 try
@@ -154,10 +146,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaNhaCungCap()
         {
             string MaNhaCungCap = txt_MaNhaCungCap.Text;
-            // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
-                // Chuỗi truy vấn xóa
                 string sSQL = "DELETE FROM NHACUNGCAP WHERE MaNCC = @MaNCC";
 
                 try
@@ -239,25 +229,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_Search.Text = "Tìm kiếm theo :";
 
         }
-
-        private void frm_NhaCungCap_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dlg = new DialogResult();
-            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dlg == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void btn_DangXuatNhaCungCap_Click(object sender, EventArgs e)
-        {
-            frm_DangNhap dn = new frm_DangNhap();
-            dn.Show();
-            this.Hide();
-        }
-
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -283,11 +254,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             frm_DangNhap dn = new frm_DangNhap();
             dn.Show();
             this.Close();
-        }
-
-        private void grb_Header_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

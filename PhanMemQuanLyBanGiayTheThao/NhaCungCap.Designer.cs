@@ -54,7 +54,6 @@
             this.btn_Suab = new System.Windows.Forms.Button();
             this.dgv_NhaCungCap = new System.Windows.Forms.DataGridView();
             this.btn_LamMoi = new System.Windows.Forms.Button();
-            this.btn_XuatThong = new System.Windows.Forms.Button();
             this.cbo_Search = new System.Windows.Forms.ComboBox();
             this.grb_NhaCungCap.SuspendLayout();
             this.grb_Header.SuspendLayout();
@@ -192,6 +191,7 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_Search.Image = ((System.Drawing.Image)(resources.GetObject("btn_Search.Image")));
             this.btn_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Search.Location = new System.Drawing.Point(976, 191);
@@ -200,7 +200,7 @@
             this.btn_Search.TabIndex = 35;
             this.btn_Search.Text = "Search";
             this.btn_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.UseVisualStyleBackColor = false;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // lb_TimKiem
@@ -231,7 +231,6 @@
             this.grb_Header.Size = new System.Drawing.Size(1349, 150);
             this.grb_Header.TabIndex = 43;
             this.grb_Header.TabStop = false;
-            this.grb_Header.Enter += new System.EventHandler(this.grb_Header_Enter);
             // 
             // grb_Menu
             // 
@@ -342,7 +341,7 @@
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(1030, 655);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1217, 643);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 50);
             this.btn_LamMoi.TabIndex = 46;
@@ -350,19 +349,6 @@
             this.btn_LamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LamMoi.UseVisualStyleBackColor = false;
             this.btn_LamMoi.Click += new System.EventHandler(this.btn_LamMoi_Click);
-            // 
-            // btn_XuatThong
-            // 
-            this.btn_XuatThong.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_XuatThong.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThong.Image")));
-            this.btn_XuatThong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThong.Location = new System.Drawing.Point(1202, 655);
-            this.btn_XuatThong.Name = "btn_XuatThong";
-            this.btn_XuatThong.Size = new System.Drawing.Size(159, 51);
-            this.btn_XuatThong.TabIndex = 45;
-            this.btn_XuatThong.Text = "Xuất thông tin";
-            this.btn_XuatThong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_XuatThong.UseVisualStyleBackColor = false;
             // 
             // cbo_Search
             // 
@@ -388,7 +374,6 @@
             this.Controls.Add(this.cbo_Search);
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.btn_LamMoi);
-            this.Controls.Add(this.btn_XuatThong);
             this.Controls.Add(this.dgv_NhaCungCap);
             this.Controls.Add(this.grb_Header);
             this.Controls.Add(this.grb_NhaCungCap);
@@ -434,7 +419,6 @@
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.DataGridView dgv_NhaCungCap;
         private System.Windows.Forms.Button btn_LamMoi;
-        private System.Windows.Forms.Button btn_XuatThong;
         private System.Windows.Forms.ComboBox cbo_Search;
         private System.Windows.Forms.PictureBox pic_Logo;
         private System.Windows.Forms.GroupBox grb_Menu;

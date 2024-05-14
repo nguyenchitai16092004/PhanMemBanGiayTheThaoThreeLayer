@@ -48,10 +48,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_Search.Text = "Tìm kiếm theo :";
 
         }
-        private void btn_QuayLaiKhachHang_Click(object sender, EventArgs e)
-        {
-           
-        }
         private void dgv_KhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_KhachHang.CurrentRow.Index;
@@ -89,10 +85,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                         cmd.Parameters.AddWithValue("@SDT", txt_SDTKhachHang.Text);
                         cmd.Parameters.AddWithValue("@QuyenHang", cbo_QuyenHang.Text);
 
-
-
-
-                        // Ánh xạ giữa giá trị của combobox và giá trị bit trong cơ sở dữ liệu
                         if (cbo_GioiTinh.Text == "Nam")
                         {
                             cmd.Parameters.AddWithValue("@GioiTinh", true);
@@ -121,7 +113,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void SuaKhachHang()
         {
             string MaKhachHang = txt_MaKhachHangKhachHang.Text;
-            // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
                 // Chuỗi truy vấn cập nhật TenKH, Email, DiaChi, GioiTinh, SDT,QuyenHang
@@ -130,7 +121,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 try
                 {
                     myConnection.Open();
-                    // Khởi tạo đối tượng SqlCommand
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
                         // Thêm các tham số vào truy vấn
@@ -180,10 +170,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             string MaKhachHang = txt_MaKhachHangKhachHang.Text;
 
-            // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
-                // Chuỗi truy vấn xóa
                 string sSQL = "DELETE FROM KHACHHANG WHERE MaKH = @MaKH";
 
                 try
@@ -277,35 +265,12 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                // Ngăn ký tự không hợp lệ
+                // Ngăn ký tự không hợp lệ chỉ cho phép kí tự số 
                 e.Handled = true;
 
                 // Hiển thị thông báo
                 MessageBox.Show("Chỉ được nhập số.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void frm_KhachHang_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dlg = new DialogResult();
-            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dlg == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void btn_DangXuatKhachHang_Click(object sender, EventArgs e)
-        {
-            frm_DangNhap dn = new frm_DangNhap();
-            dn.Show();
-            this.Hide();
-        }
-
-        private void grb_HeaderKhachHang_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_quaylai_Click(object sender, EventArgs e)

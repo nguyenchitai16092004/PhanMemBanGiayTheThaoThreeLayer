@@ -36,7 +36,6 @@
             this.btn_SearchThongKe = new System.Windows.Forms.Button();
             this.txt_TimKiemThongKe = new System.Windows.Forms.TextBox();
             this.btn_LamMoi = new System.Windows.Forms.Button();
-            this.btn_XuatThongTinThongKe = new System.Windows.Forms.Button();
             this.btn_HoaDon = new System.Windows.Forms.Button();
             this.lb_HoaDon = new System.Windows.Forms.Label();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
@@ -63,11 +62,10 @@
             this.grb_ThongKeSanPham.Controls.Add(this.btn_SearchThongKe);
             this.grb_ThongKeSanPham.Controls.Add(this.txt_TimKiemThongKe);
             this.grb_ThongKeSanPham.Controls.Add(this.btn_LamMoi);
-            this.grb_ThongKeSanPham.Controls.Add(this.btn_XuatThongTinThongKe);
             this.grb_ThongKeSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_ThongKeSanPham.Location = new System.Drawing.Point(0, 148);
             this.grb_ThongKeSanPham.Name = "grb_ThongKeSanPham";
-            this.grb_ThongKeSanPham.Size = new System.Drawing.Size(1330, 492);
+            this.grb_ThongKeSanPham.Size = new System.Drawing.Size(1330, 413);
             this.grb_ThongKeSanPham.TabIndex = 58;
             this.grb_ThongKeSanPham.TabStop = false;
             this.grb_ThongKeSanPham.Text = "Thống kê sản phẩm";
@@ -132,27 +130,13 @@
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(967, 398);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1168, 346);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 50);
             this.btn_LamMoi.TabIndex = 59;
             this.btn_LamMoi.Text = "Làm mới";
             this.btn_LamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LamMoi.UseVisualStyleBackColor = false;
-            // 
-            // btn_XuatThongTinThongKe
-            // 
-            this.btn_XuatThongTinThongKe.AutoSize = true;
-            this.btn_XuatThongTinThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_XuatThongTinThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinThongKe.Image")));
-            this.btn_XuatThongTinThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThongTinThongKe.Location = new System.Drawing.Point(1145, 397);
-            this.btn_XuatThongTinThongKe.Name = "btn_XuatThongTinThongKe";
-            this.btn_XuatThongTinThongKe.Size = new System.Drawing.Size(156, 51);
-            this.btn_XuatThongTinThongKe.TabIndex = 59;
-            this.btn_XuatThongTinThongKe.Text = "Xuất thông tin";
-            this.btn_XuatThongTinThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_XuatThongTinThongKe.UseVisualStyleBackColor = false;
             // 
             // btn_HoaDon
             // 
@@ -255,7 +239,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1327, 703);
+            this.ClientSize = new System.Drawing.Size(1327, 567);
             this.ControlBox = false;
             this.Controls.Add(this.grb_ThongKeSanPham);
             this.Controls.Add(this.grb_HeaderThongKe);
@@ -277,7 +261,6 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grb_ThongKeSanPham;
-        private System.Windows.Forms.Button btn_XuatThongTinThongKe;
         private System.Windows.Forms.Button btn_LamMoi;
         private System.Windows.Forms.Label lb_TimKiem;
         private System.Windows.Forms.ComboBox cbo_TimKiem_Theo;

@@ -78,7 +78,6 @@
             this.grb_HeaderNhanVien.Size = new System.Drawing.Size(1382, 163);
             this.grb_HeaderNhanVien.TabIndex = 2;
             this.grb_HeaderNhanVien.TabStop = false;
-            this.grb_HeaderNhanVien.Enter += new System.EventHandler(this.grb_HeaderNhanVien_Enter);
             // 
             // grb_Menu
             // 
@@ -92,7 +91,6 @@
             this.grb_Menu.Size = new System.Drawing.Size(154, 80);
             this.grb_Menu.TabIndex = 66;
             this.grb_Menu.TabStop = false;
-            this.grb_Menu.Enter += new System.EventHandler(this.grb_Menu_Enter);
             // 
             // btn_dangxuat
             // 

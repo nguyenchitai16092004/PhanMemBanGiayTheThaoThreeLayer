@@ -41,24 +41,17 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
             catch (Exception ex)
             {
-                // Ghi log hoặc báo cáo lỗi
-                Console.WriteLine("Lỗi: " + ex.Message);
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
             }
 
             return quyen;
         }
 
-        //----------------------------------------------------------------------------------------------
         public frm_Menu()
         {
             InitializeComponent();
         }
         public int MaTK;
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void btn_TaiKhoanMenu_Click(object sender, EventArgs e)
         {
@@ -159,28 +152,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             Quyen = QuyenHang(MaTaiKhoan);
             
         }
-
-        private void btn_ThoatMenu_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void frm_Menu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dlg = new DialogResult();
-            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dlg == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void grb_Menu_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_exit_Click(object sender, EventArgs e)
         {
             DialogResult dlg = new DialogResult();

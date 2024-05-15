@@ -37,15 +37,16 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_quaylai = new System.Windows.Forms.Button();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
-            this.lb_DoiMatKhauNhanVien = new System.Windows.Forms.Label();
-            this.btn_DoiMatKhauNhanVien = new System.Windows.Forms.Button();
             this.btn_KHHoaDonBanHang = new System.Windows.Forms.Button();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
+            this.cbo_MaKH = new System.Windows.Forms.ComboBox();
+            this.lb_TenKH = new System.Windows.Forms.Label();
             this.txt_MaNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbo_TenNhanVien = new System.Windows.Forms.ComboBox();
             this.cbo_TimKiem_Theo = new System.Windows.Forms.ComboBox();
             this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
+            this.txt_TenKH = new System.Windows.Forms.TextBox();
             this.btn_TaoHoaDon = new System.Windows.Forms.Button();
             this.cbo_TenNV = new System.Windows.Forms.ComboBox();
             this.btn_Search = new System.Windows.Forms.Button();
@@ -64,9 +65,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XuatThongTinHoaDonBanHang = new System.Windows.Forms.Button();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.grb_HoaDonBanHang = new System.Windows.Forms.GroupBox();
-            this.lb_TenKH = new System.Windows.Forms.Label();
-            this.cbo_MaKH = new System.Windows.Forms.ComboBox();
-            this.txt_TenKH = new System.Windows.Forms.TextBox();
             this.grb_Header.SuspendLayout();
             this.grb_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
@@ -80,8 +78,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_Header.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grb_Header.Controls.Add(this.grb_Menu);
             this.grb_Header.Controls.Add(this.pic_Logo);
-            this.grb_Header.Controls.Add(this.lb_DoiMatKhauNhanVien);
-            this.grb_Header.Controls.Add(this.btn_DoiMatKhauNhanVien);
             this.grb_Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.grb_Header.Location = new System.Drawing.Point(3, 24);
             this.grb_Header.Name = "grb_Header";
@@ -144,31 +140,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.pic_Logo.TabIndex = 64;
             this.pic_Logo.TabStop = false;
             // 
-            // lb_DoiMatKhauNhanVien
-            // 
-            this.lb_DoiMatKhauNhanVien.AutoSize = true;
-            this.lb_DoiMatKhauNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DoiMatKhauNhanVien.Location = new System.Drawing.Point(205, 95);
-            this.lb_DoiMatKhauNhanVien.Name = "lb_DoiMatKhauNhanVien";
-            this.lb_DoiMatKhauNhanVien.Size = new System.Drawing.Size(115, 22);
-            this.lb_DoiMatKhauNhanVien.TabIndex = 63;
-            this.lb_DoiMatKhauNhanVien.Text = "Đổi mật khẩu";
-            // 
-            // btn_DoiMatKhauNhanVien
-            // 
-            this.btn_DoiMatKhauNhanVien.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_DoiMatKhauNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_DoiMatKhauNhanVien.BackgroundImage")));
-            this.btn_DoiMatKhauNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_DoiMatKhauNhanVien.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_DoiMatKhauNhanVien.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_DoiMatKhauNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DoiMatKhauNhanVien.Location = new System.Drawing.Point(224, 31);
-            this.btn_DoiMatKhauNhanVien.Name = "btn_DoiMatKhauNhanVien";
-            this.btn_DoiMatKhauNhanVien.Size = new System.Drawing.Size(61, 61);
-            this.btn_DoiMatKhauNhanVien.TabIndex = 62;
-            this.btn_DoiMatKhauNhanVien.UseVisualStyleBackColor = false;
-            this.btn_DoiMatKhauNhanVien.Click += new System.EventHandler(this.btn_DoiMatKhauNhanVien_Click);
-            // 
             // btn_KHHoaDonBanHang
             // 
             this.btn_KHHoaDonBanHang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -221,6 +192,24 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_SanPham.TabStop = false;
             this.grb_SanPham.Text = "Sản phẩm";
             // 
+            // cbo_MaKH
+            // 
+            this.cbo_MaKH.FormattingEnabled = true;
+            this.cbo_MaKH.Location = new System.Drawing.Point(17, 358);
+            this.cbo_MaKH.Name = "cbo_MaKH";
+            this.cbo_MaKH.Size = new System.Drawing.Size(96, 28);
+            this.cbo_MaKH.TabIndex = 66;
+            this.cbo_MaKH.SelectedIndexChanged += new System.EventHandler(this.cbo_MaKH_SelectedIndexChanged);
+            // 
+            // lb_TenKH
+            // 
+            this.lb_TenKH.AutoSize = true;
+            this.lb_TenKH.Location = new System.Drawing.Point(141, 328);
+            this.lb_TenKH.Name = "lb_TenKH";
+            this.lb_TenKH.Size = new System.Drawing.Size(66, 20);
+            this.lb_TenKH.TabIndex = 65;
+            this.lb_TenKH.Text = "Tên KH";
+            // 
             // txt_MaNV
             // 
             this.txt_MaNV.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -270,6 +259,13 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.dtp_Ngay.Size = new System.Drawing.Size(321, 27);
             this.dtp_Ngay.TabIndex = 60;
             this.dtp_Ngay.Visible = false;
+            // 
+            // txt_TenKH
+            // 
+            this.txt_TenKH.Location = new System.Drawing.Point(145, 359);
+            this.txt_TenKH.Name = "txt_TenKH";
+            this.txt_TenKH.Size = new System.Drawing.Size(183, 27);
+            this.txt_TenKH.TabIndex = 45;
             // 
             // btn_TaoHoaDon
             // 
@@ -487,31 +483,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_HoaDonBanHang.TabIndex = 19;
             this.grb_HoaDonBanHang.TabStop = false;
             // 
-            // lb_TenKH
-            // 
-            this.lb_TenKH.AutoSize = true;
-            this.lb_TenKH.Location = new System.Drawing.Point(141, 328);
-            this.lb_TenKH.Name = "lb_TenKH";
-            this.lb_TenKH.Size = new System.Drawing.Size(66, 20);
-            this.lb_TenKH.TabIndex = 65;
-            this.lb_TenKH.Text = "Tên KH";
-            // 
-            // cbo_MaKH
-            // 
-            this.cbo_MaKH.FormattingEnabled = true;
-            this.cbo_MaKH.Location = new System.Drawing.Point(17, 358);
-            this.cbo_MaKH.Name = "cbo_MaKH";
-            this.cbo_MaKH.Size = new System.Drawing.Size(96, 28);
-            this.cbo_MaKH.TabIndex = 66;
-            this.cbo_MaKH.SelectedIndexChanged += new System.EventHandler(this.cbo_MaKH_SelectedIndexChanged);
-            // 
-            // txt_TenKH
-            // 
-            this.txt_TenKH.Location = new System.Drawing.Point(145, 359);
-            this.txt_TenKH.Name = "txt_TenKH";
-            this.txt_TenKH.Size = new System.Drawing.Size(183, 27);
-            this.txt_TenKH.TabIndex = 45;
-            // 
             // frm_HoaDonBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -525,7 +496,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.Text = "HoaDonBanHang";
             this.Load += new System.EventHandler(this.HoaDonBanHang_Load);
             this.grb_Header.ResumeLayout(false);
-            this.grb_Header.PerformLayout();
             this.grb_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.grb_SanPham.ResumeLayout(false);
@@ -562,13 +532,11 @@ namespace PhanMemQuanLyBanGiayTheThao
         private System.Windows.Forms.Button btn_TaoHoaDon;
         private System.Windows.Forms.DateTimePicker dtp_Ngay;
         private System.Windows.Forms.ComboBox cbo_TimKiem_Theo;
-        private System.Windows.Forms.Button btn_DoiMatKhauNhanVien;
         private System.Windows.Forms.PictureBox pic_Logo;
         private System.Windows.Forms.ComboBox cbo_TenNV;
         private System.Windows.Forms.GroupBox grb_Menu;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_quaylai;
-        private System.Windows.Forms.Label lb_DoiMatKhauNhanVien;
         private System.Windows.Forms.Button btn_dangxuat;
         private System.Windows.Forms.ComboBox cbo_TenNhanVien;
         private System.Windows.Forms.TextBox txt_MaNV;

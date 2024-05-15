@@ -44,7 +44,6 @@
             this.cbo_GioiTinh = new System.Windows.Forms.ComboBox();
             this.txt_EmailKhachHang = new System.Windows.Forms.TextBox();
             this.lb_Email = new System.Windows.Forms.Label();
-            this.txt_MaTaiKhoanKhachHang = new System.Windows.Forms.TextBox();
             this.lb_MaTaiKhoanKhachHang = new System.Windows.Forms.Label();
             this.txt_DiaChiKhachHang = new System.Windows.Forms.TextBox();
             this.lb_GioiTinhKhachHang = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_quaylai = new System.Windows.Forms.Button();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
+            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.grb_ThongTinKhachhangKhachHang.SuspendLayout();
             this.grb_HienThiThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).BeginInit();
@@ -76,12 +76,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grb_ThongTinKhachhangKhachHang.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.cbo_MaTK);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.cbo_QuyenHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.grb_HienThiThongTin);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.cbo_GioiTinh);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.txt_EmailKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_Email);
-            this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.txt_MaTaiKhoanKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_MaTaiKhoanKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.txt_DiaChiKhachHang);
             this.grb_ThongTinKhachhangKhachHang.Controls.Add(this.lb_GioiTinhKhachHang);
@@ -280,15 +280,6 @@
             this.lb_Email.TabIndex = 29;
             this.lb_Email.Text = "Email";
             // 
-            // txt_MaTaiKhoanKhachHang
-            // 
-            this.txt_MaTaiKhoanKhachHang.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txt_MaTaiKhoanKhachHang.Location = new System.Drawing.Point(222, 134);
-            this.txt_MaTaiKhoanKhachHang.Name = "txt_MaTaiKhoanKhachHang";
-            this.txt_MaTaiKhoanKhachHang.ReadOnly = true;
-            this.txt_MaTaiKhoanKhachHang.Size = new System.Drawing.Size(199, 27);
-            this.txt_MaTaiKhoanKhachHang.TabIndex = 15;
-            // 
             // lb_MaTaiKhoanKhachHang
             // 
             this.lb_MaTaiKhoanKhachHang.AutoSize = true;
@@ -460,6 +451,15 @@
             this.pic_Logo.TabIndex = 65;
             this.pic_Logo.TabStop = false;
             // 
+            // cbo_MaTK
+            // 
+            this.cbo_MaTK.FormattingEnabled = true;
+            this.cbo_MaTK.Location = new System.Drawing.Point(226, 131);
+            this.cbo_MaTK.Name = "cbo_MaTK";
+            this.cbo_MaTK.Size = new System.Drawing.Size(195, 28);
+            this.cbo_MaTK.TabIndex = 38;
+            this.cbo_MaTK.SelectedIndexChanged += new System.EventHandler(this.cbo_MaTK_SelectedIndexChanged);
+            // 
             // frm_KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -487,7 +487,6 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grb_ThongTinKhachhangKhachHang;
-        private System.Windows.Forms.TextBox txt_MaTaiKhoanKhachHang;
         private System.Windows.Forms.Label lb_MaTaiKhoanKhachHang;
         private System.Windows.Forms.TextBox txt_DiaChiKhachHang;
         private System.Windows.Forms.Label lb_DiaChiKhachHang;
@@ -519,5 +518,6 @@
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_quaylai;
         private System.Windows.Forms.Button btn_dangxuat;
+        private System.Windows.Forms.ComboBox cbo_MaTK;
     }
 }

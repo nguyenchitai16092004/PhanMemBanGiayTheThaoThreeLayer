@@ -78,7 +78,6 @@ namespace PhanMemQuanLyBanGiayTheThao
 
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
-                // Truy vấn cơ bản không cập nhật ảnh
                 string sSQL = "UPDATE SANPHAM SET TenSP = @TenSP, GiaBan = @Gia, MaNCC = @MaNCC, SoLuong = @SoLuong, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai, GiaNhap = @GiaNhap WHERE MaSP = @MaSP";
 
                 try
@@ -106,7 +105,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                             }
                             catch (Exception imgEx)
                             {
-                                // Lỗi khi lưu ảnh
                                 MessageBox.Show("Vui lòng cập nhật lại ảnh của sản phẩm trước khi xác nhận Sửa. Chi tiết lỗi: " + imgEx.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
@@ -114,7 +112,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                             byte[] imgByte = ms.ToArray(); // Chuyển đổi sang byte array
                             cmd.Parameters.AddWithValue("@Anh", imgByte);
 
-                            // Thay đổi chuỗi truy vấn để bao gồm trường ảnh
                             cmd.CommandText = "UPDATE SANPHAM SET TenSP = @TenSP, GiaBan = @Gia, MaNCC = @MaNCC, SoLuong = @SoLuong, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai, Anh = @Anh, GiaNhap = @GiaNhap WHERE MaSP = @MaSP";
                         }
 
@@ -147,14 +144,14 @@ namespace PhanMemQuanLyBanGiayTheThao
                     {
                         cmdKiemTra.Parameters.AddWithValue("@MaSP", maSanPham);
                         int count = (int)cmdKiemTra.ExecuteScalar();
-                        if (count > 0)
+                        if (count > 0)// nếu ktra không trùng mã sản phẩm thì tiếp tục thực hiện thêm sản phẩm
                         {
                             MessageBox.Show("Mã sản phẩm đã tồn tại. Hãy chọn nút 'Làm mới' trước thêm sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return; // thoát khỏi hàm
                         }
                     }
 
-                    // nếu không ktra không trùng mã sản phẩm thì tiếp tục thực hiện thêm sản phẩm
+                    //kiểm tra ảnh sản phẩm
                     if (pic_ImageSP.Image == null)
                     {
                         MessageBox.Show("Bạn hãy thêm ảnh của sản phẩm trước khi thêm sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -196,6 +193,20 @@ namespace PhanMemQuanLyBanGiayTheThao
                 XoaSanPham();
                 XemDanhSachSanPham();
             }
+            chk_TrangThai.Checked = false;
+            cbo_MaNCC.SelectedIndex = -1;
+            txt_MaSanPham.Clear();
+            txt_TenSanPhamSanPham.Clear();
+            txt_KhuyenMai.Clear();
+            nud_DonGiaSanPham.Value = 0;
+            nud_GiaNhap.Value = 0;
+            nud_SoLuongSanPham.Value = 0;
+
+            if (pic_ImageSP.Image != null)
+            {
+                pic_ImageSP.Image.Dispose(); // Giải phóng các byte của hình ảnh( làm trống)
+            }
+            pic_ImageSP.Image = null;
 
         }
 
@@ -219,14 +230,12 @@ namespace PhanMemQuanLyBanGiayTheThao
                     // Kiểm tra nếu cột "Anh" có dữ liệu
                     if (selectedRow.Cells[8].Value != DBNull.Value)
                     {
-                        // Lấy dữ liệu dạng byte[] từ cột "Anh"
-                        byte[] imageData = (byte[])selectedRow.Cells[8].Value;
-                        // Chuyển đổi dữ liệu byte[] thành hình ảnh
+                        byte[] imageData = (byte[])selectedRow.Cells[8].Value;// lấy dữ liệu từ cột Ảnh
                         if (imageData != null && imageData.Length > 0)
                         {
                             using (MemoryStream ms = new MemoryStream(imageData))
                             {
-                                pic_ImageSP.Image = Image.FromStream(ms);
+                                pic_ImageSP.Image = Image.FromStream(ms); // chuyển ảnh sang kiểu Image và hiện ảnh
                             }
                         }
                         else
@@ -252,14 +261,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 }
 
             }
-        }
-
-        private void btn_QuayLaiSanPham_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frm_Menu ql = new frm_Menu();
-            ql.MaTK = MaTK;
-            ql.Show();
         }
 
         private void btn_SuaSanPham_Click(object sender, EventArgs e)
@@ -295,7 +296,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_Search.Text = "Tìm kiếm theo :";
             cbo_MaNCC.SelectedIndex = -1;
             HienThiMaNhaCungCap();
-
 
         }
         public void TimKiem()
@@ -361,21 +361,11 @@ namespace PhanMemQuanLyBanGiayTheThao
 
             if (pic_ImageSP.Image != null)
             {
-                pic_ImageSP.Image.Dispose(); // Giải phóng tài nguyên hình ảnh
+                pic_ImageSP.Image.Dispose(); // Giải phóng các byte của hình ảnh( làm trống)
             }
             pic_ImageSP.Image = null;
         }
 
-        private void frm_SanPham_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dlg = new DialogResult();
-            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dlg == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
         public void HienThiMaNhaCungCap()
         {
             //Doi tuong ket noi CSDL
@@ -398,18 +388,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 MessageBox.Show("LOI. Chi tiet: " + ex.Message);
             }
-        }
-
-        private void btn_XuatThongTinSanPham_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_DangXuatSanPham_Click(object sender, EventArgs e)
-        {
-            frm_DangNhap dn = new frm_DangNhap();
-            dn.Show();
-            this.Hide();
         }
 
         private void grb_HeaderSanPham_Enter(object sender, EventArgs e)
@@ -435,11 +413,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 Application.Exit();
             }
-        }
-
-        private void grb_Menu_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_dangxuat_Click(object sender, EventArgs e)

@@ -96,7 +96,7 @@
             this.cbo_TimKiem_Theo.Items.AddRange(new object[] {
             "MaSP",
             "Tên sản phẩm "});
-            this.cbo_TimKiem_Theo.Location = new System.Drawing.Point(432, 63);
+            this.cbo_TimKiem_Theo.Location = new System.Drawing.Point(432, 57);
             this.cbo_TimKiem_Theo.Name = "cbo_TimKiem_Theo";
             this.cbo_TimKiem_Theo.Size = new System.Drawing.Size(239, 28);
             this.cbo_TimKiem_Theo.TabIndex = 64;
@@ -106,7 +106,7 @@
             this.btn_SearchThongKe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_SearchThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_SearchThongKe.Image")));
             this.btn_SearchThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SearchThongKe.Location = new System.Drawing.Point(686, 54);
+            this.btn_SearchThongKe.Location = new System.Drawing.Point(686, 46);
             this.btn_SearchThongKe.Name = "btn_SearchThongKe";
             this.btn_SearchThongKe.Size = new System.Drawing.Size(152, 48);
             this.btn_SearchThongKe.TabIndex = 63;
@@ -137,6 +137,7 @@
             this.btn_LamMoi.Text = "Làm mới";
             this.btn_LamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LamMoi.UseVisualStyleBackColor = false;
+            this.btn_LamMoi.Click += new System.EventHandler(this.btn_LamMoi_Click);
             // 
             // btn_HoaDon
             // 
@@ -161,7 +162,6 @@
             this.lb_HoaDon.Size = new System.Drawing.Size(140, 19);
             this.lb_HoaDon.TabIndex = 39;
             this.lb_HoaDon.Text = "Thống kê doanh thu";
-            this.lb_HoaDon.Click += new System.EventHandler(this.lb_HoaDon_Click);
             // 
             // pic_Logo
             // 
@@ -232,7 +232,6 @@
             this.grb_HeaderThongKe.Size = new System.Drawing.Size(1326, 150);
             this.grb_HeaderThongKe.TabIndex = 56;
             this.grb_HeaderThongKe.TabStop = false;
-            this.grb_HeaderThongKe.Enter += new System.EventHandler(this.grb_HeaderThongKe_Enter);
             // 
             // frm_ThongKeSanPham
             // 

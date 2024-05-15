@@ -337,6 +337,21 @@ namespace PhanMemQuanLyBanGiayTheThao
             dn.Show();
             this.Close();
         }
+
+        private void cbo_MaTK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_MaTK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

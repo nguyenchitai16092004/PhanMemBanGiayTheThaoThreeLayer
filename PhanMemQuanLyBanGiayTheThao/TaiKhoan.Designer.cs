@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TaiKhoan));
-            this.btn_XuatThongTinTaiKhoan = new System.Windows.Forms.Button();
             this.btn_SearchTaiKhoan = new System.Windows.Forms.Button();
             this.lb_TimKiemTaiKhoan = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
@@ -62,21 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_XuatThongTinTaiKhoan
-            // 
-            this.btn_XuatThongTinTaiKhoan.AutoSize = true;
-            this.btn_XuatThongTinTaiKhoan.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_XuatThongTinTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinTaiKhoan.Image")));
-            this.btn_XuatThongTinTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThongTinTaiKhoan.Location = new System.Drawing.Point(1221, 706);
-            this.btn_XuatThongTinTaiKhoan.Name = "btn_XuatThongTinTaiKhoan";
-            this.btn_XuatThongTinTaiKhoan.Size = new System.Drawing.Size(162, 51);
-            this.btn_XuatThongTinTaiKhoan.TabIndex = 47;
-            this.btn_XuatThongTinTaiKhoan.Text = "Xuất thông tin";
-            this.btn_XuatThongTinTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_XuatThongTinTaiKhoan.UseVisualStyleBackColor = false;
-            this.btn_XuatThongTinTaiKhoan.Click += new System.EventHandler(this.btn_XuatThongTinTaiKhoan_Click);
             // 
             // btn_SearchTaiKhoan
             // 
@@ -357,7 +341,7 @@
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(1027, 707);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1237, 706);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 50);
             this.btn_LamMoi.TabIndex = 54;
@@ -389,7 +373,6 @@
             this.Controls.Add(this.btn_ThemTaiKhoan);
             this.Controls.Add(this.dgv_TaiKhoan);
             this.Controls.Add(this.grb_HeaderTaiKhoan);
-            this.Controls.Add(this.btn_XuatThongTinTaiKhoan);
             this.Controls.Add(this.btn_SearchTaiKhoan);
             this.Controls.Add(this.lb_TimKiemTaiKhoan);
             this.Controls.Add(this.txt_TimKiem);
@@ -413,7 +396,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_XuatThongTinTaiKhoan;
         private System.Windows.Forms.Button btn_SearchTaiKhoan;
         private System.Windows.Forms.Label lb_TimKiemTaiKhoan;
         private System.Windows.Forms.TextBox txt_TimKiem;

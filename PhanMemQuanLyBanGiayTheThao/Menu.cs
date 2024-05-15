@@ -162,5 +162,13 @@ namespace PhanMemQuanLyBanGiayTheThao
                 Application.Exit();
             }
         }
+
+        private void btn_changepassword_Click(object sender, EventArgs e)
+        {
+            frm_DoiMatKhau dmk = new frm_DoiMatKhau();
+            dmk.Show();
+            dmk.MaTK = MaTK;
+            this.Hide();
+        }
     }
 }

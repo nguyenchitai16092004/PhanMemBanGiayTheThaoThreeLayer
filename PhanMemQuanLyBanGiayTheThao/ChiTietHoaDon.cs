@@ -536,25 +536,16 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
-            if (!isThemTaoChiTietHoaDonClicked || !isHoanTatClicked)
-            {
-                MessageBox.Show("Hóa đơn chưa được hoàn thành, hãy hoàn thành hóa đơn trước khi trở về trang trước!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
             if (nud_SoLuong.Value < 0)
             {
                 MessageBox.Show("Số lượng không hợp lệ. Vui lòng nhập số lượng lớn hơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            bool tmp = ChekcOut();
-            if (tmp == true)
-            {
                 frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
                 ql.MaTK = MaTK;
                 ql.Show();
                 this.Close();
-            }
         }
 
 

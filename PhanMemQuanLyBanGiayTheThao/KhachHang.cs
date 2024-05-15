@@ -46,13 +46,13 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemDanhSachKhachHang();
             txt_TimKiemKhachHang.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
-
+            HienThiMaTaiKhoan();
         }
         private void dgv_KhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_KhachHang.CurrentRow.Index;
             txt_MaKhachHangKhachHang.Text = dgv_KhachHang.Rows[i].Cells[1].Value.ToString();
-            txt_MaTaiKhoanKhachHang.Text = dgv_KhachHang.Rows[i].Cells[0].Value.ToString();
+            cbo_MaTK.Text = dgv_KhachHang.Rows[i].Cells[0].Value.ToString();
             txt_TenKhachHang.Text = dgv_KhachHang.Rows[i].Cells[2].Value.ToString();
             txt_EmailKhachHang.Text = dgv_KhachHang.Rows[i].Cells[3].Value.ToString();
             txt_DiaChiKhachHang.Text = dgv_KhachHang.Rows[i].Cells[4].Value.ToString();
@@ -116,7 +116,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
                 // Chuỗi truy vấn cập nhật TenKH, Email, DiaChi, GioiTinh, SDT,QuyenHang
-                string sSQL = "UPDATE KHACHHANG SET TenKH = @TenKH, Email = @Email, DiaChi = @DiaChi, GioiTinh = @GioiTinh, SDT = @SDT, QuyenHang = @QuyenHang WHERE MaKH = @MaKH";
+                string sSQL = "UPDATE KHACHHANG SET MaTK = @MaTK, TenKH = @TenKH, Email = @Email, DiaChi = @DiaChi, GioiTinh = @GioiTinh, SDT = @SDT, QuyenHang = @QuyenHang WHERE MaKH = @MaKH";
 
                 try
                 {
@@ -124,6 +124,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
                         // Thêm các tham số vào truy vấn
+                        cmd.Parameters.AddWithValue("@MaTK", cbo_MaTK.Text);
                         cmd.Parameters.AddWithValue("@TenKH", txt_TenKhachHang.Text);
                         cmd.Parameters.AddWithValue("@Email", txt_EmailKhachHang.Text);
                         if (cbo_GioiTinh.Text == "Nam")
@@ -202,6 +203,17 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XoaKhachHang();
             XemDanhSachKhachHang();
+            txt_TimKiemKhachHang.Clear();
+            cbo_Search.Text = "Tìm kiếm theo :";
+            txt_DiaChiKhachHang.Clear();
+            txt_MaKhachHangKhachHang.Clear();
+            cbo_MaTK.SelectedIndex = -1;
+            txt_TenKhachHang.Clear();
+            txt_EmailKhachHang.Clear();
+            txt_SDTKhachHang.Clear();
+            cbo_GioiTinh.SelectedIndex = -1;
+            cbo_QuyenHang.SelectedIndex = -1;
+            cbo_MaTK.SelectedIndex = -1;
         }
         public void TimKiem()
         {
@@ -253,12 +265,13 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_Search.Text = "Tìm kiếm theo :";
             txt_DiaChiKhachHang.Clear();
             txt_MaKhachHangKhachHang.Clear();
-            txt_MaTaiKhoanKhachHang.Clear();
+            cbo_MaTK.SelectedIndex = -1;
             txt_TenKhachHang.Clear();
             txt_EmailKhachHang.Clear();
             txt_SDTKhachHang.Clear();
             cbo_GioiTinh.SelectedIndex = -1;
             cbo_QuyenHang.SelectedIndex = -1;
+            cbo_MaTK.SelectedIndex = -1;
         }
 
         private void txt_SDTKhachHang_KeyPress(object sender, KeyPressEventArgs e)
@@ -299,5 +312,35 @@ namespace PhanMemQuanLyBanGiayTheThao
             dn.Show();
             this.Close();
         }
+
+        private void cbo_MaTK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void HienThiMaTaiKhoan()
+        {
+            //Doi tuong ket noi CSDL
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql;
+            sSql = "  SELECT MaTK, TenDangNhap FROM TAIKHOAN Where ThuocLoai like N'Khách hàng'";
+            try
+            {
+                myConnection.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
+                //DataSet: du lieu tren bo nho RAM
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                myConnection.Close();
+                cbo_MaTK.DataSource = ds.Tables[0];
+                cbo_MaTK.DisplayMember = "MaTK";
+                cbo_MaTK.ValueMember = "TenDangNhap";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            }
+        }
+
+
     }
 }

@@ -118,7 +118,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
-            frm_HoaDonBanHang ql = new frm_HoaDonBanHang();
+            frm_Menu ql = new frm_Menu();
             ql.Show();
             ql.MaTK = MaTK;
             this.Close();

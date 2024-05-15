@@ -74,47 +74,15 @@ namespace PhanMemQuanLyBanGiayTheThao
                 MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
             }
         }
-        private void btn_QuayLaiThongKe_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frm_Menu ql = new frm_Menu();
-            ql.MaTK = MaTK;
-            ql.Show();
-        }
 
         private void ThongKeSanPham_Load(object sender, EventArgs e)
         {
+            cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             XemThongKe();
         }
         private void btn_SearchThongKe_Click(object sender, EventArgs e)
         {
             TimKiem();
-        }
-
-        private void frm_ThongKeSanPham_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dlg = new DialogResult();
-            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dlg == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void btn_SanPham_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_HoaDon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grb_HeaderThongKe_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_HoaDon_Click(object sender, EventArgs e)
@@ -144,21 +112,18 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        private void btn_DangXuatTaiKhoan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_DangXuatTaiKhoan_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
             frm_DangNhap dn = new frm_DangNhap();
             dn.Show();
             this.Close();
+        }
+
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            XemThongKe();
+            txt_TimKiemThongKe.Clear();
+            cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
         }
     }
 }

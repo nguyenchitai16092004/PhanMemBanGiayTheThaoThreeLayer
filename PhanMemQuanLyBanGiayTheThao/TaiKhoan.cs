@@ -188,6 +188,11 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XoaTK();
             XemDanhSachTaiKhoan();
+            txt_MataiKhoanTaiKhoan.Clear();
+            txt_TenTaiKhoanTaiKhoan.Clear();
+            txt_MatKhauTaiKhoan.Clear();
+            cbo_LoaiTaiKhoan.SelectedIndex = -1;
+            chk_HoatDongTaiKhoan.Checked = false;
         }
 
         private void btn_SuaTaiKhoan_Click_1(object sender, EventArgs e)

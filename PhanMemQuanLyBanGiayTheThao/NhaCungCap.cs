@@ -178,6 +178,10 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XoaNhaCungCap();
             XemDanhSachNhaCungCap();
+            txt_DiaChi.Clear();
+            txt_MaNhaCungCap.Clear();
+            txt_SDT.Clear();
+            txt_TenNhaCungCap.Clear();
         }
         public void TimKiem()
         {
@@ -227,6 +231,10 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemDanhSachNhaCungCap();
             txt_TimKiem.Clear();
             cbo_Search.Text = "Tìm kiếm theo :";
+            txt_DiaChi.Clear();
+            txt_MaNhaCungCap.Clear();
+            txt_SDT.Clear();
+            txt_TenNhaCungCap.Clear();
 
         }
         private void btn_quaylai_Click(object sender, EventArgs e)
@@ -254,6 +262,18 @@ namespace PhanMemQuanLyBanGiayTheThao
             frm_DangNhap dn = new frm_DangNhap();
             dn.Show();
             this.Close();
+        }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Ngăn ký tự không hợp lệ
+                e.Handled = true;
+
+                // Hiển thị thông báo
+                MessageBox.Show("Chỉ được nhập số.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

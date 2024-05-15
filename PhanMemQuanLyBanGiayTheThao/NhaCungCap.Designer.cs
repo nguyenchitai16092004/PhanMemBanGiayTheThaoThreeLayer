@@ -126,6 +126,7 @@
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(321, 27);
             this.txt_SDT.TabIndex = 27;
+            this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // txt_MaNhaCungCap
             // 

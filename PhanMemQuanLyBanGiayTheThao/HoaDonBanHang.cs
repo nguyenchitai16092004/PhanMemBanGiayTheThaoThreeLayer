@@ -427,25 +427,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
 
         }
-
-        private void btn_DoiMatKhauNhanVien_Click(object sender, EventArgs e)
-        {
-            frm_DoiMatKhau dmk = new frm_DoiMatKhau();
-            dmk.Show();
-            dmk.MaTK = MaTK;
-            this.Hide();
-        }
-        private void frm_HoaDonBanHang_FormClosing_1(object sender, FormClosingEventArgs e)
-        {
-
-            DialogResult dlg = new DialogResult();
-            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dlg == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -39,7 +39,6 @@
             this.dgv_SanPham = new System.Windows.Forms.DataGridView();
             this.btn_Search = new System.Windows.Forms.Button();
             this.pic_ImageSP = new System.Windows.Forms.PictureBox();
-            this.btn_XuatThongTinSanPham = new System.Windows.Forms.Button();
             this.lb_TimKiemSanPham = new System.Windows.Forms.Label();
             this.txt_TimKiemSanPham = new System.Windows.Forms.TextBox();
             this.btn_XoaSanPham = new System.Windows.Forms.Button();
@@ -99,7 +98,6 @@
             this.grb_SanPhamSanPham.Controls.Add(this.dgv_SanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.btn_Search);
             this.grb_SanPhamSanPham.Controls.Add(this.pic_ImageSP);
-            this.grb_SanPhamSanPham.Controls.Add(this.btn_XuatThongTinSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.lb_TimKiemSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.txt_TimKiemSanPham);
             this.grb_SanPhamSanPham.Controls.Add(this.btn_XoaSanPham);
@@ -163,7 +161,7 @@
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(947, 513);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1108, 513);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 50);
             this.btn_LamMoi.TabIndex = 52;
@@ -220,22 +218,6 @@
             this.pic_ImageSP.TabIndex = 56;
             this.pic_ImageSP.TabStop = false;
             this.pic_ImageSP.Click += new System.EventHandler(this.pic_ImageSP_Click);
-            // 
-            // btn_XuatThongTinSanPham
-            // 
-            this.btn_XuatThongTinSanPham.AutoSize = true;
-            this.btn_XuatThongTinSanPham.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_XuatThongTinSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XuatThongTinSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinSanPham.Image")));
-            this.btn_XuatThongTinSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThongTinSanPham.Location = new System.Drawing.Point(1108, 510);
-            this.btn_XuatThongTinSanPham.Name = "btn_XuatThongTinSanPham";
-            this.btn_XuatThongTinSanPham.Size = new System.Drawing.Size(149, 51);
-            this.btn_XuatThongTinSanPham.TabIndex = 49;
-            this.btn_XuatThongTinSanPham.Text = "Xuất thông tin";
-            this.btn_XuatThongTinSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_XuatThongTinSanPham.UseVisualStyleBackColor = false;
-            this.btn_XuatThongTinSanPham.Click += new System.EventHandler(this.btn_XuatThongTinSanPham_Click);
             // 
             // lb_TimKiemSanPham
             // 
@@ -471,7 +453,6 @@
             this.grb_Menu.Size = new System.Drawing.Size(158, 80);
             this.grb_Menu.TabIndex = 66;
             this.grb_Menu.TabStop = false;
-            this.grb_Menu.Enter += new System.EventHandler(this.grb_Menu_Enter);
             // 
             // btn_dangxuat
             // 
@@ -563,7 +544,6 @@
         private System.Windows.Forms.Label lb_MaSanPhamSanPham;
         private System.Windows.Forms.Label lb_TimKiemSanPham;
         private System.Windows.Forms.TextBox txt_TimKiemSanPham;
-        private System.Windows.Forms.Button btn_XuatThongTinSanPham;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.GroupBox grb_HeaderSanPham;
         private System.Windows.Forms.DataGridView dgv_SanPham;

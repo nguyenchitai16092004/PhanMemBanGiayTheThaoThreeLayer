@@ -54,7 +54,6 @@
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.btn_XoaNhanVien = new System.Windows.Forms.Button();
             this.btn_SuaNhanVien = new System.Windows.Forms.Button();
-            this.btn_XuatThongTinNhanVien = new System.Windows.Forms.Button();
             this.btn_ThemNhanVien = new System.Windows.Forms.Button();
             this.btn_TimKiemThongTinNhanVien = new System.Windows.Forms.Button();
             this.lb_TimKiemThongTinNhanVien = new System.Windows.Forms.Label();
@@ -154,7 +153,6 @@
             this.grb_NhanVien.Controls.Add(this.btn_LamMoi);
             this.grb_NhanVien.Controls.Add(this.btn_XoaNhanVien);
             this.grb_NhanVien.Controls.Add(this.btn_SuaNhanVien);
-            this.grb_NhanVien.Controls.Add(this.btn_XuatThongTinNhanVien);
             this.grb_NhanVien.Controls.Add(this.btn_ThemNhanVien);
             this.grb_NhanVien.Controls.Add(this.btn_TimKiemThongTinNhanVien);
             this.grb_NhanVien.Controls.Add(this.lb_TimKiemThongTinNhanVien);
@@ -171,10 +169,11 @@
             // cbo_MaTK
             // 
             this.cbo_MaTK.FormattingEnabled = true;
-            this.cbo_MaTK.Location = new System.Drawing.Point(24, 129);
+            this.cbo_MaTK.Location = new System.Drawing.Point(24, 121);
             this.cbo_MaTK.Name = "cbo_MaTK";
             this.cbo_MaTK.Size = new System.Drawing.Size(121, 28);
             this.cbo_MaTK.TabIndex = 84;
+            this.cbo_MaTK.SelectedIndexChanged += new System.EventHandler(this.cbo_MaTK_SelectedIndexChanged);
             // 
             // cbo_Search
             // 
@@ -252,6 +251,7 @@
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(321, 27);
             this.txt_SDT.TabIndex = 65;
+            this.txt_SDT.TextChanged += new System.EventHandler(this.txt_SDT_TextChanged);
             this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // txt_MaNhanVienNhanVien
@@ -268,11 +268,12 @@
             // 
             this.lb_MaTK.AutoSize = true;
             this.lb_MaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_MaTK.Location = new System.Drawing.Point(24, 94);
+            this.lb_MaTK.Location = new System.Drawing.Point(24, 86);
             this.lb_MaTK.Name = "lb_MaTK";
             this.lb_MaTK.Size = new System.Drawing.Size(104, 20);
             this.lb_MaTK.TabIndex = 63;
             this.lb_MaTK.Text = "Mã tài khoản";
+            this.lb_MaTK.Click += new System.EventHandler(this.lb_MaTK_Click);
             // 
             // txt_HoTenNhanVienNhanVien
             // 
@@ -318,7 +319,7 @@
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(999, 458);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1218, 460);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 50);
             this.btn_LamMoi.TabIndex = 61;
@@ -355,19 +356,6 @@
             this.btn_SuaNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_SuaNhanVien.UseVisualStyleBackColor = false;
             this.btn_SuaNhanVien.Click += new System.EventHandler(this.btn_SuaNhanVien_Click);
-            // 
-            // btn_XuatThongTinNhanVien
-            // 
-            this.btn_XuatThongTinNhanVien.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_XuatThongTinNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinNhanVien.Image")));
-            this.btn_XuatThongTinNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThongTinNhanVien.Location = new System.Drawing.Point(1172, 456);
-            this.btn_XuatThongTinNhanVien.Name = "btn_XuatThongTinNhanVien";
-            this.btn_XuatThongTinNhanVien.Size = new System.Drawing.Size(193, 51);
-            this.btn_XuatThongTinNhanVien.TabIndex = 58;
-            this.btn_XuatThongTinNhanVien.Text = "Xuất thông tin";
-            this.btn_XuatThongTinNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_XuatThongTinNhanVien.UseVisualStyleBackColor = false;
             // 
             // btn_ThemNhanVien
             // 
@@ -465,7 +453,6 @@
         private System.Windows.Forms.Button btn_LamMoi;
         private System.Windows.Forms.Button btn_XoaNhanVien;
         private System.Windows.Forms.Button btn_SuaNhanVien;
-        private System.Windows.Forms.Button btn_XuatThongTinNhanVien;
         private System.Windows.Forms.Button btn_ThemNhanVien;
         private System.Windows.Forms.Button btn_TimKiemThongTinNhanVien;
         private System.Windows.Forms.Label lb_TimKiemThongTinNhanVien;

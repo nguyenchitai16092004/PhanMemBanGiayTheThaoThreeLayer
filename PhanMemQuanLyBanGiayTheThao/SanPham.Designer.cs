@@ -442,7 +442,6 @@
             this.grb_HeaderSanPham.Size = new System.Drawing.Size(1269, 147);
             this.grb_HeaderSanPham.TabIndex = 15;
             this.grb_HeaderSanPham.TabStop = false;
-            this.grb_HeaderSanPham.Enter += new System.EventHandler(this.grb_HeaderSanPham_Enter);
             // 
             // grb_Menu
             // 

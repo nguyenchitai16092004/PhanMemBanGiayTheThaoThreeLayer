@@ -607,5 +607,21 @@ namespace PhanMemQuanLyBanGiayTheThao
             return true;
         }
 
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            txt_TenSP.Clear();
+            txt_ThanhTien.Clear();
+            txt_TienGuiKhach.Clear();
+            txt_TienKhachDua.Clear();
+            txt_DonGia.Clear();
+            txt_KhuyenMai.Clear();
+            cbo_MaSP.SelectedIndex = -1;
+            nud_SoLuong.Value = 0;
+            if (pic_ImageSP.Image != null)
+            {
+                pic_ImageSP.Image.Dispose(); // Giải phóng các byte của hình ảnh( làm trống)
+            }
+            pic_ImageSP.Image = null;
+        }
     }
 }

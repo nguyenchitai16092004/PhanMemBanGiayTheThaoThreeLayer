@@ -292,6 +292,7 @@
             this.btn_LamMoi.Text = "Làm mới";
             this.btn_LamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LamMoi.UseVisualStyleBackColor = false;
+            this.btn_LamMoi.Click += new System.EventHandler(this.btn_LamMoi_Click);
             // 
             // lb_MaNVHoaDonBanHang
             // 

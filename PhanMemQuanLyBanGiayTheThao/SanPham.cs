@@ -395,11 +395,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        private void grb_HeaderSanPham_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Hide();

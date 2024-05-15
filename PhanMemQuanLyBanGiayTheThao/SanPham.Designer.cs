@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_SanPham));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grb_SanPham = new System.Windows.Forms.GroupBox();
             this.grb_SanPhamSanPham = new System.Windows.Forms.GroupBox();
             this.cbo_MaNCC = new System.Windows.Forms.ComboBox();
@@ -151,7 +151,8 @@
             this.cbo_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Search.FormattingEnabled = true;
             this.cbo_Search.Items.AddRange(new object[] {
-            "MaSP"});
+            "MaSP",
+            "Tên sản phẩm"});
             this.cbo_Search.Location = new System.Drawing.Point(735, 69);
             this.cbo_Search.Name = "cbo_Search";
             this.cbo_Search.Size = new System.Drawing.Size(121, 28);
@@ -186,8 +187,8 @@
             this.dgv_SanPham.Name = "dgv_SanPham";
             this.dgv_SanPham.ReadOnly = true;
             this.dgv_SanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_SanPham.RowTemplate.Height = 24;
             this.dgv_SanPham.Size = new System.Drawing.Size(852, 400);
             this.dgv_SanPham.TabIndex = 51;

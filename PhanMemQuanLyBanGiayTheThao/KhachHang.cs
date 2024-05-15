@@ -13,7 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_KhachHang : Form
     {
-       public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+       public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_KhachHang()
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemDanhSachKhachHang();
             txt_TimKiemKhachHang.Clear();
-            cbo_Search.Text = "Tìm kiếm theo :";
+            cbo_Search.SelectedIndex = 0;
             HienThiMaTaiKhoan();
         }
         private void dgv_KhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -262,7 +262,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemDanhSachKhachHang();
             txt_TimKiemKhachHang.Clear();
-            cbo_Search.Text = "Tìm kiếm theo :";
+            cbo_Search.SelectedIndex = 0;
             txt_DiaChiKhachHang.Clear();
             txt_MaKhachHangKhachHang.Clear();
             cbo_MaTK.SelectedIndex = -1;

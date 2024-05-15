@@ -353,6 +353,7 @@
             // 
             // cbo_Search
             // 
+            this.cbo_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Search.FormattingEnabled = true;
             this.cbo_Search.Items.AddRange(new object[] {
             "MaTK",

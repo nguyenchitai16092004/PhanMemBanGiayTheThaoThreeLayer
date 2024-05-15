@@ -13,7 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_NhaCungCap : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_NhaCungCap()
         {
             InitializeComponent();
@@ -230,7 +230,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemDanhSachNhaCungCap();
             txt_TimKiem.Clear();
-            cbo_Search.Text = "Tìm kiếm theo :";
+            cbo_Search.SelectedIndex = 0;
             txt_DiaChi.Clear();
             txt_MaNhaCungCap.Clear();
             txt_SDT.Clear();

@@ -13,7 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_ThongKeSanPham : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_ThongKeSanPham()
         {
             InitializeComponent();
@@ -77,7 +77,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void ThongKeSanPham_Load(object sender, EventArgs e)
         {
-            cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
+            cbo_TimKiem_Theo.SelectedIndex = 0;
             XemThongKe();
         }
         private void btn_SearchThongKe_Click(object sender, EventArgs e)
@@ -123,7 +123,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemThongKe();
             txt_TimKiemThongKe.Clear();
-            cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
+            cbo_TimKiem_Theo.SelectedIndex = 0;
         }
     }
 }

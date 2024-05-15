@@ -344,7 +344,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_MaKH.SelectedIndex = -1;
             XemHoaDon();
             HienThiMaNhanVien(MaTK);
-            cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
+            cbo_TimKiem_Theo.SelectedIndex = 0;
             dtp_Ngay.Visible = false;
             HienToanBoTenNhanVien();
             HienThiMaKhachHang();
@@ -416,7 +416,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemHoaDon();
             txt_MaHoaDon.Clear();
             txt_TimKiemHoaDonBanHang.Clear();
-            cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
+            cbo_TimKiem_Theo.SelectedIndex = 0;
             dtp_Ngay.Visible = false;
             cbo_MaKH.SelectedIndex = -1;
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Now;

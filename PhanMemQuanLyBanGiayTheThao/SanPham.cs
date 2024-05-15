@@ -14,7 +14,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_SanPham : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         private bool isChangeImage = false;
         public frm_SanPham()
         {
@@ -289,36 +289,40 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void SanPham_Load(object sender, EventArgs e)
         {
             XemDanhSachSanPham();
+            cbo_Search.SelectedIndex = 0;
             DataGridViewImageColumn avatar_column = (DataGridViewImageColumn)dgv_SanPham.Columns[8];
             avatar_column.Width = 60;
             avatar_column.ImageLayout = DataGridViewImageCellLayout.Zoom;
             txt_TimKiemSanPham.Clear();
-            cbo_Search.Text = "Tìm kiếm theo :";
             cbo_MaNCC.SelectedIndex = -1;
             HienThiMaNhaCungCap();
-
         }
         public void TimKiem()
         {
-            string TimKiemTheo = "", TimKiemThongKe = "";
-
-            TimKiemTheo = cbo_Search.Text;
-            TimKiemThongKe = txt_TimKiemSanPham.Text;
+            string TimKiemTheo = cbo_Search.Text,
+                    TimKiemThongKe = txt_TimKiemSanPham.Text;
             try
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
-                    string sSQL = "SELECT * FROM SANPHAM WHERE " + TimKiemTheo + " = @TimKiemThongKe";
+                    string sSQL;
+                    if (TimKiemTheo == "MaSP")
+                    {
+                        sSQL = "SELECT * FORM SANPHAM WHERE MaSP = @TimKiem";
+                    }
+                    else
+                    {
+                        sSQL = "SELECT * FROM SANPHAM WHERE TenSP like '%' + @TimKiem + '%'";
+                    }
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
-                        cmd.Parameters.AddWithValue("@TimKiemThongKe", TimKiemThongKe);
+                        cmd.Parameters.AddWithValue("@TimKiem", TimKiemThongKe.ToString());
 
-                        SqlDataAdapter daSP = new SqlDataAdapter(cmd);
-                        DataSet dsSP = new DataSet();
-                        daSP.Fill(dsSP);
-
-                        dgv_SanPham.DataSource = dsSP.Tables[0];
+                        SqlDataAdapter daSanPham = new SqlDataAdapter(cmd);
+                        DataSet dsSanPham = new DataSet();
+                        daSanPham.Fill(dsSanPham);
+                        dgv_SanPham.DataSource = dsSanPham.Tables[0];
                     }
                 }
             }
@@ -349,7 +353,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XemDanhSachSanPham();
             txt_TimKiemSanPham.Clear();
-            cbo_Search.Text = "Tìm kiếm theo :";
+            cbo_Search.SelectedIndex = 0;
             chk_TrangThai.Checked = false;
             cbo_MaNCC.SelectedIndex = -1;
             txt_MaSanPham.Clear();
@@ -358,6 +362,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             nud_DonGiaSanPham.Value = 0;
             nud_GiaNhap.Value = 0;
             nud_SoLuongSanPham.Value = 0;
+            cbo_MaNCC.SelectedIndex = 0;
 
             if (pic_ImageSP.Image != null)
             {

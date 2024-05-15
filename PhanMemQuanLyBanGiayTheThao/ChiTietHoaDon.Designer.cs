@@ -130,7 +130,6 @@
             this.pic_ImageSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_ImageSP.TabIndex = 57;
             this.pic_ImageSP.TabStop = false;
-            this.pic_ImageSP.Click += new System.EventHandler(this.pic_ImageSP_Click);
             // 
             // txt_TienGuiKhach
             // 
@@ -408,7 +407,6 @@
             this.grb_Menu.Size = new System.Drawing.Size(110, 80);
             this.grb_Menu.TabIndex = 62;
             this.grb_Menu.TabStop = false;
-            this.grb_Menu.Enter += new System.EventHandler(this.grb_Menu_Enter);
             // 
             // btn_dangxuat
             // 

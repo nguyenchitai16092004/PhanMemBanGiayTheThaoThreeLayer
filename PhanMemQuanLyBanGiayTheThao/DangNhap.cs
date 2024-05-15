@@ -56,7 +56,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void EyeWatchPassword_Click(object sender, EventArgs e)
         {
             txt_MatKhau.UseSystemPasswordChar = !txt_MatKhau.UseSystemPasswordChar;
             if (txt_MatKhau.UseSystemPasswordChar)

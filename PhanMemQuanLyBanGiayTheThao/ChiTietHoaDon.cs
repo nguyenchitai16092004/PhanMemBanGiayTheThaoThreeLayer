@@ -357,7 +357,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
             int Gia = int.Parse(txt_DonGia.Text);
             int Soluong = (int)nud_SoLuong.Value;
-            double ThanhTien = (Soluong * Gia) * ((100.0 - KhuyenMai) / 100);
+            double ThanhTien = (Soluong * Gia) * ((100.0 - KhuyenMai) / 100.0);
             txt_ThanhTien.Text = ThanhTien.ToString();
 
             TongHD();
@@ -529,11 +529,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
-        private void pic_ImageSP_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
 
@@ -546,12 +541,6 @@ namespace PhanMemQuanLyBanGiayTheThao
                 ql.MaTK = MaTK;
                 ql.Show();
                 this.Close();
-        }
-
-
-        private void grb_Menu_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_dangxuat_Click(object sender, EventArgs e)
@@ -617,5 +606,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
             return true;
         }
+
     }
 }

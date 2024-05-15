@@ -168,7 +168,7 @@
             this.btn_eyeopen.Size = new System.Drawing.Size(30, 30);
             this.btn_eyeopen.TabIndex = 5;
             this.btn_eyeopen.UseVisualStyleBackColor = true;
-            this.btn_eyeopen.Click += new System.EventHandler(this.button1_Click);
+            this.btn_eyeopen.Click += new System.EventHandler(this.EyeWatchPassword_Click);
             // 
             // btn_eyeclose
             // 
@@ -179,7 +179,7 @@
             this.btn_eyeclose.Size = new System.Drawing.Size(30, 30);
             this.btn_eyeclose.TabIndex = 5;
             this.btn_eyeclose.UseVisualStyleBackColor = false;
-            this.btn_eyeclose.Click += new System.EventHandler(this.button1_Click);
+            this.btn_eyeclose.Click += new System.EventHandler(this.EyeWatchPassword_Click);
             // 
             // grb_2
             // 

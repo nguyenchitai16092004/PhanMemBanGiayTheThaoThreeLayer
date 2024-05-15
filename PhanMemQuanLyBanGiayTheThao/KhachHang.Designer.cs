@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_KhachHang));
             this.grb_ThongTinKhachhangKhachHang = new System.Windows.Forms.GroupBox();
+            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.cbo_QuyenHang = new System.Windows.Forms.ComboBox();
             this.grb_HienThiThongTin = new System.Windows.Forms.GroupBox();
             this.cbo_Search = new System.Windows.Forms.ComboBox();
@@ -61,7 +62,6 @@
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_quaylai = new System.Windows.Forms.Button();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
-            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.grb_ThongTinKhachhangKhachHang.SuspendLayout();
             this.grb_HienThiThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).BeginInit();
@@ -101,8 +101,19 @@
             this.grb_ThongTinKhachhangKhachHang.TabStop = false;
             this.grb_ThongTinKhachhangKhachHang.Text = "Thông tin khách hàng";
             // 
+            // cbo_MaTK
+            // 
+            this.cbo_MaTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_MaTK.FormattingEnabled = true;
+            this.cbo_MaTK.Location = new System.Drawing.Point(226, 131);
+            this.cbo_MaTK.Name = "cbo_MaTK";
+            this.cbo_MaTK.Size = new System.Drawing.Size(195, 28);
+            this.cbo_MaTK.TabIndex = 38;
+            this.cbo_MaTK.SelectedIndexChanged += new System.EventHandler(this.cbo_MaTK_SelectedIndexChanged);
+            // 
             // cbo_QuyenHang
             // 
+            this.cbo_QuyenHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_QuyenHang.FormattingEnabled = true;
             this.cbo_QuyenHang.Items.AddRange(new object[] {
             "Bạc",
@@ -133,6 +144,7 @@
             // cbo_Search
             // 
             this.cbo_Search.DropDownHeight = 110;
+            this.cbo_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Search.DropDownWidth = 121;
             this.cbo_Search.FormattingEnabled = true;
             this.cbo_Search.IntegralHeight = false;
@@ -253,6 +265,7 @@
             // 
             // cbo_GioiTinh
             // 
+            this.cbo_GioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_GioiTinh.FormattingEnabled = true;
             this.cbo_GioiTinh.Items.AddRange(new object[] {
             "Nam",
@@ -450,15 +463,6 @@
             this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_Logo.TabIndex = 65;
             this.pic_Logo.TabStop = false;
-            // 
-            // cbo_MaTK
-            // 
-            this.cbo_MaTK.FormattingEnabled = true;
-            this.cbo_MaTK.Location = new System.Drawing.Point(226, 131);
-            this.cbo_MaTK.Name = "cbo_MaTK";
-            this.cbo_MaTK.Size = new System.Drawing.Size(195, 28);
-            this.cbo_MaTK.TabIndex = 38;
-            this.cbo_MaTK.SelectedIndexChanged += new System.EventHandler(this.cbo_MaTK_SelectedIndexChanged);
             // 
             // frm_KhachHang
             // 

@@ -190,6 +190,7 @@
             // 
             // cbb_DoanhThu
             // 
+            this.cbb_DoanhThu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_DoanhThu.FormattingEnabled = true;
             this.cbb_DoanhThu.Items.AddRange(new object[] {
             "Tháng ",
@@ -273,6 +274,7 @@
             // 
             // cbb_TimKiem_Theo
             // 
+            this.cbb_TimKiem_Theo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_TimKiem_Theo.FormattingEnabled = true;
             this.cbb_TimKiem_Theo.Items.AddRange(new object[] {
             "MaHD",

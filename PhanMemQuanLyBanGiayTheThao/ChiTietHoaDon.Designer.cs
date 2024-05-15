@@ -240,6 +240,7 @@
             // 
             // cbo_MaSP
             // 
+            this.cbo_MaSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_MaSP.FormattingEnabled = true;
             this.cbo_MaSP.Location = new System.Drawing.Point(9, 211);
             this.cbo_MaSP.Name = "cbo_MaSP";

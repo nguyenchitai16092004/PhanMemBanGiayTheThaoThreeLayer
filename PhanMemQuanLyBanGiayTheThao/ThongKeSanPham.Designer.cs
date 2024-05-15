@@ -92,6 +92,7 @@
             // 
             // cbo_TimKiem_Theo
             // 
+            this.cbo_TimKiem_Theo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TimKiem_Theo.FormattingEnabled = true;
             this.cbo_TimKiem_Theo.Items.AddRange(new object[] {
             "MaSP",

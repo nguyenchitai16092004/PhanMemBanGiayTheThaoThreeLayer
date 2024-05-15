@@ -168,6 +168,7 @@
             // 
             // cbo_MaTK
             // 
+            this.cbo_MaTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_MaTK.FormattingEnabled = true;
             this.cbo_MaTK.Location = new System.Drawing.Point(24, 121);
             this.cbo_MaTK.Name = "cbo_MaTK";
@@ -177,6 +178,7 @@
             // 
             // cbo_Search
             // 
+            this.cbo_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Search.FormattingEnabled = true;
             this.cbo_Search.Items.AddRange(new object[] {
             "MaNV"});
@@ -187,6 +189,7 @@
             // 
             // cbo_GioiTinh
             // 
+            this.cbo_GioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_GioiTinh.FormattingEnabled = true;
             this.cbo_GioiTinh.Items.AddRange(new object[] {
             "Nam",

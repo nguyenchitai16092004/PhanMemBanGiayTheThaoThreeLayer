@@ -128,6 +128,7 @@
             // 
             // cbo_MaNCC
             // 
+            this.cbo_MaNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_MaNCC.FormattingEnabled = true;
             this.cbo_MaNCC.Location = new System.Drawing.Point(11, 547);
             this.cbo_MaNCC.Name = "cbo_MaNCC";
@@ -147,6 +148,7 @@
             // 
             // cbo_Search
             // 
+            this.cbo_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Search.FormattingEnabled = true;
             this.cbo_Search.Items.AddRange(new object[] {
             "MaSP"});

@@ -197,6 +197,7 @@
             // 
             // cbo_LoaiTaiKhoan
             // 
+            this.cbo_LoaiTaiKhoan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_LoaiTaiKhoan.FormattingEnabled = true;
             this.cbo_LoaiTaiKhoan.Items.AddRange(new object[] {
             "Nhân viên",

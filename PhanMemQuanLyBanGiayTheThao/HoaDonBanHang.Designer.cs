@@ -194,6 +194,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // cbo_MaKH
             // 
+            this.cbo_MaKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_MaKH.FormattingEnabled = true;
             this.cbo_MaKH.Location = new System.Drawing.Point(17, 358);
             this.cbo_MaKH.Name = "cbo_MaKH";
@@ -231,6 +232,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // cbo_TenNhanVien
             // 
+            this.cbo_TenNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TenNhanVien.FormattingEnabled = true;
             this.cbo_TenNhanVien.Location = new System.Drawing.Point(377, 27);
             this.cbo_TenNhanVien.Name = "cbo_TenNhanVien";
@@ -240,6 +242,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // cbo_TimKiem_Theo
             // 
+            this.cbo_TimKiem_Theo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TimKiem_Theo.FormattingEnabled = true;
             this.cbo_TimKiem_Theo.Items.AddRange(new object[] {
             "MaHD",
@@ -282,6 +285,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // 
             // cbo_TenNV
             // 
+            this.cbo_TenNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TenNV.FormattingEnabled = true;
             this.cbo_TenNV.Location = new System.Drawing.Point(17, 289);
             this.cbo_TenNV.Name = "cbo_TenNV";

@@ -354,6 +354,7 @@
             // cbo_Search
             // 
             this.cbo_Search.DropDownHeight = 110;
+            this.cbo_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Search.DropDownWidth = 121;
             this.cbo_Search.FormattingEnabled = true;
             this.cbo_Search.IntegralHeight = false;

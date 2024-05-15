@@ -16,7 +16,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_HoaDonBanHang : Form
     {
-        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         int TienKhachDua;
         public int MaTK;
         public frm_HoaDonBanHang()
@@ -192,6 +192,32 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
+        //Hàm này cho phép ta có thể hiện thị toàn bộ nhân viên vào trong cbo_TenNhanVien để thuận lợi tìm kiếm
+        public void HienToanBoTenNhanVien()
+        {
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql;
+            sSql = "SELECT MaNV, TenNV FROM NHANVIEN ";
+            try
+            {
+                myConnection.Open();
+                SqlCommand cmd = new SqlCommand(sSql, myConnection);
+                cmd.Parameters.AddWithValue("@MaTK", MaTK);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //DataSet: du lieu tren bo nho RAM
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                myConnection.Close();
+                cbo_TenNhanVien.DataSource = ds.Tables[0];
+                cbo_TenNhanVien.DisplayMember = "TenNV";
+                cbo_TenNhanVien.ValueMember = "MaNV";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            }
+        }
+
         public void HienThiMaKhachHang()
         {
 
@@ -296,7 +322,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void btn_XoaHoaDonBanHang_Click(object sender, EventArgs e)
         {
-            if (dgv_HoaDonBanHang.SelectedCells.Count>0)
+            if (dgv_HoaDonBanHang.SelectedCells.Count > 0)
             {
                 XoaHoaDon();
                 XemHoaDon();
@@ -320,6 +346,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             HienThiMaNhanVien(MaTK);
             cbo_TimKiem_Theo.Text = "Tìm kiếm theo :";
             dtp_Ngay.Visible = false;
+            HienToanBoTenNhanVien();
             HienThiMaKhachHang();
         }
 
@@ -347,7 +374,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                 TimKiemTheo = "NgayLap";
                 TimKiemThongKe = dtp_Ngay.Value.ToString("yyyy/MM/dd");
             }
-            else if(cbo_TimKiem_Theo.Text == "Tên Nhân viên")
+            else if (cbo_TimKiem_Theo.Text == "Tên Nhân viên")
             {
                 TimKiemTheo = "MaNV";
                 TimKiemThongKe = cbo_TenNhanVien.SelectedValue.ToString();
@@ -394,6 +421,9 @@ namespace PhanMemQuanLyBanGiayTheThao
             cbo_MaKH.SelectedIndex = -1;
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Now;
             txt_TenKH.Clear();
+            cbo_TenNhanVien.Visible = false;
+            HienThiMaKhachHang();
+            HienToanBoTenNhanVien();
             HienThiMaNhanVien(MaTK);
         }
 
@@ -415,7 +445,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                 dtp_Ngay.Visible = true;
                 cbo_TenNhanVien.Visible = false;
             }
-            else if(cbo_TimKiem_Theo.Text == "Tên Nhân viên")
+            else if (cbo_TimKiem_Theo.Text == "Tên Nhân viên")
             {
                 cbo_TenNhanVien.Visible = true;
                 dtp_Ngay.Visible = false;
@@ -426,6 +456,25 @@ namespace PhanMemQuanLyBanGiayTheThao
                 dtp_Ngay.Visible = false;
             }
 
+        }
+
+        private void btn_DoiMatKhauNhanVien_Click(object sender, EventArgs e)
+        {
+            frm_DoiMatKhau dmk = new frm_DoiMatKhau();
+            dmk.Show();
+            dmk.MaTK = MaTK;
+            this.Hide();
+        }
+        private void frm_HoaDonBanHang_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult dlg = new DialogResult();
+            dlg = MessageBox.Show("Bạn có thật sự muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlg == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
         private void btn_quaylai_Click(object sender, EventArgs e)
         {

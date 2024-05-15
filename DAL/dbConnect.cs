@@ -11,7 +11,7 @@ namespace DAL
         public dbConnect()
         {
             // Thay đổi chuỗi kết nối của bạn tại đây
-            conn = new SqlConnection("Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True");
+            conn = new SqlConnection("Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True");
         }
 
         // Lấy dữ liệu từ câu lệnh SQL (SELECT)

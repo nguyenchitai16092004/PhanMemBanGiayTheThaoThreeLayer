@@ -13,7 +13,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 {
     public partial class frm_TaiKhoan : Form
     {
-        public string scon = "Data Source=SECRET-0327\\SQL_SEVER_01;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
+        public string scon = "Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True";
         public frm_TaiKhoan()
         {
             InitializeComponent();
@@ -136,10 +136,8 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaTK()
         {
             string MaTaiKhoan = txt_MataiKhoanTaiKhoan.Text;
-            // Khởi tạo kết nối
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
-                // Chuỗi truy vấn xóa
                 string sSQL = "DELETE FROM TAIKHOAN WHERE MaTK = @MaTK";
 
                 try
@@ -157,6 +155,17 @@ namespace PhanMemQuanLyBanGiayTheThao
                         {
                             MessageBox.Show("Đã xóa tài khoản có mã là: " + MaTaiKhoan, "Thông báo");
                         }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 547) // mã lỗi khóa ngoại
+                    {
+                        MessageBox.Show("Hãy xóa nhân viên này trong bảng Nhân Viên trước khi xóa tài khoản này bạn nhé!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
                     }
                 }
                 catch (Exception ex)

@@ -60,14 +60,14 @@
             this.pn_Header.Controls.Add(this.lb_SprotsShoeShop);
             this.pn_Header.Location = new System.Drawing.Point(0, 0);
             this.pn_Header.Name = "pn_Header";
-            this.pn_Header.Size = new System.Drawing.Size(1027, 146);
+            this.pn_Header.Size = new System.Drawing.Size(989, 149);
             this.pn_Header.TabIndex = 0;
             // 
             // btn_exit
             // 
             this.btn_exit.BackColor = System.Drawing.Color.Transparent;
             this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
-            this.btn_exit.Location = new System.Drawing.Point(987, 0);
+            this.btn_exit.Location = new System.Drawing.Point(949, 3);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(37, 41);
             this.btn_exit.TabIndex = 58;
@@ -95,7 +95,7 @@
             this.lb_SprotsShoeShop.ForeColor = System.Drawing.Color.Red;
             this.lb_SprotsShoeShop.Location = new System.Drawing.Point(189, 9);
             this.lb_SprotsShoeShop.Name = "lb_SprotsShoeShop";
-            this.lb_SprotsShoeShop.Size = new System.Drawing.Size(760, 104);
+            this.lb_SprotsShoeShop.Size = new System.Drawing.Size(722, 107);
             this.lb_SprotsShoeShop.TabIndex = 8;
             this.lb_SprotsShoeShop.Text = "Sports Shoe Shop";
             this.lb_SprotsShoeShop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +154,7 @@
             this.btn_DangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_DangNhap.Location = new System.Drawing.Point(675, 218);
             this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(227, 49);
+            this.btn_DangNhap.Size = new System.Drawing.Size(227, 54);
             this.btn_DangNhap.TabIndex = 4;
             this.btn_DangNhap.Text = "Đăng nhập";
             this.btn_DangNhap.UseVisualStyleBackColor = false;
@@ -183,6 +183,7 @@
             // 
             // grb_2
             // 
+            this.grb_2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grb_2.BackColor = System.Drawing.Color.Transparent;
             this.grb_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("grb_2.BackgroundImage")));
             this.grb_2.Controls.Add(this.pic_Image);
@@ -194,9 +195,9 @@
             this.grb_2.Controls.Add(this.lb_MatKhau);
             this.grb_2.Controls.Add(this.lb_TenDangNhap);
             this.grb_2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_2.Location = new System.Drawing.Point(3, 145);
+            this.grb_2.Location = new System.Drawing.Point(-31, 142);
             this.grb_2.Name = "grb_2";
-            this.grb_2.Size = new System.Drawing.Size(1030, 345);
+            this.grb_2.Size = new System.Drawing.Size(1020, 354);
             this.grb_2.TabIndex = 6;
             this.grb_2.TabStop = false;
             // 
@@ -218,7 +219,7 @@
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1023, 490);
+            this.ClientSize = new System.Drawing.Size(987, 490);
             this.ControlBox = false;
             this.Controls.Add(this.grb_2);
             this.Controls.Add(this.pn_Header);

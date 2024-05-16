@@ -50,7 +50,6 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         public void ThemHoaDon()
         {
-            // Khai báo chuỗi kết nối CSDL
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Now;
             string sSQL = "INSERT INTO HOADON (MaNV, MaKH, NgayLap, TienKhachDua, TienGuiLai, TongHD) VALUES (@MaNV, @MaKH, @NgayLap, @TienKhachDua, @TienGuiLai, @TongHD)";
             try
@@ -122,7 +121,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XoaHoaDon()
         {
             string maHoaDon = txt_MaHoaDon.Text;
-            bool success = true;
 
             try
             {
@@ -136,17 +134,8 @@ namespace PhanMemQuanLyBanGiayTheThao
                     {
                         cmdChiTietHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
                         int rowsAffected = cmdChiTietHoaDon.ExecuteNonQuery();
-
-                        // Kiểm tra nếu không có hàng nào bị xóa
-                        if (rowsAffected == 0)
-                        {
-                            success = false;
-                            MessageBox.Show("Không tìm thấy hóa đơn để xóa.", "Thông báo");
-                        }
                     }
 
-                    if (success)
-                    {
                         // Xóa hóa đơn
                         string sSQLHoaDon = "DELETE FROM HOADON WHERE MaHD = @MaHD";
                         using (SqlCommand cmdHoaDon = new SqlCommand(sSQLHoaDon, myConnection))
@@ -155,13 +144,11 @@ namespace PhanMemQuanLyBanGiayTheThao
                             cmdHoaDon.ExecuteNonQuery();
 
                             MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo");
-                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                success = false;
                 MessageBox.Show("Lỗi khi xóa hóa đơn. Chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

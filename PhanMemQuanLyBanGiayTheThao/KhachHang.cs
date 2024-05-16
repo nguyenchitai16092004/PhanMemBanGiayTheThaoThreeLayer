@@ -71,7 +71,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void ThemKhachHang()
         {
             //khai báo chuoi ket noi CSDL
-            string sSQL = "INSERT INTO KHACHHANG (TenKH, Email, DiaChi, GioiTinh, SDT,QuyenHang) VALUES (@TenKH, @Email, @DiaChi, @GioiTinh,@SDT, @QuyenHang)";
+            string sSQL = "INSERT INTO KHACHHANG (MaTK, TenKH, Email, DiaChi, GioiTinh, SDT,QuyenHang) VALUES (@MaTK, @TenKH, @Email, @DiaChi, @GioiTinh,@SDT, @QuyenHang)";
             try
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
@@ -79,6 +79,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
+                        cmd.Parameters.AddWithValue("@MaTK", cbo_MaTK.Text);
                         cmd.Parameters.AddWithValue("@TenKH", txt_TenKhachHang.Text);
                         cmd.Parameters.AddWithValue("@Email", txt_EmailKhachHang.Text);
                         cmd.Parameters.AddWithValue("@DiaChi", txt_DiaChiKhachHang.Text);

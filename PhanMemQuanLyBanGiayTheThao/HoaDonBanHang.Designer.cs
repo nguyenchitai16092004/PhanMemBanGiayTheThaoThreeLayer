@@ -326,6 +326,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             // dtp_NgayLapHoaDonBanHang
             // 
             this.dtp_NgayLapHoaDonBanHang.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_NgayLapHoaDonBanHang.Enabled = false;
             this.dtp_NgayLapHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_NgayLapHoaDonBanHang.Location = new System.Drawing.Point(17, 156);
             this.dtp_NgayLapHoaDonBanHang.Name = "dtp_NgayLapHoaDonBanHang";

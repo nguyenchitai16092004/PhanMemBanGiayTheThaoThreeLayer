@@ -615,8 +615,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             txt_TienKhachDua.Clear();
             txt_DonGia.Clear();
             txt_KhuyenMai.Clear();
-            cbo_MaSP.SelectedIndex = -1;
-            nud_SoLuong.Value = 0;
+            HienThiMaSanPham();
             if (pic_ImageSP.Image != null)
             {
                 pic_ImageSP.Image.Dispose(); // Giải phóng các byte của hình ảnh( làm trống)

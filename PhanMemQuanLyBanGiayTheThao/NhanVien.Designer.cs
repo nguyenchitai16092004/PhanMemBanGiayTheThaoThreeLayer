@@ -135,6 +135,7 @@
             // 
             // grb_NhanVien
             // 
+            this.grb_NhanVien.Controls.Add(this.dgv_NhanVien);
             this.grb_NhanVien.Controls.Add(this.cbo_MaTK);
             this.grb_NhanVien.Controls.Add(this.cbo_Search);
             this.grb_NhanVien.Controls.Add(this.cbo_GioiTinh);
@@ -157,7 +158,6 @@
             this.grb_NhanVien.Controls.Add(this.btn_TimKiemThongTinNhanVien);
             this.grb_NhanVien.Controls.Add(this.lb_TimKiemThongTinNhanVien);
             this.grb_NhanVien.Controls.Add(this.txt_TimKiem);
-            this.grb_NhanVien.Controls.Add(this.dgv_NhanVien);
             this.grb_NhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_NhanVien.Location = new System.Drawing.Point(0, 169);
             this.grb_NhanVien.Name = "grb_NhanVien";
@@ -416,13 +416,13 @@
             this.dgv_NhanVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_NhanVien.CausesValidation = false;
             this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_NhanVien.Location = new System.Drawing.Point(423, 55);
+            this.dgv_NhanVien.Location = new System.Drawing.Point(429, 57);
             this.dgv_NhanVien.Name = "dgv_NhanVien";
             this.dgv_NhanVien.ReadOnly = true;
             this.dgv_NhanVien.RowHeadersWidth = 51;
             this.dgv_NhanVien.RowTemplate.Height = 24;
-            this.dgv_NhanVien.Size = new System.Drawing.Size(941, 397);
-            this.dgv_NhanVien.TabIndex = 53;
+            this.dgv_NhanVien.Size = new System.Drawing.Size(883, 393);
+            this.dgv_NhanVien.TabIndex = 85;
             this.dgv_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellClick);
             // 
             // frm_NhanVien
@@ -460,7 +460,6 @@
         private System.Windows.Forms.Button btn_TimKiemThongTinNhanVien;
         private System.Windows.Forms.Label lb_TimKiemThongTinNhanVien;
         private System.Windows.Forms.TextBox txt_TimKiem;
-        private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.Label lb_GioiTinhNhanVien;
         private System.Windows.Forms.TextBox txt_DiaChiNhanVien;
         private System.Windows.Forms.Label lb_LuongNhanVien;
@@ -481,5 +480,6 @@
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_quaylai;
         private System.Windows.Forms.Button btn_dangxuat;
+        private System.Windows.Forms.DataGridView dgv_NhanVien;
     }
 }

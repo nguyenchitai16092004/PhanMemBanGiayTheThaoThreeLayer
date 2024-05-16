@@ -22,9 +22,9 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
+            cbo_Search.SelectedIndex = 0;
             XemDanhSachNhaCungCap();
             txt_TimKiem.Clear();
-            cbo_Search.Text = "Tìm kiếm theo :";
         }
 
         private void ddv_NhaCungCap_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,6 +50,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
+            dgv_NhaCungCap.ClearSelection();
         }
 
 

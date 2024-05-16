@@ -46,6 +46,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
+            dgv_ThongKeHoaDon.ClearSelection();
         }
 
         public void TimKiem()
@@ -179,6 +180,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         private void button1_Click(object sender, EventArgs e)
         {
             frm_ThongKeSanPham TKSP = new frm_ThongKeSanPham();
+            TKSP.MaTK = MaTK;
             TKSP.Show();
             this.Hide();
         }

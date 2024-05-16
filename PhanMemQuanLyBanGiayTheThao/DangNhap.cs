@@ -41,7 +41,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
             else
             {
-                MessageBox.Show("Đăng Nhập không thành công, hãy kiểm tra lại tên đăng nhập và mật khẩu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Đăng Nhập không thành công, hãy kiểm tra lại tên đăng nhập và mật khẩu hoặc tài khoản bạn không được phép truy cập !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

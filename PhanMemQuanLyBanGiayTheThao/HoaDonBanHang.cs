@@ -422,7 +422,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             dtp_NgayLapHoaDonBanHang.Value = DateTime.Now;
             txt_TenKH.Clear();
             cbo_TenNhanVien.Visible = false;
-            HienThiMaKhachHang();
             HienToanBoTenNhanVien();
             HienThiMaNhanVien(MaTK);
         }

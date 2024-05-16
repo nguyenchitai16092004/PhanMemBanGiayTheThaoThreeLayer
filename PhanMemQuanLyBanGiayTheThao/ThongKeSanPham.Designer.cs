@@ -72,6 +72,7 @@
             // 
             // dgv_ThongKeSanPhamBanRa
             // 
+            this.dgv_ThongKeSanPhamBanRa.AllowUserToAddRows = false;
             this.dgv_ThongKeSanPhamBanRa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ThongKeSanPhamBanRa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ThongKeSanPhamBanRa.Location = new System.Drawing.Point(12, 108);

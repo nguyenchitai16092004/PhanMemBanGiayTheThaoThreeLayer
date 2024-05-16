@@ -38,6 +38,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
+            dgv_TaiKhoan.ClearSelection();
         }
 
         private void btn_QuayLaiTaiKhoan_Click(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             XemDanhSachTaiKhoan();
             txt_TimKiem.Clear();
             cbo_Search.SelectedIndex = 0;
-
+            dgv_TaiKhoan.ClearSelection();
 
         }
         public void ThemTK()
@@ -212,6 +213,7 @@ namespace PhanMemQuanLyBanGiayTheThao
 
         private void dgv_TaiKhoan_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
             int i = dgv_TaiKhoan.CurrentRow.Index;
             txt_MataiKhoanTaiKhoan.Text = dgv_TaiKhoan.Rows[i].Cells[0].Value.ToString();
             txt_TenTaiKhoanTaiKhoan.Text = dgv_TaiKhoan.Rows[i].Cells[1].Value.ToString();

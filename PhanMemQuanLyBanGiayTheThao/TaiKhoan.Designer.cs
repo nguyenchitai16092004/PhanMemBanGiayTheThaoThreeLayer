@@ -326,6 +326,7 @@
             // 
             // dgv_TaiKhoan
             // 
+            this.dgv_TaiKhoan.AllowUserToAddRows = false;
             this.dgv_TaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_TaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TaiKhoan.Location = new System.Drawing.Point(431, 221);

@@ -338,6 +338,7 @@
             this.txt_SDTKhachHang.Name = "txt_SDTKhachHang";
             this.txt_SDTKhachHang.Size = new System.Drawing.Size(199, 27);
             this.txt_SDTKhachHang.TabIndex = 11;
+            this.txt_SDTKhachHang.TextChanged += new System.EventHandler(this.txt_SDTKhachHang_TextChanged);
             this.txt_SDTKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDTKhachHang_KeyPress);
             // 
             // txt_MaKhachHangKhachHang

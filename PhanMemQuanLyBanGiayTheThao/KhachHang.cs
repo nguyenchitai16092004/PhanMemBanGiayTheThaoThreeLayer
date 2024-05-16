@@ -341,6 +341,9 @@ namespace PhanMemQuanLyBanGiayTheThao
             }
         }
 
+        private void txt_SDTKhachHang_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

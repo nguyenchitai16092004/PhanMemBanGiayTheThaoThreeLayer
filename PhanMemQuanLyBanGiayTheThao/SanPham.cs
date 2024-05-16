@@ -40,6 +40,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
             }
+            dgv_SanPham.ClearSelection();
         }
 
         public void XoaSanPham()

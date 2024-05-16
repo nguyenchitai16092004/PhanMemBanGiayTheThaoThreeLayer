@@ -40,6 +40,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             {
                 MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
+            dgv_NhanVien.ClearSelection();
         }
         private void dgv_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -62,7 +63,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         }
         public void ThemNhanVien()
         {
-            string sSQL = "INSERT INTO NHANVIEN (TenNV, DiaChi, GioiTinh, SDT, Luong) VALUES (@TenNV, @DiaChi, @GioiTinh, @SDT, @Luong)";
+            string sSQL = "INSERT INTO NHANVIEN (MaTK,TenNV, DiaChi, GioiTinh, SDT, Luong) VALUES (@MaTK, @TenNV, @DiaChi, @GioiTinh, @SDT, @Luong)";
             try
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
@@ -70,6 +71,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
+                        cmd.Parameters.AddWithValue("@MaTK", cbo_MaTK.Text);
                         cmd.Parameters.AddWithValue("@TenNV", txt_HoTenNhanVienNhanVien.Text);
                         cmd.Parameters.AddWithValue("@DiaChi", txt_DiaChiNhanVien.Text);
 
@@ -194,6 +196,15 @@ namespace PhanMemQuanLyBanGiayTheThao
         {
             XoaNhanVien();
             XemDanhSachNhanVien();
+            cbo_Search.SelectedIndex = 0; ;
+            cbo_MaTK.SelectedIndex = -1;
+            txt_MaNhanVienNhanVien.Clear();
+            txt_HoTenNhanVienNhanVien.Clear();
+            txt_SDT.Clear();
+            cbo_GioiTinh.SelectedIndex = -1;
+            txt_DiaChiNhanVien.Clear();
+            txt_Luong.Clear();
+
         }
 
         private void NhanVien_Load(object sender, EventArgs e)

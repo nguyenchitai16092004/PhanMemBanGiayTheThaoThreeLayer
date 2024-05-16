@@ -240,6 +240,7 @@
             // 
             // dgv_ThongKeHoaDon
             // 
+            this.dgv_ThongKeHoaDon.AllowUserToAddRows = false;
             this.dgv_ThongKeHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ThongKeHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ThongKeHoaDon.Location = new System.Drawing.Point(11, 269);

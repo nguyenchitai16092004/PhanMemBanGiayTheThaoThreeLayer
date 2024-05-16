@@ -136,7 +136,7 @@ namespace PhanMemQuanLyBanGiayTheThao
                         int rowsAffected = cmdChiTietHoaDon.ExecuteNonQuery();
                     }
 
-                        // Xóa hóa đơn
+                        // Xóa hóa đơnn
                         string sSQLHoaDon = "DELETE FROM HOADON WHERE MaHD = @MaHD";
                         using (SqlCommand cmdHoaDon = new SqlCommand(sSQLHoaDon, myConnection))
                         {

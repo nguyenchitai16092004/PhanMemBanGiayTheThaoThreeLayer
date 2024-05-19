@@ -62,7 +62,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.txt_TimKiemHoaDonBanHang = new System.Windows.Forms.TextBox();
             this.btn_XoaHoaDonBanHang = new System.Windows.Forms.Button();
             this.btn_XemDanhSachHoaDon = new System.Windows.Forms.Button();
-            this.btn_XuatThongTinHoaDonBanHang = new System.Windows.Forms.Button();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.grb_HoaDonBanHang = new System.Windows.Forms.GroupBox();
             this.grb_Header.SuspendLayout();
@@ -181,7 +180,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.grb_SanPham.Controls.Add(this.txt_TimKiemHoaDonBanHang);
             this.grb_SanPham.Controls.Add(this.btn_XoaHoaDonBanHang);
             this.grb_SanPham.Controls.Add(this.btn_XemDanhSachHoaDon);
-            this.grb_SanPham.Controls.Add(this.btn_XuatThongTinHoaDonBanHang);
             this.grb_SanPham.Controls.Add(this.lb_MaKH);
             this.grb_SanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grb_SanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -339,7 +337,7 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LamMoi.Location = new System.Drawing.Point(875, 500);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1098, 498);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(146, 50);
             this.btn_LamMoi.TabIndex = 22;
@@ -451,20 +449,6 @@ namespace PhanMemQuanLyBanGiayTheThao
             this.btn_XemDanhSachHoaDon.UseVisualStyleBackColor = false;
             this.btn_XemDanhSachHoaDon.Click += new System.EventHandler(this.btn_XemDanhSachHoaDon_Click);
             // 
-            // btn_XuatThongTinHoaDonBanHang
-            // 
-            this.btn_XuatThongTinHoaDonBanHang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_XuatThongTinHoaDonBanHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XuatThongTinHoaDonBanHang.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatThongTinHoaDonBanHang.Image")));
-            this.btn_XuatThongTinHoaDonBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XuatThongTinHoaDonBanHang.Location = new System.Drawing.Point(1083, 499);
-            this.btn_XuatThongTinHoaDonBanHang.Name = "btn_XuatThongTinHoaDonBanHang";
-            this.btn_XuatThongTinHoaDonBanHang.Size = new System.Drawing.Size(160, 51);
-            this.btn_XuatThongTinHoaDonBanHang.TabIndex = 18;
-            this.btn_XuatThongTinHoaDonBanHang.Text = "Xuất thông tin";
-            this.btn_XuatThongTinHoaDonBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_XuatThongTinHoaDonBanHang.UseVisualStyleBackColor = false;
-            // 
             // lb_MaKH
             // 
             this.lb_MaKH.AutoSize = true;
@@ -528,7 +512,6 @@ namespace PhanMemQuanLyBanGiayTheThao
         private System.Windows.Forms.TextBox txt_TimKiemHoaDonBanHang;
         private System.Windows.Forms.Button btn_XoaHoaDonBanHang;
         private System.Windows.Forms.Button btn_XemDanhSachHoaDon;
-        private System.Windows.Forms.Button btn_XuatThongTinHoaDonBanHang;
         private System.Windows.Forms.Label lb_MaKH;
         private System.Windows.Forms.GroupBox grb_HoaDonBanHang;
         private System.Windows.Forms.Button btn_KHHoaDonBanHang;

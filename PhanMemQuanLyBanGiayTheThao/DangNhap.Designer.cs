@@ -93,9 +93,9 @@
             this.lb_SprotsShoeShop.BackColor = System.Drawing.Color.Transparent;
             this.lb_SprotsShoeShop.Font = new System.Drawing.Font("ROG Fonts", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SprotsShoeShop.ForeColor = System.Drawing.Color.Red;
-            this.lb_SprotsShoeShop.Location = new System.Drawing.Point(189, 9);
+            this.lb_SprotsShoeShop.Location = new System.Drawing.Point(167, 19);
             this.lb_SprotsShoeShop.Name = "lb_SprotsShoeShop";
-            this.lb_SprotsShoeShop.Size = new System.Drawing.Size(722, 107);
+            this.lb_SprotsShoeShop.Size = new System.Drawing.Size(786, 107);
             this.lb_SprotsShoeShop.TabIndex = 8;
             this.lb_SprotsShoeShop.Text = "Sports Shoe Shop";
             this.lb_SprotsShoeShop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

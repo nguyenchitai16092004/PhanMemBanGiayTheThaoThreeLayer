@@ -22,7 +22,7 @@ namespace PhanMemQuanLyBanGiayTheThao
         public void XemDanhSachTaiKhoan()
         {
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT* FROM TAIKHOAN;";
+            string sSQL = "SELECT * FROM TAIKHOAN;";
             try
             {
                 myConnection.Open();

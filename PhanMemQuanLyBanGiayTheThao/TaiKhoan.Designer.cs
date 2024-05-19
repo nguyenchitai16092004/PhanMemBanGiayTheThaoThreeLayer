@@ -109,6 +109,7 @@
             this.txt_MatKhauTaiKhoan.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_MatKhauTaiKhoan.Location = new System.Drawing.Point(22, 215);
             this.txt_MatKhauTaiKhoan.Name = "txt_MatKhauTaiKhoan";
+            this.txt_MatKhauTaiKhoan.PasswordChar = '*';
             this.txt_MatKhauTaiKhoan.Size = new System.Drawing.Size(321, 27);
             this.txt_MatKhauTaiKhoan.TabIndex = 27;
             // 

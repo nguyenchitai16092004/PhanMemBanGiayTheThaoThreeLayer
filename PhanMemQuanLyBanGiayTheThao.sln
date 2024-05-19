@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{29457A2D-017B-4519-962F-DFFAB7A0C23F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{892355AB-B1DB-47B0-A98C-D289AC969E75}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\OneDrive\Tài liệu\script.sql = ..\..\..\..\OneDrive\Tài liệu\script.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
